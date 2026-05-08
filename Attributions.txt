@@ -10,6 +10,14 @@ A copy of the Apache 2.0 license is available at https://www.apache.org/licenses
 
 ---
 
+## Agilex Piper
+
+Location: robots/agilex_piper/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/agilex_piper
+
+---
+
 ## Shadow Hand
 
 Location: grippers/shadow_hand/
