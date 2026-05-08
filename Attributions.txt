@@ -1,0 +1,9 @@
+﻿# Third-Party Attributions
+
+## TetherIA Aero Hand Open
+
+Location: grippers/tetheria_aero_hand_open/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/tetheria_aero_hand_open
+
+A copy of the Apache 2.0 license is available at https://www.apache.org/licenses/LICENSE-2.0
