@@ -1,0 +1,622 @@
+<mujoco model="Fridge_1">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__ARTICULABLE_DYNAMIC_MJT__">
+        <geom contype="0" conaffinity="7" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="Fridge_Metal_Mat" file="BrushedAluminum_AlbedoTransparency.png"/>
+    <texture type="2d" name="Fridge_Secondary1_Mat" file="BrushedAluminum_AlbedoTransparency.png"/>
+    <texture type="2d" name="Fridge_Decal_Mat" file="Fridge_Decal_AlbedoTransparency.png"/>
+    <material name="material_Fridge_Window_Mat" class="/" rgba="0.397059 0.397059 0.397059 0.166"/>
+    <material name="material_Fridge_Interior1_Mat" class="/" rgba="0.801471 0.801471 0.801471 1"/>
+    <material name="material_Fridge_Metal_Mat" class="/" texture="Fridge_Metal_Mat" rgba="0.875 0.875 0.875 1"/>
+    <material name="material_Fridge_Secondary1_Mat" class="/" texture="Fridge_Secondary1_Mat" rgba="0.830882 0.830882 0.830882 1"/>
+    <material name="material_Fridge_Primary1_Mat" class="/"/>
+    <material name="material_Fridge_Decal_Mat" class="/" texture="Fridge_Decal_Mat"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3" class="/" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4" class="/" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5" class="/" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6" class="/" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_1" class="/" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_1.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3" class="/" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5" class="/" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6" class="/" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" class="/" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3" class="/" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5" class="/" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6" class="/" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" class="/" content_type="model/obj" file="Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_10" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_10.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_43" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_43.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_23" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_23.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_41" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_41.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_2" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_2.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_9" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_9.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_29" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_29.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_21" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_21.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_17" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_17.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_27" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_27.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_7" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_7.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_11" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_11.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_37" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_37.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_15" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_15.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_26" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_26.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_6" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_6.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_36" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_36.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_1" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_1.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_35" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_35.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_12" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_12.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_39" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_39.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_13" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_13.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_3" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_3.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_0" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_0.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_33" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_33.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_32" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_32.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_42" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_42.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_14" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_14.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_25" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_25.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_38" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_38.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_19" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_19.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_16" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_16.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_5" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_5.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_4" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_4.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_34" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_34.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_18" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_18.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_28" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_28.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_31" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_31.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_30" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_30.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_8" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_8.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_40" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_40.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_22" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_22.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_24" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_24.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_20" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3/Fridge_1_FridgeBodyMesh_daf6b078_3_collision_20.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_3" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4/Fridge_1_FridgeBodyMesh_daf6b078_4_collision_3.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_1" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4/Fridge_1_FridgeBodyMesh_daf6b078_4_collision_1.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_2" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4/Fridge_1_FridgeBodyMesh_daf6b078_4_collision_2.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_0" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4/Fridge_1_FridgeBodyMesh_daf6b078_4_collision_0.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_7" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_7.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_3" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_3.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_0" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_0.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_6" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_6.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_1" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_1.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_13" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_13.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_11" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_11.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_8" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_8.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_9" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_9.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_4" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_4.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_5" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_5.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_10" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_10.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_12" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_12.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_2" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5/Fridge_1_FridgeBodyMesh_daf6b078_5_collision_2.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_18" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_18.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_11" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_11.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_21" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_21.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_12" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_12.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_6" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_6.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_15" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_15.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_22" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_22.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_5" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_5.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_7" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_7.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_2" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_2.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_4" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_4.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_8" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_8.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_0" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_0.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_13" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_13.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_17" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_17.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_14" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_14.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_19" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_19.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_10" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_10.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_25" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_25.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_3" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_3.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_23" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_23.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_20" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_20.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_9" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_9.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_1" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_1.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_16" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_16.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_24" content_type="model/obj" file="Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6/Fridge_1_FridgeBodyMesh_daf6b078_6_collision_24.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_1_collision_0" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_1/Fridge_1_Mesh_77a1be5e_1_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_5" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_21" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_21.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_31" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_31.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_1" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_19" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_19.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_22" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_22.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_13" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_3" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_28" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_28.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_7" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_6" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_2" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_2.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_32" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_32.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_27" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_27.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_17" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_17.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_25" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_25.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_18" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_18.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_16" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_16.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_26" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_26.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_35" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_35.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_10" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_4" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_8" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_0" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_20" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_20.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_15" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_15.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_12" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_23" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_23.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_36" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_36.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_30" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_30.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_33" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_33.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_11" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_24" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_24.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_29" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_29.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_34" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_34.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_14" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3_collision_9" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3/Fridge_1_Mesh_77a1be5e_3_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_0" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_11" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_2" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_2.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_6" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_1" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_12" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_14" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_7" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_9" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_8" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_13" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_5" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_3" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_4" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5_collision_10" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5/Fridge_1_Mesh_77a1be5e_5_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_8" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_13" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_12" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_18" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_18.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_21" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_21.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_9" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_17" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_17.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_22" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_22.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_0" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_7" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_14" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_5" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_15" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_15.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_1" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_10" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_6" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_11" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_3" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_4" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_20" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_20.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_19" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_19.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_2" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_2.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6_collision_16" content_type="model/obj" file="Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6/Fridge_1_Mesh_77a1be5e_6_collision_16.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_24" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_24.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_47" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_47.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_11" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_21" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_21.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_8" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_25" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_25.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_35" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_35.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_23" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_23.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_39" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_39.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_2" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_2.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_7" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_0" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_49" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_49.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_16" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_16.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_18" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_18.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_4" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_36" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_36.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_27" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_27.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_17" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_17.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_31" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_31.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_38" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_38.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_15" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_15.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_45" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_45.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_13" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_33" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_33.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_42" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_42.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_46" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_46.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_43" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_43.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_34" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_34.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_44" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_44.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_22" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_22.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_12" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_29" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_29.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_5" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_28" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_28.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_41" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_41.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_3" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_37" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_37.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_20" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_20.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_6" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_48" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_48.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_30" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_30.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_40" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_40.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_19" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_19.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_32" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_32.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_14" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_26" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_26.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_10" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_1" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3_collision_9" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3/Fridge_1_Mesh_78210b38_3_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_2" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_2.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_11" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_8" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_6" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_5" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_12" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_4" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_14" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_0" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_1" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_16" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_16.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_15" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_15.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_13" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_7" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_3" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_9" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5_collision_10" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5/Fridge_1_Mesh_78210b38_5_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_14" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_14.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_7" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_7.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_15" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_15.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_13" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_13.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_18" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_18.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_5" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_3" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_3.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_1" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_1.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_19" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_19.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_16" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_16.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_8" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_8.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_20" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_20.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_10" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_10.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_12" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_12.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_9" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_9.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_6" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_6.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_21" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_21.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_22" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_22.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_23" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_23.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_11" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_11.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_17" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_17.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_0" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_0.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_4" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_4.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6_collision_2" content_type="model/obj" file="Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6/Fridge_1_Mesh_78210b38_6_collision_2.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_5" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_5.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_4" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_4.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_2" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_2.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_0" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_0.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_1" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_1.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_3" content_type="model/obj" file="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_3.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_1" content_type="model/obj" file="Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_1.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_0" content_type="model/obj" file="Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_0.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_2" content_type="model/obj" file="Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_2.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_3" content_type="model/obj" file="Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_3.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Fridge_1">
+      <body name="Fridge_1_FridgeBodyMesh_daf6b078" pos="0.00583 -0.97925 -0.08206">
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_4" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Metal_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.114938 0.935956 0.466753 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_10"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.802626 0.0460789 0.536918 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_43"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.579021 0.284136 0.898236 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_23"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.404688 0.447196 0.359306 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_41"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.897968 0.137802 0.338149 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_2"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.119715 0.344205 0.162473 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_9"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0321788 0.247083 0.905044 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_29"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.124507 0.994356 0.586869 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_21"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.659795 0.990989 0.895198 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_17"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.122901 0.982886 0.467282 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_27"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.334365 0.380825 0.224188 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_7"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.884745 0.506454 0.816163 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_11"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.514578 0.853764 0.668924 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_37"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.735052 0.212787 0.170768 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_15"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.313279 0.082169 0.318518 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_26"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0375138 0.949217 0.544481 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_6"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.735952 0.758193 0.902478 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_36"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.491884 0.238489 0.834393 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.858166 0.193026 0.921868 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_35"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.795731 0.717753 0.952727 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_12"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.198944 0.949452 0.623369 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_39"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.698533 0.936966 0.769702 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_13"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.594399 0.328117 0.386558 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.457023 0.553182 0.715257 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_0"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.878092 0.970683 0.849025 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_33"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_25" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.15769 0.792302 0.929354 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_32"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_26" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.274733 0.753957 0.776035 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_42"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_27" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.184448 0.435359 0.278892 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_14"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_28" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.986551 0.972832 0.0796595 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_25"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_29" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.800931 0.658494 0.660766 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_38"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_30" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.929887 0.695603 0.245059 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_19"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_31" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.259819 0.888516 0.923902 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_16"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_32" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0859145 0.975366 0.601697 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_5"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_33" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.339465 0.541879 0.129178 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_4"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_34" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.351207 0.764468 0.717199 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_34"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_35" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.12711 0.941758 0.240711 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_18"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_36" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.191196 0.085593 0.600517 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_28"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_37" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0946904 0.22175 0.0977987 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_31"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_38" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.00626805 0.480431 0.345436 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_30"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_39" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.227708 0.797138 0.173709 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_8"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_40" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.518361 0.354485 0.654 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_40"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_41" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.397743 0.489127 0.86385 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_22"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_42" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.373747 0.102137 0.189137 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_24"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_3_MeshCollider_43" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.481628 0.975296 0.921975 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3_collision_20"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_4_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.439355 0.0626571 0.452858 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_4_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.327789 0.0859505 0.309344 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_4_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.965687 0.272605 0.135333 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_2"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_4_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.664471 0.169776 0.294505 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4_collision_0"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.77066 0.418653 0.936779 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_7"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.00400338 0.881223 0.729906 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.136117 0.818455 0.204869 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_0"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.012262 0.852663 0.407795 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_6"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.747291 0.93565 0.151026 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.359247 0.02949 0.526387 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_13"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.627568 0.331238 0.184857 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_11"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.561301 0.528535 0.0160232 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_8"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.688413 0.035049 0.880569 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_9"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.601393 0.553408 0.728419 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_4"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.123535 0.360014 0.86023 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_5"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.373808 0.40666 0.715424 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_10"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.762427 0.0889926 0.571198 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_12"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_5_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.379046 0.37967 0.993252 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5_collision_2"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.114669 0.980913 0.855532 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_18"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.45933 0.443964 0.921736 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_11"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.813975 0.696618 0.773871 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_21"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.535161 0.584881 0.53469 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_12"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.422207 0.779334 0.578979 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_6"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.981181 0.516834 0.0949389 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_15"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.321016 0.160312 0.731982 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_22"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.903583 0.107269 0.546071 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_5"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.205205 0.254699 0.121366 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_7"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.859001 0.572192 0.187348 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_2"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.474566 0.462496 0.45141 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_4"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0424784 0.0892206 0.394402 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_8"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.510427 0.571965 0.691146 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_0"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.279156 0.482404 0.86032 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_13"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.39813 0.29259 0.0215064 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_17"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.200285 0.181795 0.561531 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_14"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.996314 0.984663 0.521892 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_19"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.831974 0.986148 0.209478 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_10"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.984431 0.459788 0.25249 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_25"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.973293 0.453348 0.297352 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0543736 0.0641264 0.437278 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_23"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.0395812 0.607823 0.206862 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_20"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.708503 0.316861 0.498195 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_9"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.455892 0.997381 0.484183 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.347953 0.553248 0.777624 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_16"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_Fridge_1_FridgeBodyMesh_daf6b078_6_MeshCollider_25" class="__DYNAMIC_MJT__" type="mesh" density="100" rgba="0.833605 0.651771 0.120397 1" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6_collision_24"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_0" class="/" pos="0.005 0.629325 0.0233116" quat="0 1 0 0" size="0.357609 0.0962296 0.172328" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_1" class="/" pos="0.00500013 1.37796 0.0318033" quat="0 1 0 0" size="0.384375 0.0840883 0.180819" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_2" class="/" pos="0.005 0.885625 0.0233116" quat="0 1 0 0" size="0.357609 0.0962296 0.172328" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_3" class="/" pos="0.00500013 1.57896 0.00807125" quat="0 1 0 0" size="0.384375 0.0840883 0.157087" type="box" rgba="1 0 0 1"/>
+        <body name="Fridge_1_Mesh_77a1be5e" pos="-0.485672 1.56042 0.261416">
+          <joint name="Fridge_1_joint" class="/" pos="0 0 0" axis="0 -1 0" stiffness="1" range="0 1.5708" armature="0.109" damping="9" frictionloss="10"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_1" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Decal_Mat" mesh="Fridge_1_Mesh_77a1be5e_1"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_Mesh_77a1be5e_3"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_Mesh_77a1be5e_5"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_Mesh_77a1be5e_6"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_1_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.352103 0.507455 0.285823 1" mesh="Fridge_1_Mesh_77a1be5e_1_collision_0"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.151832 0.841619 0.599674 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_5"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.404979 0.597231 0.80858 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_21"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.350632 0.780168 0.431155 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_31"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.500703 0.467983 0.232054 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_1"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.304806 0.0112071 0.951556 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_19"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.596314 0.429229 0.195522 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_22"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.834418 0.769242 0.632272 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_13"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.553089 0.192563 0.762041 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_3"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.70934 0.598324 0.0871792 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_28"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.493945 0.178231 0.682964 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_7"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.661891 0.478539 0.163177 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_6"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.737781 0.541678 0.633798 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_2"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.658514 0.797352 0.698783 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_32"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.355737 0.432111 0.0153805 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_27"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0519727 0.239501 0.818994 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_17"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.035852 0.826055 0.422728 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_25"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.630931 0.170868 0.94985 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_18"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.148566 0.199879 0.269426 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_16"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.301906 0.829051 0.850229 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_26"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.221291 0.236767 0.31549 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_35"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.527571 0.341767 0.100128 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_10"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.855053 0.447705 0.898872 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_4"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0944727 0.0954837 0.705882 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_8"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.46292 0.733446 0.10861 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_0"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.088698 0.898336 0.359404 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_20"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_25" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.216747 0.865402 0.32888 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_15"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_26" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0255829 0.483255 0.805517 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_12"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_27" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.98815 0.45762 0.478029 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_23"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_28" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.995424 0.795723 0.725967 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_36"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_29" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.400393 0.0560699 0.680003 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_30"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_30" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.854921 0.619273 0.989353 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_33"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_31" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.582714 0.929549 0.122399 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_11"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_32" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.96194 0.100776 0.605893 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_24"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_33" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.557671 0.317747 0.588057 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_29"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_34" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.324282 0.843419 0.151418 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_34"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_35" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.37551 0.701852 0.644618 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_14"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_3_MeshCollider_36" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.528639 0.575161 0.426763 1" mesh="Fridge_1_Mesh_77a1be5e_3_collision_9"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.789916 0.537022 0.504498 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_0"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.291681 0.9888 0.256967 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_11"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.318827 0.471132 0.206746 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_2"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.564922 0.942182 0.108263 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_6"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.901614 0.0333458 0.097993 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_1"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.00792539 0.0729444 0.920248 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_12"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.72022 0.0612416 0.807193 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_14"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.281455 0.0582827 0.468215 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_7"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.774194 0.810796 0.136827 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_9"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.801951 0.886527 0.186393 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_8"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.635061 0.843022 0.962743 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_13"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.859798 0.154306 0.398432 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_5"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.823794 0.887118 0.96299 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_3"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.141091 0.459733 0.696004 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_4"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_5_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.75263 0.891165 0.92337 1" mesh="Fridge_1_Mesh_77a1be5e_5_collision_10"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0891918 0.583537 0.998547 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_8"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.277287 0.83367 0.240321 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_13"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.428336 0.968413 0.604678 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_12"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.755152 0.683083 0.763648 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_18"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.124476 0.983148 0.779827 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_21"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.889869 0.048474 0.168558 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_9"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.578005 0.356136 0.58295 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_17"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.972032 0.875879 0.488974 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_22"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.682283 0.898989 0.436142 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_0"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.218955 0.712543 0.045498 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_7"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.202464 0.275635 0.173115 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_14"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.320005 0.475824 0.108305 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_5"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.516884 0.910422 0.362419 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_15"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.952312 0.11323 0.529273 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_1"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.663148 0.00729622 0.264082 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_10"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0833903 0.694094 0.120833 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_6"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.995277 0.139274 0.477617 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_11"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.288084 0.474785 0.263017 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_3"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.912201 0.868284 0.173958 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_4"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.815692 0.0404023 0.440474 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_20"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.458278 0.127611 0.732521 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_19"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0434584 0.0369722 0.0948503 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_2"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_Fridge_1_Mesh_77a1be5e_6_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="80" rgba="0.0409305 0.608341 0.675921 1" mesh="Fridge_1_Mesh_77a1be5e_6_collision_16"/>
+          <body name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" pos="0.905033 -0.0068779 0.113278">
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.551626 0.14684 0.350571 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_5"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.119322 0.209771 0.997225 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_4"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.114112 0.765939 0.128312 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_2"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.382767 0.318062 0.38728 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_0"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.832724 0.695472 0.902541 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_1"/>
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.73095 0.444408 0.0957034 1" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5_collision_3"/>
+          </body>
+        </body>
+        <body name="Fridge_1_Mesh_78210b38" pos="-0.485672 0.651082 0.261417">
+          <joint name="Fridge_1_Mesh_78210b38__1" class="/" pos="0 0 0" axis="0 -1 0" range="0 1.5708" armature="0.068" damping="8" frictionloss="10"/>
+          <geom name="Fridge_1_Mesh_78210b38_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_Mesh_78210b38_3"/>
+          <geom name="Fridge_1_Mesh_78210b38_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_Mesh_78210b38_5"/>
+          <geom name="Fridge_1_Mesh_78210b38_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_Mesh_78210b38_6"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.857676 0.0718931 0.487306 1" mesh="Fridge_1_Mesh_78210b38_3_collision_24"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.634606 0.114351 0.356097 1" mesh="Fridge_1_Mesh_78210b38_3_collision_47"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.764664 0.312418 0.353554 1" mesh="Fridge_1_Mesh_78210b38_3_collision_11"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.625332 0.832025 0.846503 1" mesh="Fridge_1_Mesh_78210b38_3_collision_21"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.736237 0.733625 0.0379428 1" mesh="Fridge_1_Mesh_78210b38_3_collision_8"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.945994 0.404785 0.64796 1" mesh="Fridge_1_Mesh_78210b38_3_collision_25"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.790615 0.510561 0.558668 1" mesh="Fridge_1_Mesh_78210b38_3_collision_35"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.992768 0.152604 0.742825 1" mesh="Fridge_1_Mesh_78210b38_3_collision_23"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.857868 0.807035 0.491407 1" mesh="Fridge_1_Mesh_78210b38_3_collision_39"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.933282 0.219032 0.269497 1" mesh="Fridge_1_Mesh_78210b38_3_collision_2"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0480709 0.710638 0.48966 1" mesh="Fridge_1_Mesh_78210b38_3_collision_7"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.599093 0.295453 0.128824 1" mesh="Fridge_1_Mesh_78210b38_3_collision_0"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0124151 0.00568899 0.268546 1" mesh="Fridge_1_Mesh_78210b38_3_collision_49"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.823558 0.578757 0.459249 1" mesh="Fridge_1_Mesh_78210b38_3_collision_16"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.982978 0.391521 0.25475 1" mesh="Fridge_1_Mesh_78210b38_3_collision_18"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.276801 0.213856 0.374075 1" mesh="Fridge_1_Mesh_78210b38_3_collision_4"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0910018 0.276015 0.159545 1" mesh="Fridge_1_Mesh_78210b38_3_collision_36"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.152278 0.451459 0.994539 1" mesh="Fridge_1_Mesh_78210b38_3_collision_27"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.298748 0.705847 0.381121 1" mesh="Fridge_1_Mesh_78210b38_3_collision_17"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.637331 0.426143 0.184324 1" mesh="Fridge_1_Mesh_78210b38_3_collision_31"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.691776 0.585415 0.530747 1" mesh="Fridge_1_Mesh_78210b38_3_collision_38"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.5691 0.397263 0.735876 1" mesh="Fridge_1_Mesh_78210b38_3_collision_15"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.931586 0.241517 0.304467 1" mesh="Fridge_1_Mesh_78210b38_3_collision_45"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0415545 0.967814 0.195503 1" mesh="Fridge_1_Mesh_78210b38_3_collision_13"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.533431 0.426581 0.900926 1" mesh="Fridge_1_Mesh_78210b38_3_collision_33"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_25" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.747136 0.603989 0.44869 1" mesh="Fridge_1_Mesh_78210b38_3_collision_42"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_26" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.398978 0.115194 0.7191 1" mesh="Fridge_1_Mesh_78210b38_3_collision_46"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_27" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.501299 0.768548 0.679973 1" mesh="Fridge_1_Mesh_78210b38_3_collision_43"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_28" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.448729 0.637862 0.531467 1" mesh="Fridge_1_Mesh_78210b38_3_collision_34"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_29" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.348919 0.166597 0.53696 1" mesh="Fridge_1_Mesh_78210b38_3_collision_44"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_30" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.596435 0.114616 0.131704 1" mesh="Fridge_1_Mesh_78210b38_3_collision_22"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_31" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.150409 0.545705 0.860453 1" mesh="Fridge_1_Mesh_78210b38_3_collision_12"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_32" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.545634 0.290518 0.974127 1" mesh="Fridge_1_Mesh_78210b38_3_collision_29"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_33" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.276899 0.779744 0.888354 1" mesh="Fridge_1_Mesh_78210b38_3_collision_5"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_34" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.24985 0.347429 0.902866 1" mesh="Fridge_1_Mesh_78210b38_3_collision_28"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_35" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.736356 0.813866 0.226061 1" mesh="Fridge_1_Mesh_78210b38_3_collision_41"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_36" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.058508 0.319652 0.587256 1" mesh="Fridge_1_Mesh_78210b38_3_collision_3"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_37" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.244265 0.128232 0.552536 1" mesh="Fridge_1_Mesh_78210b38_3_collision_37"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_38" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0815708 0.781536 0.534585 1" mesh="Fridge_1_Mesh_78210b38_3_collision_20"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_39" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0365842 0.190601 0.314693 1" mesh="Fridge_1_Mesh_78210b38_3_collision_6"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_40" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.426736 0.8619 0.390085 1" mesh="Fridge_1_Mesh_78210b38_3_collision_48"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_41" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.356883 0.293318 0.351707 1" mesh="Fridge_1_Mesh_78210b38_3_collision_30"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_42" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.839742 0.0439142 0.143642 1" mesh="Fridge_1_Mesh_78210b38_3_collision_40"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_43" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.673567 0.711918 0.824465 1" mesh="Fridge_1_Mesh_78210b38_3_collision_19"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_44" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.920777 0.617043 0.317738 1" mesh="Fridge_1_Mesh_78210b38_3_collision_32"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_45" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.470714 0.98845 0.222367 1" mesh="Fridge_1_Mesh_78210b38_3_collision_14"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_46" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.979744 0.554418 0.884943 1" mesh="Fridge_1_Mesh_78210b38_3_collision_26"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_47" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.984142 0.894643 0.811783 1" mesh="Fridge_1_Mesh_78210b38_3_collision_10"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_48" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.266622 0.0828524 0.28886 1" mesh="Fridge_1_Mesh_78210b38_3_collision_1"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_3_MeshCollider_49" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.896577 0.290446 0.963418 1" mesh="Fridge_1_Mesh_78210b38_3_collision_9"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.202799 0.0200182 0.668653 1" mesh="Fridge_1_Mesh_78210b38_5_collision_2"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.186852 0.0244927 0.710347 1" mesh="Fridge_1_Mesh_78210b38_5_collision_11"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.815861 0.030788 0.258652 1" mesh="Fridge_1_Mesh_78210b38_5_collision_8"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.836291 0.697413 0.0412551 1" mesh="Fridge_1_Mesh_78210b38_5_collision_6"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.986555 0.208103 0.963596 1" mesh="Fridge_1_Mesh_78210b38_5_collision_5"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.528398 0.509166 0.526828 1" mesh="Fridge_1_Mesh_78210b38_5_collision_12"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.924603 0.0320568 0.447692 1" mesh="Fridge_1_Mesh_78210b38_5_collision_4"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.47748 0.768548 0.191147 1" mesh="Fridge_1_Mesh_78210b38_5_collision_14"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.259625 0.148819 0.858533 1" mesh="Fridge_1_Mesh_78210b38_5_collision_0"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.802147 0.416024 0.334446 1" mesh="Fridge_1_Mesh_78210b38_5_collision_1"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.43828 0.317555 0.85785 1" mesh="Fridge_1_Mesh_78210b38_5_collision_16"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.49279 0.0258145 0.580978 1" mesh="Fridge_1_Mesh_78210b38_5_collision_15"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.312753 0.00022701 0.368797 1" mesh="Fridge_1_Mesh_78210b38_5_collision_13"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.77361 0.637006 0.775319 1" mesh="Fridge_1_Mesh_78210b38_5_collision_7"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.732267 0.621844 0.745901 1" mesh="Fridge_1_Mesh_78210b38_5_collision_3"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.460774 0.401325 0.0913908 1" mesh="Fridge_1_Mesh_78210b38_5_collision_9"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_5_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.467888 0.123859 0.454264 1" mesh="Fridge_1_Mesh_78210b38_5_collision_10"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.927392 0.898585 0.204338 1" mesh="Fridge_1_Mesh_78210b38_6_collision_14"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.588497 0.465192 0.264837 1" mesh="Fridge_1_Mesh_78210b38_6_collision_7"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.283491 0.495484 0.170225 1" mesh="Fridge_1_Mesh_78210b38_6_collision_15"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.609564 0.686279 0.299607 1" mesh="Fridge_1_Mesh_78210b38_6_collision_13"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0473056 0.109605 0.385764 1" mesh="Fridge_1_Mesh_78210b38_6_collision_18"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.106193 0.41699 0.22757 1" mesh="Fridge_1_Mesh_78210b38_6_collision_5"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.163644 0.599535 0.761806 1" mesh="Fridge_1_Mesh_78210b38_6_collision_3"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.592193 0.789451 0.336134 1" mesh="Fridge_1_Mesh_78210b38_6_collision_1"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.38461 0.231326 0.0398524 1" mesh="Fridge_1_Mesh_78210b38_6_collision_19"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.571175 0.483046 0.174483 1" mesh="Fridge_1_Mesh_78210b38_6_collision_16"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.121815 0.354794 0.877617 1" mesh="Fridge_1_Mesh_78210b38_6_collision_8"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.697775 0.453831 0.689495 1" mesh="Fridge_1_Mesh_78210b38_6_collision_20"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.583611 0.226686 0.650182 1" mesh="Fridge_1_Mesh_78210b38_6_collision_10"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.988802 0.0559238 0.93741 1" mesh="Fridge_1_Mesh_78210b38_6_collision_12"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.743969 0.527015 0.82659 1" mesh="Fridge_1_Mesh_78210b38_6_collision_9"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.795692 0.0509152 0.778321 1" mesh="Fridge_1_Mesh_78210b38_6_collision_6"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.43707 0.681111 0.88581 1" mesh="Fridge_1_Mesh_78210b38_6_collision_21"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.0471515 0.556996 0.179113 1" mesh="Fridge_1_Mesh_78210b38_6_collision_22"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.45003 0.46519 0.312752 1" mesh="Fridge_1_Mesh_78210b38_6_collision_23"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.859779 0.185071 0.728638 1" mesh="Fridge_1_Mesh_78210b38_6_collision_11"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.414961 0.840547 0.668974 1" mesh="Fridge_1_Mesh_78210b38_6_collision_17"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.436227 0.184517 0.287128 1" mesh="Fridge_1_Mesh_78210b38_6_collision_0"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.488634 0.169923 0.268093 1" mesh="Fridge_1_Mesh_78210b38_6_collision_4"/>
+          <geom name="Fridge_1_Mesh_78210b38_Fridge_1_Mesh_78210b38_6_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="70" rgba="0.373198 0.91936 0.0598453 1" mesh="Fridge_1_Mesh_78210b38_6_collision_2"/>
+          <body name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" pos="0.905033 -0.00864816 0.113277">
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_Fridge_1_fridge_maindoor_handle_a1_fa5364a9_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.166659 0.991334 0.384129 1" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_1"/>
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_Fridge_1_fridge_maindoor_handle_a1_fa5364a9_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.0772834 0.857019 0.405565 1" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_0"/>
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_Fridge_1_fridge_maindoor_handle_a1_fa5364a9_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.322858 0.365481 0.496977 1" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_2"/>
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_Fridge_1_fridge_maindoor_handle_a1_fa5364a9_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="600" rgba="0.997946 0.8503 0.245679 1" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_collision_3"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_Mesh_77a1be5e"/>
+    <exclude body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+    <exclude name="//unnamed_contact_1" body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_Mesh_78210b38" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+  </contact>
+</mujoco>

@@ -1,0 +1,2 @@
+Derived from MolmoSpaces THOR MuJoCo objects (allenai/molmospaces, mujoco/objects/thor and Living Room assets).
+License: CC BY 4.0 for this subset per https://huggingface.co/datasets/allenai/molmospaces

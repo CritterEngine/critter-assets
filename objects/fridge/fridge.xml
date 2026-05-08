@@ -1,0 +1,107 @@
+<mujoco model="Fridge_1">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__ARTICULABLE_DYNAMIC_MJT__">
+        <geom contype="0" conaffinity="7" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="Fridge_Secondary1_Mat" file="assets/BrushedAluminum_AlbedoTransparency.png"/>
+    <texture type="2d" name="Fridge_Decal_Mat" file="assets/Fridge_Decal_AlbedoTransparency.png"/>
+    <material name="material_Fridge_Window_Mat" class="/" rgba="0.397059 0.397059 0.397059 0.166"/>
+    <material name="material_Fridge_Interior1_Mat" class="/" rgba="0.819608 0.819608 0.819608 1"/>
+    <material name="material_Fridge_Metal_Mat" class="/" texture="Fridge_Secondary1_Mat" rgba="0.929412 0.929412 0.929412 1" metallic="1" roughness="0.11"/>
+    <material name="material_Fridge_Secondary1_Mat" class="/" texture="Fridge_Secondary1_Mat" rgba="0.870588 0.870588 0.870588 1" metallic="1" roughness="0.23"/>
+    <material name="material_Fridge_Primary1_Mat" class="/"/>
+    <material name="material_Fridge_Decal_Mat" class="/" texture="Fridge_Decal_Mat"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_3" class="/" content_type="model/obj" file="assets/Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_4" class="/" content_type="model/obj" file="assets/Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_4.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_5" class="/" content_type="model/obj" file="assets/Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_5.obj"/>
+    <mesh name="Fridge_1_FridgeBodyMesh_daf6b078_6" class="/" content_type="model/obj" file="assets/Fridge_1_FridgeBodyMesh_daf6b078/Fridge_1_FridgeBodyMesh_daf6b078_6.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_1" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_1.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_3" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_5" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_5.obj"/>
+    <mesh name="Fridge_1_Mesh_77a1be5e_6" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_77a1be5e/Fridge_1_Mesh_77a1be5e_6.obj"/>
+    <mesh name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" class="/" content_type="model/obj" file="assets/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5/Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_3" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_3.obj" inertia="shell"/>
+    <mesh name="Fridge_1_Mesh_78210b38_5" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_5.obj"/>
+    <mesh name="Fridge_1_Mesh_78210b38_6" class="/" content_type="model/obj" file="assets/Fridge_1_Mesh_78210b38/Fridge_1_Mesh_78210b38_6.obj"/>
+    <mesh name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" class="/" content_type="model/obj" file="assets/Fridge_1_fridge_maindoor_handle_a1_fa5364a9/Fridge_1_fridge_maindoor_handle_a1_fa5364a9.obj"/>
+  </asset>
+
+  <worldbody>
+    <!-- Initial pose: global (0,0,0.982), rotation +90° about X (deg). -->
+    <body name="Fridge_1" pos="0 0 0.982" quat="0.707107 0.707107 0 0">
+      <body name="Fridge_1_FridgeBodyMesh_daf6b078" pos="0.00583 -0.97925 -0.08206">
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_3"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_4" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Metal_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_4"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_5"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_FridgeBodyMesh_daf6b078_6"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.5 0.0468114 0.358147" pos="0 0.0468114 0.0823707" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.5 0.0707055 0.274517" pos="0 0.152343 -0.00125849" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.5 0.0587584 0.105233" pos="0 0.221077 -0.0544354" quat="-0.34542 0.938448 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.5 0.123386 0.0936805" pos="0 0.205024 -0.182095" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.5 0.93084 0.0646122" pos="0 1.01248 -0.211164" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.5 0.119771 0.243003" pos="0 1.17629 -0.0176091" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.5 0.0791795 0.0891342" pos="0 1.18082 0.178333" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.43622 0.00982689 0.179937" pos="0 1.48415 0.00460739" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.43622 0.00982689 0.179937" pos="0 0.780554 0.00460739" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.43622 0.00982689 0.179937" pos="0 0.521154 0.00460739" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_10" class="__DYNAMIC_MJT__" size="0.0561153 0.912807 0.243003" pos="-0.438222 0.992484 -0.0176091" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_11" class="__DYNAMIC_MJT__" size="0.0561153 0.912807 0.243003" pos="0.427778 0.992484 -0.0176091" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <geom name="Fridge_1_FridgeBodyMesh_daf6b078_PrimitiveCollider_12" class="__DYNAMIC_MJT__" size="0.481471 0.140176 0.243003" pos="0.000357258 1.81277 -0.0176091" quat="0 1 0 0" type="box" density="100" rgba="0 1 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_0" class="/" pos="0.005 0.629325 0.0233116" quat="0 1 0 0" size="0.357609 0.0962296 0.172328" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_1" class="/" pos="0.00500013 1.37796 0.0318033" quat="0 1 0 0" size="0.384375 0.0840883 0.180819" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_2" class="/" pos="0.005 0.885625 0.0233116" quat="0 1 0 0" size="0.357609 0.0962296 0.172328" type="box" rgba="1 0 0 1"/>
+        <site name="Fridge_1_FridgeBodyMesh_daf6b078_Receptacle_3" class="/" pos="0.00500013 1.57896 0.00807125" quat="0 1 0 0" size="0.384375 0.0840883 0.157087" type="box" rgba="1 0 0 1"/>
+        <body name="Fridge_1_Mesh_77a1be5e" pos="-0.485672 1.56042 0.261416">
+          <joint name="Fridge_1_joint" class="/" pos="0 0 0" axis="0 -1 0" stiffness="1" range="0 1.5708" armature="0.109" damping="9" frictionloss="10"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_1" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Decal_Mat" mesh="Fridge_1_Mesh_77a1be5e_1"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_Mesh_77a1be5e_3"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_Mesh_77a1be5e_5"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_Mesh_77a1be5e_6"/>
+          <geom name="Fridge_1_Mesh_77a1be5e_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.5 0.38125 0.0937503" pos="0.498 0.012 0.0889998" quat="0 1 0 0" type="box" density="80" rgba="0 1 0 1"/>
+          <body name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" pos="0.905033 -0.0068779 0.113278">
+            <geom name="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+          </body>
+        </body>
+        <body name="Fridge_1_Mesh_78210b38" pos="-0.485672 0.651082 0.261417">
+          <joint name="Fridge_1_Mesh_78210b38__1" class="/" pos="0 0 0" axis="0 -1 0" range="0 1.5708" armature="0.068" damping="8" frictionloss="10"/>
+          <geom name="Fridge_1_Mesh_78210b38_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_Mesh_78210b38_3"/>
+          <geom name="Fridge_1_Mesh_78210b38_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_Mesh_78210b38_5"/>
+          <geom name="Fridge_1_Mesh_78210b38_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_Mesh_78210b38_6"/>
+          <geom name="Fridge_1_Mesh_78210b38_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.5 0.544218 0.079922" pos="0.485 -0.00999999 0.0869999" quat="0 1 0 0" type="box" density="70" rgba="0 1 0 1"/>
+          <body name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" pos="0.905033 -0.00864816 0.113277">
+            <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_Mesh_77a1be5e"/>
+    <exclude body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+    <exclude name="//unnamed_contact_1" body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_FridgeBodyMesh_daf6b078" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_Mesh_77a1be5e" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" body2="Fridge_1_Mesh_78210b38"/>
+    <exclude body1="Fridge_1_fridge_freezerdoor_handle_a1_80b0bee5" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+    <exclude body1="Fridge_1_Mesh_78210b38" body2="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
+  </contact>
+</mujoco>

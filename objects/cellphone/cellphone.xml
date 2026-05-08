@@ -1,0 +1,37 @@
+<mujoco model="Cellphone_1">
+  <compiler angle="radian" />
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" />
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="Cellphone_1A_Mat" file="assets/Cellphone_1A_AlbedoTransparency.png" />
+    <material name="material_Cellphone_Screen_Off_Mat" class="/" rgba="0.000000 0.000000 0.000000 1.000000" metallic="0.000000" roughness="0.040000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <material name="material_Cellphone_1A_Mat" class="/" texture="Cellphone_1A_Mat" rgba="1.000000 1.000000 1.000000 1.000000" metallic="0.750000" roughness="0.290000" ior="1.45" />
+    <mesh name="Cellphone_1_cellphone_1_0" class="/" content_type="model/obj" file="assets/Cellphone_1_cellphone_1/Cellphone_1_cellphone_1_0.obj" inertia="shell" />
+    <mesh name="Cellphone_1_cellphone_1_1" class="/" content_type="model/obj" file="assets/Cellphone_1_cellphone_1/Cellphone_1_cellphone_1_1.obj" inertia="shell" />
+    <mesh name="Cellphone_1_cellphone_1_2" class="/" content_type="model/obj" file="assets/Cellphone_1_cellphone_1/Cellphone_1_cellphone_1_2.obj" />
+  </asset>
+  <worldbody>
+    <body name="Cellphone_1">
+      <joint name="Cellphone_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
+      <geom name="Cellphone_1_cellphone_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_0" pos="0.0005 -0.00331 0.0003" />
+      <geom name="Cellphone_1_cellphone_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_1" pos="0.0005 -0.00331 0.0003" />
+      <geom name="Cellphone_1_cellphone_1_2" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_1A_Mat" mesh="Cellphone_1_cellphone_1_2" pos="0.0005 -0.00331 0.0003" />
+      <geom name="Cellphone_1_cellphone_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0391867 0.00300477 0.0808525" pos="0.001 8.5e-07 -1e-09" quat="-1 5.96046e-08 0 0" type="box" density="120" rgba="0 1 0 1" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="lying face up" qpos="0 0 0.01 0.707107 0.707107 0 0" />
+    <key name="lying face down" qpos="0 0 0.01 0 0 -0.707107 0.707107" />
+  </keyframe>
+</mujoco>

@@ -1,0 +1,254 @@
+<mujoco model="Desk_310_1">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="LightWoodCounters3" file="LightWoodCounters.png"/>
+    <texture type="2d" name="HammeredMetal_AlbedoTransparency_2" file="HammeredMetal_AlbedoTransparency.png"/>
+    <material name="material_LightWoodCounters4" class="/" texture="LightWoodCounters3" rgba="0.686275 0.34902 0.156863 1" metallic="0" roughness="0.3" colormapwrap="repeat"/>
+    <material name="material_LightWoodCounters3" class="/" texture="LightWoodCounters3" rgba="0.686275 0.34902 0.156863 1" metallic="0" roughness="0.3" clearcoat="0.18" clearcoatroughness="0" colormapwrap="repeat"/>
+    <material name="material_HammeredMetal_AlbedoTransparency_2" class="/" texture="HammeredMetal_AlbedoTransparency_2" rgba="0.835294 0.807843 0.764706 1" metallic="1" roughness="0.13" colormapwrap="repeat"/>
+    <mesh name="Desk_310_1_DeskMesh_0" class="/" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1" class="/" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_02" class="/" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_02/Desk_310_1_CabinetDoorMesh_02.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_02" class="/" content_type="model/obj" file="Desk_310_1_handle_3_76mm_02/Desk_310_1_handle_3_76mm_02.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_03" class="/" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_03/Desk_310_1_CabinetDoorMesh_03.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_03" class="/" content_type="model/obj" file="Desk_310_1_handle_3_76mm_03/Desk_310_1_handle_3_76mm_03.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_01" class="/" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_01/Desk_310_1_CabinetDoorMesh_01.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_01" class="/" content_type="model/obj" file="Desk_310_1_handle_3_76mm_01/Desk_310_1_handle_3_76mm_01.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_04" class="/" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_04/Desk_310_1_CabinetDoorMesh_04.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_04" class="/" content_type="model/obj" file="Desk_310_1_handle_3_76mm_04/Desk_310_1_handle_3_76mm_04.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_5" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_5.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_28" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_28.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_18" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_18.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_15" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_15.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_10" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_10.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_2" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_2.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_20" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_20.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_12" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_12.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_19" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_19.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_14" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_14.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_4" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_4.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_25" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_25.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_16" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_16.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_8" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_8.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_3" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_3.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_17" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_17.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_22" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_22.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_24" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_24.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_26" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_26.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_29" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_29.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_6" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_6.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_1" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_1.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_21" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_21.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_11" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_11.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_27" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_27.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_0" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_0.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_23" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_23.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_7" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_7.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_0_collision_13" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_0/Desk_310_1_DeskMesh_0_collision_13.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_3" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_3.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_18" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_18.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_23" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_23.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_2" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_2.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_19" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_19.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_12" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_12.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_0" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_0.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_14" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_14.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_4" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_4.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_20" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_20.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_7" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_7.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_6" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_6.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_5" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_5.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_17" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_17.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_22" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_22.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_16" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_16.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_8" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_8.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_24" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_24.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_1" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_1.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_11" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_11.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_10" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_10.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_9" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_9.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_15" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_15.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_13" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_13.obj"/>
+    <mesh name="Desk_310_1_DeskMesh_1_collision_21" content_type="model/obj" file="Desk_310_1_DeskMesh/Desk_310_1_DeskMesh_1/Desk_310_1_DeskMesh_1_collision_21.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_02_collision_0" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_02/Desk_310_1_CabinetDoorMesh_02/Desk_310_1_CabinetDoorMesh_02_collision_0.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_03_collision_0" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_03/Desk_310_1_CabinetDoorMesh_03/Desk_310_1_CabinetDoorMesh_03_collision_0.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_01_collision_0" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_01/Desk_310_1_CabinetDoorMesh_01/Desk_310_1_CabinetDoorMesh_01_collision_0.obj"/>
+    <mesh name="Desk_310_1_CabinetDoorMesh_04_collision_0" content_type="model/obj" file="Desk_310_1_CabinetDoorMesh_04/Desk_310_1_CabinetDoorMesh_04/Desk_310_1_CabinetDoorMesh_04_collision_0.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_02_collision_1" content_type="model/obj" file="Desk_310_1_handle_3_76mm_02/Desk_310_1_handle_3_76mm_02/Desk_310_1_handle_3_76mm_02_collision_1.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_02_collision_0" content_type="model/obj" file="Desk_310_1_handle_3_76mm_02/Desk_310_1_handle_3_76mm_02/Desk_310_1_handle_3_76mm_02_collision_0.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_03_collision_0" content_type="model/obj" file="Desk_310_1_handle_3_76mm_03/Desk_310_1_handle_3_76mm_03/Desk_310_1_handle_3_76mm_03_collision_0.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_03_collision_1" content_type="model/obj" file="Desk_310_1_handle_3_76mm_03/Desk_310_1_handle_3_76mm_03/Desk_310_1_handle_3_76mm_03_collision_1.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_01_collision_0" content_type="model/obj" file="Desk_310_1_handle_3_76mm_01/Desk_310_1_handle_3_76mm_01/Desk_310_1_handle_3_76mm_01_collision_0.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_01_collision_1" content_type="model/obj" file="Desk_310_1_handle_3_76mm_01/Desk_310_1_handle_3_76mm_01/Desk_310_1_handle_3_76mm_01_collision_1.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_04_collision_0" content_type="model/obj" file="Desk_310_1_handle_3_76mm_04/Desk_310_1_handle_3_76mm_04/Desk_310_1_handle_3_76mm_04_collision_0.obj"/>
+    <mesh name="Desk_310_1_handle_3_76mm_04_collision_1" content_type="model/obj" file="Desk_310_1_handle_3_76mm_04/Desk_310_1_handle_3_76mm_04/Desk_310_1_handle_3_76mm_04_collision_1.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Desk_310_1">
+      <body name="Desk_310_1_DeskMesh" pos="-0.00108 -0.884 -0.0039">
+        <geom name="Desk_310_1_DeskMesh_0" class="__VISUAL_MJT__" type="mesh" density="160" material="material_LightWoodCounters4" mesh="Desk_310_1_DeskMesh_0"/>
+        <geom name="Desk_310_1_DeskMesh_1" class="__VISUAL_MJT__" type="mesh" density="160" material="material_LightWoodCounters3" mesh="Desk_310_1_DeskMesh_1"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.678296 0.951096 0.336739 1" mesh="Desk_310_1_DeskMesh_0_collision_5"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.53053 0.750794 0.587283 1" mesh="Desk_310_1_DeskMesh_0_collision_28"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0517538 0.23714 0.98183 1" mesh="Desk_310_1_DeskMesh_0_collision_18"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.262121 0.788895 0.854143 1" mesh="Desk_310_1_DeskMesh_0_collision_15"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.85074 0.39086 0.856247 1" mesh="Desk_310_1_DeskMesh_0_collision_10"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.384703 0.0291451 0.426568 1" mesh="Desk_310_1_DeskMesh_0_collision_2"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.389199 0.167586 0.213791 1" mesh="Desk_310_1_DeskMesh_0_collision_20"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0291747 0.621879 0.671142 1" mesh="Desk_310_1_DeskMesh_0_collision_12"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0444809 0.87775 0.244225 1" mesh="Desk_310_1_DeskMesh_0_collision_19"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.449488 0.916086 0.228162 1" mesh="Desk_310_1_DeskMesh_0_collision_14"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.582179 0.415215 0.309097 1" mesh="Desk_310_1_DeskMesh_0_collision_4"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0499144 0.973909 0.196473 1" mesh="Desk_310_1_DeskMesh_0_collision_25"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.728669 0.573406 0.589658 1" mesh="Desk_310_1_DeskMesh_0_collision_16"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0364696 0.734461 0.630564 1" mesh="Desk_310_1_DeskMesh_0_collision_8"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.688371 0.520608 0.405771 1" mesh="Desk_310_1_DeskMesh_0_collision_3"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.886222 0.857515 0.770415 1" mesh="Desk_310_1_DeskMesh_0_collision_17"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.979981 0.520857 0.445445 1" mesh="Desk_310_1_DeskMesh_0_collision_22"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.824166 0.554018 0.729073 1" mesh="Desk_310_1_DeskMesh_0_collision_24"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.306988 0.661513 0.19039 1" mesh="Desk_310_1_DeskMesh_0_collision_26"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.156197 0.39919 0.513313 1" mesh="Desk_310_1_DeskMesh_0_collision_29"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.534902 0.868026 0.30844 1" mesh="Desk_310_1_DeskMesh_0_collision_6"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0917074 0.37306 0.28098 1" mesh="Desk_310_1_DeskMesh_0_collision_1"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.861562 0.596507 0.182305 1" mesh="Desk_310_1_DeskMesh_0_collision_21"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.721844 0.978452 0.24858 1" mesh="Desk_310_1_DeskMesh_0_collision_11"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_25" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.773113 0.677444 0.288542 1" mesh="Desk_310_1_DeskMesh_0_collision_27"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_26" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.609028 0.61634 0.282734 1" mesh="Desk_310_1_DeskMesh_0_collision_0"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_27" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.253245 0.459655 0.877698 1" mesh="Desk_310_1_DeskMesh_0_collision_23"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_28" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.643303 0.902584 0.21426 1" mesh="Desk_310_1_DeskMesh_0_collision_7"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_0_MeshCollider_29" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.815406 0.00141215 0.565171 1" mesh="Desk_310_1_DeskMesh_0_collision_13"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0432198 0.182461 0.816072 1" mesh="Desk_310_1_DeskMesh_1_collision_3"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.92528 0.199422 0.750119 1" mesh="Desk_310_1_DeskMesh_1_collision_18"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.465305 0.441322 0.480376 1" mesh="Desk_310_1_DeskMesh_1_collision_23"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_3" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.532157 0.763752 0.192419 1" mesh="Desk_310_1_DeskMesh_1_collision_2"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_4" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.0656561 0.429409 0.470446 1" mesh="Desk_310_1_DeskMesh_1_collision_19"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_5" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.409229 0.202464 0.570126 1" mesh="Desk_310_1_DeskMesh_1_collision_12"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_6" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.530026 0.501355 0.248288 1" mesh="Desk_310_1_DeskMesh_1_collision_0"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_7" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.324049 0.129351 0.380738 1" mesh="Desk_310_1_DeskMesh_1_collision_14"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_8" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.368479 0.62185 0.000916577 1" mesh="Desk_310_1_DeskMesh_1_collision_4"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_9" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.574879 0.370882 0.609094 1" mesh="Desk_310_1_DeskMesh_1_collision_20"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_10" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.526905 0.954325 0.852799 1" mesh="Desk_310_1_DeskMesh_1_collision_7"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_11" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.381265 0.901868 0.176184 1" mesh="Desk_310_1_DeskMesh_1_collision_6"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_12" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.963339 0.0280249 0.917246 1" mesh="Desk_310_1_DeskMesh_1_collision_5"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_13" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.697725 0.271271 0.763027 1" mesh="Desk_310_1_DeskMesh_1_collision_17"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_14" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.726854 0.369533 0.66483 1" mesh="Desk_310_1_DeskMesh_1_collision_22"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_15" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.816327 0.252435 0.634413 1" mesh="Desk_310_1_DeskMesh_1_collision_16"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_16" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.980943 0.297925 0.332138 1" mesh="Desk_310_1_DeskMesh_1_collision_8"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_17" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.361253 0.474052 0.275541 1" mesh="Desk_310_1_DeskMesh_1_collision_24"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_18" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.548874 0.679882 0.26148 1" mesh="Desk_310_1_DeskMesh_1_collision_1"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_19" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.141717 0.52578 0.000922206 1" mesh="Desk_310_1_DeskMesh_1_collision_11"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_20" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.967504 0.413082 0.453734 1" mesh="Desk_310_1_DeskMesh_1_collision_10"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_21" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.253752 0.353736 0.366839 1" mesh="Desk_310_1_DeskMesh_1_collision_9"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_22" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.370792 0.0191105 0.111519 1" mesh="Desk_310_1_DeskMesh_1_collision_15"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_23" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.226683 0.244234 0.951218 1" mesh="Desk_310_1_DeskMesh_1_collision_13"/>
+        <geom name="Desk_310_1_DeskMesh_Desk_310_1_DeskMesh_1_MeshCollider_24" class="__DYNAMIC_MJT__" type="mesh" density="160" rgba="0.213499 0.961681 0.474003 1" mesh="Desk_310_1_DeskMesh_1_collision_21"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_0" class="/" pos="0.00113094 0.906268 0.00632234" quat="0 1 0 0" size="0.921527 0.0732682 0.432285" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_1" class="/" pos="0.00113082 1.84567 -0.185835" quat="0 1 0 0" size="0.921527 0.0732682 0.239933" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_2" class="/" pos="-0.00473142 1.53191 -0.159239" quat="0 1 0 0" size="0.131429 0.186728 0.196312" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_3" class="/" pos="-0.344069 1.53117 -0.156457" quat="0 1 0 0" size="0.183548 0.184952 0.204138" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_4" class="/" pos="0.350116 1.53021 -0.155319" quat="0 1 0 0" size="0.174296 0.185916 0.203269" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_5" class="/" pos="-0.728237 1.53187 -0.15524" quat="0 1 0 0" size="0.176412 0.184925 0.204133" type="box" rgba="1 0 0 1"/>
+        <site name="Desk_310_1_DeskMesh_Receptacle_6" class="/" pos="0.719028 1.53117 -0.155829" quat="0 1 0 0" size="0.177572 0.185904 0.204653" type="box" rgba="1 0 0 1"/>
+        <body name="Desk_310_1_CabinetDoorMesh_02" pos="-0.148602 1.53117 0.0545616">
+          <joint name="Desk_310_1_joint" class="/" pos="0 0 0" axis="0 -1 0" range="-1.5708 0" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_02" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Desk_310_1_CabinetDoorMesh_02"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_02_Desk_310_1_CabinetDoorMesh_02_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.807576 0.231909 0.699529 1" mesh="Desk_310_1_CabinetDoorMesh_02_collision_0"/>
+          <body name="Desk_310_1_handle_3_76mm_02" pos="-0.353 0 0" quat="0.707107 0 0 -0.707107">
+            <geom name="Desk_310_1_handle_3_76mm_02" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_AlbedoTransparency_2" mesh="Desk_310_1_handle_3_76mm_02"/>
+            <geom name="Desk_310_1_handle_3_76mm_02_Desk_310_1_handle_3_76mm_02_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.202549 0.907376 0.784579 1" mesh="Desk_310_1_handle_3_76mm_02_collision_1"/>
+            <geom name="Desk_310_1_handle_3_76mm_02_Desk_310_1_handle_3_76mm_02_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.191149 0.372851 0.132229 1" mesh="Desk_310_1_handle_3_76mm_02_collision_0"/>
+          </body>
+        </body>
+        <body name="Desk_310_1_CabinetDoorMesh_03" pos="0.903774 1.53117 0.0529699">
+          <joint name="Desk_310_1_CabinetDoorMesh_03__1" class="/" pos="0 0 0" axis="0 -1 0" range="-1.5708 0" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_03" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Desk_310_1_CabinetDoorMesh_03"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_03_Desk_310_1_CabinetDoorMesh_03_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.18463 0.0682945 0.940079 1" mesh="Desk_310_1_CabinetDoorMesh_03_collision_0"/>
+          <body name="Desk_310_1_handle_3_76mm_03" pos="-0.336 0 0" quat="0.707107 0 0 -0.707107">
+            <geom name="Desk_310_1_handle_3_76mm_03" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_AlbedoTransparency_2" mesh="Desk_310_1_handle_3_76mm_03"/>
+            <geom name="Desk_310_1_handle_3_76mm_03_Desk_310_1_handle_3_76mm_03_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.727019 0.312341 0.662359 1" mesh="Desk_310_1_handle_3_76mm_03_collision_0"/>
+            <geom name="Desk_310_1_handle_3_76mm_03_Desk_310_1_handle_3_76mm_03_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.951074 0.616792 0.731893 1" mesh="Desk_310_1_handle_3_76mm_03_collision_1"/>
+          </body>
+        </body>
+        <body name="Desk_310_1_CabinetDoorMesh_01" pos="-0.903774 1.53117 0.0545616">
+          <joint name="Desk_310_1_CabinetDoorMesh_01__1" class="/" pos="0 0 0" axis="0 -1 0" range="0 1.5708" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_01" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Desk_310_1_CabinetDoorMesh_01"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_01_Desk_310_1_CabinetDoorMesh_01_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.324416 0.590064 0.753457 1" mesh="Desk_310_1_CabinetDoorMesh_01_collision_0"/>
+          <body name="Desk_310_1_handle_3_76mm_01" pos="0.335 0 0" quat="0.707107 0 0 0.707107">
+            <geom name="Desk_310_1_handle_3_76mm_01" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_AlbedoTransparency_2" mesh="Desk_310_1_handle_3_76mm_01"/>
+            <geom name="Desk_310_1_handle_3_76mm_01_Desk_310_1_handle_3_76mm_01_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.98835 0.0867262 0.303882 1" mesh="Desk_310_1_handle_3_76mm_01_collision_0"/>
+            <geom name="Desk_310_1_handle_3_76mm_01_Desk_310_1_handle_3_76mm_01_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.190708 0.351 0.0678005 1" mesh="Desk_310_1_handle_3_76mm_01_collision_1"/>
+          </body>
+        </body>
+        <body name="Desk_310_1_CabinetDoorMesh_04" pos="0.148602 1.53117 0.0529699">
+          <joint name="Desk_310_1_CabinetDoorMesh_04__1" class="/" pos="0 0 0" axis="0 -1 0" range="0 1.5708" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_04" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Desk_310_1_CabinetDoorMesh_04"/>
+          <geom name="Desk_310_1_CabinetDoorMesh_04_Desk_310_1_CabinetDoorMesh_04_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.196626 0.990094 0.995068 1" mesh="Desk_310_1_CabinetDoorMesh_04_collision_0"/>
+          <body name="Desk_310_1_handle_3_76mm_04" pos="0.35 0 0" quat="0.707107 0 0 0.707107">
+            <geom name="Desk_310_1_handle_3_76mm_04" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_AlbedoTransparency_2" mesh="Desk_310_1_handle_3_76mm_04"/>
+            <geom name="Desk_310_1_handle_3_76mm_04_Desk_310_1_handle_3_76mm_04_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.950321 0.0981061 0.0575255 1" mesh="Desk_310_1_handle_3_76mm_04_collision_0"/>
+            <geom name="Desk_310_1_handle_3_76mm_04_Desk_310_1_handle_3_76mm_04_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.958682 0.842225 0.563617 1" mesh="Desk_310_1_handle_3_76mm_04_collision_1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_02"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_02"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_handle_3_76mm_02"/>
+    <exclude name="//unnamed_contact_1" body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_03"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_03"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_handle_3_76mm_03"/>
+    <exclude name="//unnamed_contact_2" body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude name="//unnamed_contact_3" body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_DeskMesh" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_handle_3_76mm_02"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_CabinetDoorMesh_03"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_handle_3_76mm_03"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_02" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_CabinetDoorMesh_03"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_handle_3_76mm_03"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_02" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_03" body2="Desk_310_1_handle_3_76mm_03"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_03" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_03" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_03" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_03" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_03" body2="Desk_310_1_CabinetDoorMesh_01"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_03" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_03" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_03" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_01" body2="Desk_310_1_handle_3_76mm_01"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_01" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_01" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_01" body2="Desk_310_1_CabinetDoorMesh_04"/>
+    <exclude body1="Desk_310_1_handle_3_76mm_01" body2="Desk_310_1_handle_3_76mm_04"/>
+    <exclude body1="Desk_310_1_CabinetDoorMesh_04" body2="Desk_310_1_handle_3_76mm_04"/>
+  </contact>
+</mujoco>

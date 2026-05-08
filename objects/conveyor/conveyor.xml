@@ -1,0 +1,69 @@
+<mujoco model="conveyor">
+  <compiler angle="radian"/>
+  <option timestep="0.002"/>
+
+  <asset>
+    <material name="conveyor_frame_mat" rgba="0.12 0.13 0.15 1" roughness="0.6"/>
+    <material name="conveyor_belt_mat" rgba="0.02 0.02 0.025 1" roughness="0.85"/>
+    <material name="conveyor_roller_mat" rgba="0.45 0.48 0.5 1" metallic="0.2" roughness="0.35"/>
+  </asset>
+
+  <worldbody>
+    <body name="conveyor" pos="0 0 0">
+      <geom name="conveyor_frame" type="box" size="0.75 0.34 0.06" pos="0 0 0.06"
+            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
+      <geom name="conveyor_left_rail" type="box" size="0.78 0.025 0.055" pos="0 0.36 0.17"
+            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
+      <geom name="conveyor_right_rail" type="box" size="0.78 0.025 0.055" pos="0 -0.36 0.17"
+            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
+      <geom name="conveyor_front_roller" type="cylinder" size="0.06 0.32" pos="0.72 0 0.17"
+            euler="1.57079632679 0 0" material="conveyor_roller_mat" contype="0" conaffinity="0" group="1"/>
+      <geom name="conveyor_back_roller" type="cylinder" size="0.06 0.32" pos="-0.72 0 0.17"
+            euler="1.57079632679 0 0" material="conveyor_roller_mat" contype="0" conaffinity="0" group="1"/>
+
+      <body name="conveyor_belt_segment_0" pos="-0.6 0 0.23">
+        <joint name="conveyor_belt_segment_0_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_0_contact" type="box" size="0.15 0.3 0.025"
+              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+      </body>
+      <body name="conveyor_belt_segment_1" pos="-0.3 0 0.23">
+        <joint name="conveyor_belt_segment_1_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_1_contact" type="box" size="0.15 0.3 0.025"
+              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+      </body>
+      <body name="conveyor_belt_segment_2" pos="0 0 0.23">
+        <joint name="conveyor_belt_segment_2_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_2_contact" type="box" size="0.15 0.3 0.025"
+              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+      </body>
+      <body name="conveyor_belt_segment_3" pos="0.3 0 0.23">
+        <joint name="conveyor_belt_segment_3_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_3_contact" type="box" size="0.15 0.3 0.025"
+              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+      </body>
+      <body name="conveyor_belt_segment_4" pos="0.6 0 0.23">
+        <joint name="conveyor_belt_segment_4_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_4_contact" type="box" size="0.15 0.3 0.025"
+              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- Chain joint equalities: q(i+1)=q(i), so all belt slides stay in sync. Named rows for strict
+       parsers; chain avoids some builds flagging redundant constraints when one joint is joint1 many times. -->
+  <equality>
+    <joint name="belt_eq_0_1" joint1="conveyor_belt_segment_0_slide" joint2="conveyor_belt_segment_1_slide" polycoef="0 1 0 0 0"/>
+    <joint name="belt_eq_1_2" joint1="conveyor_belt_segment_1_slide" joint2="conveyor_belt_segment_2_slide" polycoef="0 1 0 0 0"/>
+    <joint name="belt_eq_2_3" joint1="conveyor_belt_segment_2_slide" joint2="conveyor_belt_segment_3_slide" polycoef="0 1 0 0 0"/>
+    <joint name="belt_eq_3_4" joint1="conveyor_belt_segment_3_slide" joint2="conveyor_belt_segment_4_slide" polycoef="0 1 0 0 0"/>
+  </equality>
+
+  <actuator>
+    <velocity name="conveyor_speed" joint="conveyor_belt_segment_0_slide" ctrlrange="-1.5 1.5" kv="20"/>
+  </actuator>
+</mujoco>

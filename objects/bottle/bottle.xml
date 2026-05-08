@@ -1,0 +1,46 @@
+<mujoco model="Bottle_1">
+  <compiler angle="radian" />
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" />
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="material_Glass_Detailed_White_Mat" class="/" rgba="0.921569 0.988235 1.000000 0.500000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <mesh name="Bottle_1_bottle_1" class="/" content_type="model/obj" file="assets/Bottle_1_bottle_1/Bottle_1_bottle_1.obj" />
+  </asset>
+  <worldbody>
+    <body name="Bottle_1">
+      <joint name="Bottle_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
+      <geom name="Bottle_1_bottle_1" class="__VISUAL_MJT__" type="mesh" material="material_Glass_Detailed_White_Mat" mesh="Bottle_1_bottle_1" pos="0 -0.12669 0" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0417788 0.0848904 0.0172831" pos="0 -0.0418675 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0417799 0.0848909 0.0172836" pos="0 -0.0418679 0" quat="0.707108 0 0.707106 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0417799 0.0848909 0.0172836" pos="0 -0.0418679 0" quat="0.92388 0 0.382683 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0417799 0.0848909 0.0172836" pos="0 -0.0418679 0" quat="0.382685 0 0.923879 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0523213 0.0661989 0.0216444" pos="0 -0.0447045 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0523213 0.0661995 0.0216444" pos="0 -0.044705 0" quat="0.707108 0 0.707106 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.0523213 0.0661995 0.0216444" pos="0 -0.044705 0" quat="0.92388 0 0.382683 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.0523213 0.0661995 0.0216444" pos="0 -0.044705 0" quat="0.382685 0 0.923879 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.0236474 0.0275119 0.00978252" pos="0 0.099244 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.0236474 0.0275123 0.00978253" pos="0 0.099244 0" quat="0.707108 0 0.707106 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_10" class="__DYNAMIC_MJT__" size="0.0236474 0.0275123 0.00978252" pos="0 0.099244 0" quat="0.92388 0 0.382683 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_11" class="__DYNAMIC_MJT__" size="0.0236474 0.0275123 0.00978253" pos="0 0.099244 0" quat="0.382685 0 0.923879 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_12" class="__DYNAMIC_MJT__" size="0.0346492 0.0161207 0.0143337" pos="0 0.056959 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_13" class="__DYNAMIC_MJT__" size="0.0346492 0.0161207 0.0143338" pos="0 0.056959 0" quat="0.707108 0 0.707106 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_14" class="__DYNAMIC_MJT__" size="0.0346492 0.0161207 0.0143337" pos="0 0.056959 0" quat="0.92388 0 0.382683 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Bottle_1_bottle_1_PrimitiveCollider_15" class="__DYNAMIC_MJT__" size="0.0346492 0.0161207 0.0143338" pos="0 0.056959 0" quat="0.382685 0 0.923879 0" type="box" density="200" rgba="0 1 0 1" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="Standing" qpos="0 0 0.132 0.707107 0.707107 0 0" />
+    <key name="Lying on side" qpos="0 0 0.058 1 0 0 0" />
+  </keyframe>
+</mujoco>

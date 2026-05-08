@@ -1,0 +1,40 @@
+<mujoco model="Plate_1">
+  <compiler angle="radian" />
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" />
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="material_Plate_Decals_Off_Mat" class="/" rgba="0.878431 0.760784 0 1" metallic="0" roughness="0.5" />
+    <material name="material_Plate_Mat1" class="/" rgba="0.878431 0.760784 0 1" metallic="0" roughness="0.5" />
+    <mesh name="Plate_1_plate_1_0" class="/" content_type="model/obj" file="assets/Plate_1_plate_1/Plate_1_plate_1_0.obj" />
+    <mesh name="Plate_1_plate_1_1" class="/" content_type="model/obj" file="assets/Plate_1_plate_1/Plate_1_plate_1_1.obj" />
+  </asset>
+  <worldbody>
+    <body name="Plate_1" pos="0 0 0.015" quat="0.7071067811865476 0.7071067811865475 0 0">
+      <joint name="Plate_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
+      <geom name="Plate_1_plate_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Plate_Decals_Off_Mat" mesh="Plate_1_plate_1_0" pos="-0.00191 -0.01118 0.00129" />
+      <geom name="Plate_1_plate_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Plate_Mat1" mesh="Plate_1_plate_1_1" pos="-0.00191 -0.01118 0.00129" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0780024 0.0041055 0.078476" pos="-0.00191 -0.00688356 0.00129" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="-0.00191000132 -4.84e-05 -0.0901137" quat="8.44623e-08 2.6788e-07 0.300706 -0.953717" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="-0.00191107288 4.48e-05 0.0901173" quat="0 0 -0.300706 -0.953717" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="0.0840749 4.48e-05 -7.471e-05" quat="0.212631 0.67438 0.212631 -0.67438" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="-0.0920849 4.48e-05 -3.919e-05" quat="-0.212609 0.67431 -0.212653 -0.674449" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="0.0611813 -4.84e-05 -0.062251" quat="0.115042 0.364866 0.27783 -0.881163" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.039162 0.0039029 0.0157566" pos="-0.0662308 4.48e-05 0.0652215" quat="-0.115042 0.364866 -0.27783 -0.881163" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.0391619 0.0039029 0.0157566" pos="0.0583451 4.48e-05 0.0622171" quat="0.277802 0.881076 0.115108 -0.365078" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Plate_1_plate_1_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.0391619 0.0039029 0.0157566" pos="-0.0662739 4.48e-05 -0.062291" quat="-0.27779 0.881038 -0.115137 -0.365169" type="box" density="200" rgba="0 1 0 1" />
+      <site name="Plate_1_plate_1_ReceptacleCollider_0" class="/" pos="-0.00191 0.0478572 0.00129" quat="0 1 0 0" size="0.0928703 0.0510603 0.074063" type="box" rgba="1 0 0 1" />
+      <site name="Plate_1_plate_1_ReceptacleCollider_1" class="/" pos="-0.00191 0.0478572 0.00129" quat="0 0.707108 0 -0.707106" size="0.0935746 0.0510603 0.074063" type="box" rgba="1 0 0 1" />
+    </body>
+  </worldbody>
+</mujoco>
