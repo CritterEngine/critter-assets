@@ -53,6 +53,87 @@
       "source": "critter-assets",
       "xmlFilename": "arx_l5.xml",
       "xmlPath": "robots/arx_l5/arx_l5.xml"
+    },
+    {
+      "id": "berkeley_humanoid",
+      "name": "Berkeley Humanoid",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "berkeley_humanoid.xml",
+      "xmlPath": "robots/berkeley_humanoid/berkeley_humanoid.xml"
+    },
+    {
+      "id": "bitcraze_crazyflie_2",
+      "name": "Bitcraze Crazyflie 2",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "cf2.xml",
+      "xmlPath": "robots/bitcraze_crazyflie_2/cf2.xml"
+    },
+    {
+      "id": "booster_t1",
+      "name": "Booster T1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "t1.xml",
+      "xmlPath": "robots/booster_t1/t1.xml"
+    },
+    {
+      "id": "dynamixel_2r",
+      "name": "Dynamixel 2r",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "dynamixel_2r.xml",
+      "xmlPath": "robots/dynamixel_2r/dynamixel_2r.xml"
+    },
+    {
+      "id": "fourier_n1",
+      "name": "Fourier N1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "n1.xml",
+      "xmlPath": "robots/fourier_n1/n1.xml"
+    },
+    {
+      "id": "franka_fr3",
+      "name": "Franka FR3",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "fr3.xml",
+      "xmlPath": "robots/franka_fr3/fr3.xml"
+    },
+    {
+      "id": "google_barkour_v0",
+      "name": "Google Barkour V0",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "barkour_v0.xml",
+      "xmlPath": "robots/google_barkour_v0/barkour_v0.xml"
+    },
+    {
+      "id": "google_barkour_vb",
+      "name": "Google Barkour Vb",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "barkour_vb.xml",
+      "xmlPath": "robots/google_barkour_vb/barkour_vb.xml"
+    },
+    {
+      "id": "google_robot",
+      "name": "Google Robot",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "robot.xml",
+      "xmlPath": "robots/google_robot/robot.xml"
     }
   ]
 }

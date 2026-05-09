@@ -169,3 +169,93 @@ Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robo
 A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
 
 ---
+
+## Berkeley Humanoid
+
+Location: robots/berkeley_humanoid/
+License: Copyright (c) 2024 Hybrid Robotics
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/berkeley_humanoid
+
+A copy of the license is included at robots/berkeley_humanoid/LICENSE when provided upstream.
+
+---
+
+## Bitcraze Crazyflie 2
+
+Location: robots/bitcraze_crazyflie_2/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/bitcraze_crazyflie_2
+
+A copy of the license is included at robots/bitcraze_crazyflie_2/LICENSE when provided upstream.
+
+---
+
+## Booster T1
+
+Location: robots/booster_t1/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/booster_t1
+
+A copy of the license is included at robots/booster_t1/LICENSE when provided upstream.
+
+---
+
+## Dynamixel 2r
+
+Location: robots/dynamixel_2r/
+License: Copyright (c) <2024-2099> Marc Duclusaud and Grégoire Passault
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/dynamixel_2r
+
+A copy of the license is included at robots/dynamixel_2r/LICENSE when provided upstream.
+
+---
+
+## Fourier N1
+
+Location: robots/fourier_n1/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/fourier_n1
+
+A copy of the license is included at robots/fourier_n1/LICENSE when provided upstream.
+
+---
+
+## Franka FR3
+
+Location: robots/franka_fr3/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/franka_fr3
+
+A copy of the license is included at robots/franka_fr3/LICENSE when provided upstream.
+
+---
+
+## Google Barkour V0
+
+Location: robots/google_barkour_v0/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/google_barkour_v0
+
+A copy of the license is included at robots/google_barkour_v0/LICENSE when provided upstream.
+
+---
+
+## Google Barkour Vb
+
+Location: robots/google_barkour_vb/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/google_barkour_vb
+
+A copy of the license is included at robots/google_barkour_vb/LICENSE when provided upstream.
+
+---
+
+## Google Robot
+
+Location: robots/google_robot/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/google_robot
+
+A copy of the license is included at robots/google_robot/LICENSE when provided upstream.
+
+---
