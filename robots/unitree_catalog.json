@@ -1,0 +1,62 @@
+{
+  "robots": [
+    {
+      "id": "a2",
+      "name": "Unitree A2",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "a2.xml",
+      "xmlPath": "robots/a2/a2.xml"
+    },
+    {
+      "id": "b2",
+      "name": "Unitree B2",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "b2.xml",
+      "xmlPath": "robots/b2/b2.xml",
+      "thumbnailFilename": "B2.png"
+    },
+    {
+      "id": "b2w",
+      "name": "Unitree B2-W",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "b2w.xml",
+      "xmlPath": "robots/b2w/b2w.xml",
+      "thumbnailFilename": "B2w.png"
+    },
+    {
+      "id": "go2w",
+      "name": "Unitree Go2-W",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "go2w.xml",
+      "xmlPath": "robots/go2w/go2w.xml"
+    },
+    {
+      "id": "h1",
+      "name": "Unitree H1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "h1.xml",
+      "xmlPath": "robots/h1/h1.xml",
+      "thumbnailFilename": "H1.png"
+    },
+    {
+      "id": "h1_2",
+      "name": "Unitree H1-2",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "h1_2_handless.xml",
+      "xmlPath": "robots/h1_2/h1_2_handless.xml",
+      "thumbnailFilename": "h1_2.png"
+    }
+  ]
+}

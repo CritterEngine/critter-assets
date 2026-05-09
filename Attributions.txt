@@ -103,9 +103,69 @@ A copy of the license is included at robots/apptronik_apollo/LICENSE when provid
 ## Arx L5
 
 Location: robots/arx_l5/
-License: BSD
+License: BSD 3-Clause
 Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/arx_l5
 
 A copy of the license is included at robots/arx_l5/LICENSE when provided upstream.
+
+---
+
+## Unitree A2
+
+Location: robots/a2/
+License: BSD 3-Clause
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/a2
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
+
+---
+
+## Unitree B2
+
+Location: robots/b2/
+License: BSD 3-Clause
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/b2
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
+
+---
+
+## Unitree B2-W
+
+Location: robots/b2w/
+License: BSD 3-Clause
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/b2w
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
+
+---
+
+## Unitree Go2-W
+
+Location: robots/go2w/
+License: BSD 3-Clause
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/go2w
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
+
+---
+
+## Unitree H1
+
+Location: robots/h1/
+License: BSD 3-Clause
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/h1
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
+
+---
+
+## Unitree H1-2
+
+Location: robots/h1_2/
+License: BSD
+Source: https://github.com/unitreerobotics/unitree_mujoco/tree/main/unitree_robots/h1_2
+
+A copy of the repository license is included at robots/unitree_LICENSE when provided upstream.
 
 ---
