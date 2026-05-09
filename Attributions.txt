@@ -59,3 +59,53 @@ Fridge and desk cabinet include SOURCE.txt files with subset notes from the orig
 
 Location: objects/conveyor/
 License: Project-authored asset unless otherwise documented.
+
+## Aloha
+
+Location: robots/aloha/
+License: Copyright (c) 2023, Trossen Robotics
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/aloha
+
+A copy of the license is included at robots/aloha/LICENSE when provided upstream.
+
+---
+
+## Anybotics Anymal B
+
+Location: robots/anybotics_anymal_b/
+License: Copyright 2019, ANYbotics AG.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/anybotics_anymal_b
+
+A copy of the license is included at robots/anybotics_anymal_b/LICENSE when provided upstream.
+
+---
+
+## Anybotics Anymal C
+
+Location: robots/anybotics_anymal_c/
+License: Copyright 2020, ANYbotics AG.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/anybotics_anymal_c
+
+A copy of the license is included at robots/anybotics_anymal_c/LICENSE when provided upstream.
+
+---
+
+## Apptronik Apollo
+
+Location: robots/apptronik_apollo/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/apptronik_apollo
+
+A copy of the license is included at robots/apptronik_apollo/LICENSE when provided upstream.
+
+---
+
+## Arx L5
+
+Location: robots/arx_l5/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/arx_l5
+
+A copy of the license is included at robots/arx_l5/LICENSE when provided upstream.
+
+---

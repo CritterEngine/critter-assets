@@ -1,0 +1,58 @@
+{
+  "robots": [
+    {
+      "id": "agilex_piper",
+      "name": "Agilex Piper",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "piper.xml",
+      "xmlPath": "robots/agilex_piper/piper.xml"
+    },
+    {
+      "id": "aloha",
+      "name": "Aloha",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "aloha.xml",
+      "xmlPath": "robots/aloha/aloha.xml"
+    },
+    {
+      "id": "anybotics_anymal_b",
+      "name": "Anybotics Anymal B",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "anymal_b.xml",
+      "xmlPath": "robots/anybotics_anymal_b/anymal_b.xml"
+    },
+    {
+      "id": "anybotics_anymal_c",
+      "name": "Anybotics Anymal C",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "anymal_c.xml",
+      "xmlPath": "robots/anybotics_anymal_c/anymal_c.xml"
+    },
+    {
+      "id": "apptronik_apollo",
+      "name": "Apptronik Apollo",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "apptronik_apollo.xml",
+      "xmlPath": "robots/apptronik_apollo/apptronik_apollo.xml"
+    },
+    {
+      "id": "arx_l5",
+      "name": "Arx L5",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "arx_l5.xml",
+      "xmlPath": "robots/arx_l5/arx_l5.xml"
+    }
+  ]
+}
