@@ -359,3 +359,193 @@ Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/pal_tiago
 A copy of the license is included at robots/pal_tiago/LICENSE when provided upstream.
 
 ---
+
+## Pal Tiago Dual
+
+Location: robots/pal_tiago_dual/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/pal_tiago_dual
+
+A copy of the license is included at robots/pal_tiago_dual/LICENSE when provided upstream.
+
+---
+
+## Pndbotics Adam Lite
+
+Location: robots/pndbotics_adam_lite/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/pndbotics_adam_lite
+
+A copy of the license is included at robots/pndbotics_adam_lite/LICENSE when provided upstream.
+
+---
+
+## Rethink Robotics Sawyer
+
+Location: robots/rethink_robotics_sawyer/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/rethink_robotics_sawyer
+
+A copy of the license is included at robots/rethink_robotics_sawyer/LICENSE when provided upstream.
+
+---
+
+## Robot Soccer Kit
+
+Location: robots/robot_soccer_kit/
+License: Copyright 2019-2099 Rhoban Team <Grégoire Passault>
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/robot_soccer_kit
+
+A copy of the license is included at robots/robot_soccer_kit/LICENSE when provided upstream.
+
+---
+
+## Robotiq 2f85 V4
+
+Location: robots/robotiq_2f85_v4/
+License: Copyright (c) 2013, ROS-Industrial
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/robotiq_2f85_v4
+
+A copy of the license is included at robots/robotiq_2f85_v4/LICENSE when provided upstream.
+
+---
+
+## Robotis Op3
+
+Location: robots/robotis_op3/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/robotis_op3
+
+A copy of the license is included at robots/robotis_op3/LICENSE when provided upstream.
+
+---
+
+## Shadow Dexee
+
+Location: robots/shadow_dexee/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/shadow_dexee
+
+A copy of the license is included at robots/shadow_dexee/LICENSE when provided upstream.
+
+---
+
+## Skydio X2
+
+Location: robots/skydio_x2/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/skydio_x2
+
+A copy of the license is included at robots/skydio_x2/LICENSE when provided upstream.
+
+---
+
+## Stanford Tidybot
+
+Location: robots/stanford_tidybot/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/stanford_tidybot
+
+A copy of the license is included at robots/stanford_tidybot/LICENSE when provided upstream.
+
+---
+
+## Trossen Vx300s
+
+Location: robots/trossen_vx300s/
+License: Copyright (c) 2023, Trossen Robotics
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/trossen_vx300s
+
+A copy of the license is included at robots/trossen_vx300s/LICENSE when provided upstream.
+
+---
+
+## Trs So Arm100
+
+Location: robots/trs_so_arm100/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/trs_so_arm100
+
+A copy of the license is included at robots/trs_so_arm100/LICENSE when provided upstream.
+
+---
+
+## Ufactory Lite6
+
+Location: robots/ufactory_lite6/
+License: Copyright (c) 2018, UFACTORY Inc.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/ufactory_lite6
+
+A copy of the license is included at robots/ufactory_lite6/LICENSE when provided upstream.
+
+---
+
+## Ufactory xArm7
+
+Location: robots/ufactory_xarm7/
+License: Copyright (c) 2018, UFACTORY Inc.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/ufactory_xarm7
+
+A copy of the license is included at robots/ufactory_xarm7/LICENSE when provided upstream.
+
+---
+
+## Unitree A1
+
+Location: robots/unitree_a1/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_a1
+
+A copy of the license is included at robots/unitree_a1/LICENSE when provided upstream.
+
+---
+
+## Unitree Go1
+
+Location: robots/unitree_go1/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_go1
+
+A copy of the license is included at robots/unitree_go1/LICENSE when provided upstream.
+
+---
+
+## Unitree H1
+
+Location: robots/unitree_h1/
+License: Copyright (c) 2016-2023 HangZhou YuShu TECHNOLOGY CO.,LTD. ("Unitree Robotics")
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_h1
+
+A copy of the license is included at robots/unitree_h1/LICENSE when provided upstream.
+
+---
+
+## Unitree Z1
+
+Location: robots/unitree_z1/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_z1
+
+A copy of the license is included at robots/unitree_z1/LICENSE when provided upstream.
+
+---
+
+## Universal Robots UR10e
+
+Location: robots/universal_robots_ur10e/
+License: Copyright 2018 ROS Industrial Consortium
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/universal_robots_ur10e
+
+A copy of the license is included at robots/universal_robots_ur10e/LICENSE when provided upstream.
+
+---
+
+## Wonik Allegro
+
+Location: robots/wonik_allegro/
+License: Copyright (c) 2016, SimLab
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/wonik_allegro
+
+A copy of the license is included at robots/wonik_allegro/LICENSE when provided upstream.
+
+---

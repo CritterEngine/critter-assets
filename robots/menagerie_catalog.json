@@ -224,6 +224,177 @@
       "source": "critter-assets",
       "xmlFilename": "scene_motor.xml",
       "xmlPath": "robots/pal_tiago/scene_motor.xml"
+    },
+    {
+      "id": "pal_tiago_dual",
+      "name": "Pal Tiago Dual",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "tiago_dual.xml",
+      "xmlPath": "robots/pal_tiago_dual/tiago_dual.xml"
+    },
+    {
+      "id": "pndbotics_adam_lite",
+      "name": "Pndbotics Adam Lite",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "adam_lite.xml",
+      "xmlPath": "robots/pndbotics_adam_lite/adam_lite.xml"
+    },
+    {
+      "id": "rethink_robotics_sawyer",
+      "name": "Rethink Robotics Sawyer",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "sawyer.xml",
+      "xmlPath": "robots/rethink_robotics_sawyer/sawyer.xml"
+    },
+    {
+      "id": "robot_soccer_kit",
+      "name": "Robot Soccer Kit",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "robot_soccer_kit.xml",
+      "xmlPath": "robots/robot_soccer_kit/robot_soccer_kit.xml"
+    },
+    {
+      "id": "robotiq_2f85_v4",
+      "name": "Robotiq 2f85 V4",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "2f85.xml",
+      "xmlPath": "robots/robotiq_2f85_v4/2f85.xml"
+    },
+    {
+      "id": "robotis_op3",
+      "name": "Robotis Op3",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "op3.xml",
+      "xmlPath": "robots/robotis_op3/op3.xml"
+    },
+    {
+      "id": "shadow_dexee",
+      "name": "Shadow Dexee",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "shadow_dexee.xml",
+      "xmlPath": "robots/shadow_dexee/shadow_dexee.xml"
+    },
+    {
+      "id": "skydio_x2",
+      "name": "Skydio X2",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "x2.xml",
+      "xmlPath": "robots/skydio_x2/x2.xml"
+    },
+    {
+      "id": "stanford_tidybot",
+      "name": "Stanford Tidybot",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "base.xml",
+      "xmlPath": "robots/stanford_tidybot/base.xml"
+    },
+    {
+      "id": "trossen_vx300s",
+      "name": "Trossen Vx300s",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "vx300s.xml",
+      "xmlPath": "robots/trossen_vx300s/vx300s.xml"
+    },
+    {
+      "id": "trs_so_arm100",
+      "name": "Trs So Arm100",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "so_arm100.xml",
+      "xmlPath": "robots/trs_so_arm100/so_arm100.xml"
+    },
+    {
+      "id": "ufactory_lite6",
+      "name": "Ufactory Lite6",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "lite6.xml",
+      "xmlPath": "robots/ufactory_lite6/lite6.xml"
+    },
+    {
+      "id": "ufactory_xarm7",
+      "name": "Ufactory xArm7",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "hand.xml",
+      "xmlPath": "robots/ufactory_xarm7/hand.xml"
+    },
+    {
+      "id": "unitree_a1",
+      "name": "Unitree A1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "a1.xml",
+      "xmlPath": "robots/unitree_a1/a1.xml"
+    },
+    {
+      "id": "unitree_go1",
+      "name": "Unitree Go1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "go1.xml",
+      "xmlPath": "robots/unitree_go1/go1.xml"
+    },
+    {
+      "id": "unitree_h1",
+      "name": "Unitree H1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "h1.xml",
+      "xmlPath": "robots/unitree_h1/h1.xml"
+    },
+    {
+      "id": "unitree_z1",
+      "name": "Unitree Z1",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "z1.xml",
+      "xmlPath": "robots/unitree_z1/z1.xml"
+    },
+    {
+      "id": "universal_robots_ur10e",
+      "name": "Universal Robots UR10e",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "ur10e.xml",
+      "xmlPath": "robots/universal_robots_ur10e/ur10e.xml"
+    },
+    {
+      "id": "wonik_allegro",
+      "name": "Wonik Allegro",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "left_hand.xml",
+      "xmlPath": "robots/wonik_allegro/left_hand.xml"
     }
   ]
 }
