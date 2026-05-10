@@ -134,6 +134,96 @@
       "source": "critter-assets",
       "xmlFilename": "robot.xml",
       "xmlPath": "robots/google_robot/robot.xml"
+    },
+    {
+      "id": "hello_robot_stretch",
+      "name": "Hello Robot Stretch",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "stretch.xml",
+      "xmlPath": "robots/hello_robot_stretch/stretch.xml"
+    },
+    {
+      "id": "hello_robot_stretch_3",
+      "name": "Hello Robot Stretch 3",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "stretch.xml",
+      "xmlPath": "robots/hello_robot_stretch_3/stretch.xml"
+    },
+    {
+      "id": "i2rt_yam",
+      "name": "I2rt Yam",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "yam.xml",
+      "xmlPath": "robots/i2rt_yam/yam.xml"
+    },
+    {
+      "id": "iit_softfoot",
+      "name": "Iit Softfoot",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "softfoot.xml",
+      "xmlPath": "robots/iit_softfoot/softfoot.xml"
+    },
+    {
+      "id": "kinova_gen3",
+      "name": "Kinova Gen3",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "gen3.xml",
+      "xmlPath": "robots/kinova_gen3/gen3.xml"
+    },
+    {
+      "id": "kuka_iiwa_14",
+      "name": "Kuka IIWA 14",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "iiwa14.xml",
+      "xmlPath": "robots/kuka_iiwa_14/iiwa14.xml"
+    },
+    {
+      "id": "leap_hand",
+      "name": "Leap Hand",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "left_hand.xml",
+      "xmlPath": "robots/leap_hand/left_hand.xml"
+    },
+    {
+      "id": "low_cost_robot_arm",
+      "name": "Low Cost Robot Arm",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "low_cost_robot_arm.xml",
+      "xmlPath": "robots/low_cost_robot_arm/low_cost_robot_arm.xml"
+    },
+    {
+      "id": "pal_talos",
+      "name": "Pal Talos",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "scene_motor.xml",
+      "xmlPath": "robots/pal_talos/scene_motor.xml"
+    },
+    {
+      "id": "pal_tiago",
+      "name": "Pal Tiago",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "scene_motor.xml",
+      "xmlPath": "robots/pal_tiago/scene_motor.xml"
     }
   ]
 }

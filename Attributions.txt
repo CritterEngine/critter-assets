@@ -259,3 +259,103 @@ Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/google_rob
 A copy of the license is included at robots/google_robot/LICENSE when provided upstream.
 
 ---
+
+## Hello Robot Stretch
+
+Location: robots/hello_robot_stretch/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/hello_robot_stretch
+
+A copy of the license is included at robots/hello_robot_stretch/LICENSE when provided upstream.
+
+---
+
+## Hello Robot Stretch 3
+
+Location: robots/hello_robot_stretch_3/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/hello_robot_stretch_3
+
+A copy of the license is included at robots/hello_robot_stretch_3/LICENSE when provided upstream.
+
+---
+
+## I2rt Yam
+
+Location: robots/i2rt_yam/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/i2rt_yam
+
+A copy of the license is included at robots/i2rt_yam/LICENSE when provided upstream.
+
+---
+
+## Iit Softfoot
+
+Location: robots/iit_softfoot/
+License: Copyright (c) 2024, Istituto Italiano di Tecnologia
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/iit_softfoot
+
+A copy of the license is included at robots/iit_softfoot/LICENSE when provided upstream.
+
+---
+
+## Kinova Gen3
+
+Location: robots/kinova_gen3/
+License: Copyright (c) 2018, Kinova inc.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/kinova_gen3
+
+A copy of the license is included at robots/kinova_gen3/LICENSE when provided upstream.
+
+---
+
+## Kuka IIWA 14
+
+Location: robots/kuka_iiwa_14/
+License: BSD
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/kuka_iiwa_14
+
+A copy of the license is included at robots/kuka_iiwa_14/LICENSE when provided upstream.
+
+---
+
+## Leap Hand
+
+Location: robots/leap_hand/
+License: Copyright 2023 Ananye Agarwal
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/leap_hand
+
+A copy of the license is included at robots/leap_hand/LICENSE when provided upstream.
+
+---
+
+## Low Cost Robot Arm
+
+Location: robots/low_cost_robot_arm/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/low_cost_robot_arm
+
+A copy of the license is included at robots/low_cost_robot_arm/LICENSE when provided upstream.
+
+---
+
+## Pal Talos
+
+Location: robots/pal_talos/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/pal_talos
+
+A copy of the license is included at robots/pal_talos/LICENSE when provided upstream.
+
+---
+
+## Pal Tiago
+
+Location: robots/pal_tiago/
+License: Apache License 2.0
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/pal_tiago
+
+A copy of the license is included at robots/pal_tiago/LICENSE when provided upstream.
+
+---
