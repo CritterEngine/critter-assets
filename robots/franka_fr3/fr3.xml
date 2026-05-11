@@ -19,7 +19,7 @@
   </default>
 
   <asset>
-    <material name="black" rgba=".2 .2 .2 1"/>
+    <material name="black" rgba="0.058824 0.058824 0.058824 1" metallic="0" roughness="0.5"/>
     <material name="white" rgba="1 1 1 1"/>
     <material name="red" rgba="1 0.072272 0.039546 1"/>
     <material name="gray" rgba="0.863156 0.863156 0.863157 1"/>
