@@ -549,3 +549,11 @@ Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/wonik_alle
 A copy of the license is included at robots/wonik_allegro/LICENSE when provided upstream.
 
 ---
+
+## Shadow Hand Egg
+
+Location: objects/egg/
+License: MIT
+Source: https://github.com/Farama-Foundation/Gymnasium-Robotics
+
+---

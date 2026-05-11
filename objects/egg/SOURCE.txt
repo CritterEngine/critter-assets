@@ -1,0 +1,7 @@
+Egg object derived for Shadow Hand egg manipulation scenes.
+
+Reference:
+https://github.com/Farama-Foundation/Gymnasium-Robotics
+
+License:
+MIT (Gymnasium-Robotics repository)
