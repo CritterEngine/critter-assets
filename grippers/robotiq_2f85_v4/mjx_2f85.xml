@@ -1,4 +1,4 @@
-<mujoco model="robotiq_2f85">
+﻿<mujoco model="robotiq_2f85">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <asset>
@@ -41,7 +41,7 @@
         <geom type="mesh" contype="0" conaffinity="0" group="2" material="black"/>
       </default>
       <default class="collision">
-        <geom group="3" type="mesh" contype="0" conaffinity="0"/>
+        <geom group="3" type="mesh" contype="1" conaffinity="15"/>
         <default class="pad_box1">
           <geom group="3" mass="1e-6" type="box" pos="0.043258  0 0.12"  size="0.002 0.011 0.009375"
            solimp="0.99 0.995 0.01" solref="0.01 1" friction="1 0.005 0.0001" rgba="1.0 0.55 0.55 1" conaffinity="3"/>

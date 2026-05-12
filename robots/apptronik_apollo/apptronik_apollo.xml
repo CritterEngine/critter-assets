@@ -1,4 +1,4 @@
-<mujoco model="apptronik_apollo">
+﻿<mujoco model="apptronik_apollo">
     <compiler angle="radian" eulerseq="zyx" meshdir="assets" texturedir="assets"/>
 
     <option timestep="0.005" integrator="implicitfast"/>
@@ -21,7 +21,7 @@
             </default>
         </default>
         <default class="collision">
-            <geom contype="0" conaffinity="0" group="3" rgba="0 1 0 0.4"/>
+            <geom contype="1" conaffinity="15" group="3" rgba="0 1 0 0.4"/>
         </default>
     </default>
 
