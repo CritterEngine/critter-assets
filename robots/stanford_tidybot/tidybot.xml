@@ -89,7 +89,7 @@
     <material name="metal" rgba="0.58 0.58 0.58 1"/>
     <material name="silicone" rgba="0.1882 0.1882 0.1882 1"/>
     <material name="2f85/gray" rgba="0.4627 0.4627 0.4627 1"/>
-    <material name="2f85/black" rgba="0.149 0.149 0.149 1"/>
+    <material name="2f85/black" rgba="0.149 0.149 0.149 1" metallic="1" roughness="0.58"/>
     <mesh class="2f85" file="2f85/base.stl"/>
     <mesh class="2f85" file="2f85/driver.stl"/>
     <mesh class="2f85" file="2f85/coupler.stl"/>

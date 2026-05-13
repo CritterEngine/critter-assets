@@ -76,11 +76,11 @@ Naming Conventions
     <mesh name="proximal" file="proximal.obj"/>
     <mesh name="medial" file="medial.obj"/>
     <mesh name="distal" file="distal.obj"/>
-    <mesh name="tip" file="tip.obj" scale="1.025 1.025 1.025"/>
+    <mesh name="tip" file="tip.obj" scale="1.025 1.025 1.06"/>
     <mesh name="thumb_base" file="thumb_base.obj"/>
     <mesh name="thumb_proximal" file="thumb_proximal.obj"/>
     <mesh name="thumb_distal" file="thumb_distal.obj"/>
-    <mesh name="thumb_tip" file="thumb_tip.obj" scale="1.025 1.025 1.025"/>
+    <mesh name="thumb_tip" file="thumb_tip.obj" scale="1.025 1.025 1.06"/>
   </asset>
 
   <!-- defaults -->
@@ -100,10 +100,10 @@ Naming Conventions
       <geom material="black" />
     </default>
     <default class="tip">
-      <geom type="mesh" mesh="tip" pos="0 0 -0.001" friction="0.5" material="white" />
+      <geom type="mesh" mesh="tip" pos="0 0 -0.0005" friction="0.5" material="white" />
     </default>
     <default class="thumb_tip">
-      <geom type="mesh" mesh="thumb_tip" pos="0 0 -0.001" friction="0.5" material="white" />
+      <geom type="mesh" mesh="thumb_tip" pos="0 0 -0.0005" friction="0.5" material="white" />
     </default>
 
     <!-- joint class defaults -->

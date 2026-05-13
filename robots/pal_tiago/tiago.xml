@@ -5,7 +5,7 @@
   <option integrator="implicitfast"/>
 
   <asset>
-    <material name="black" rgba="0.149 0.149 0.149 1"/>
+    <material name="black" rgba="0.109804 0.109804 0.109804 1" metallic="1" roughness="0.77"/>
     <material name="gray10" rgba="0.1 0.1 0.1 1"/>
     <material name="gray70" rgba="0.7 0.7 0.7 1"/>
     <material name="mercury" rgba="0.9 0.9 0.9 1"/>
