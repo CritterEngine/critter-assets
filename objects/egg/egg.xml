@@ -3,8 +3,12 @@
     <material name="egg_shell" metallic="0" roughness="0.35" rgba="0.95 0.92 0.82 1"/>
   </asset>
   <worldbody>
-    <body name="egg" pos="0 0 0.03">
+    <body name="egg" pos="0 0 0.0308">
       <freejoint/>
+      <inertial
+        pos="0.0015 -0.0008 0.0025"
+        mass="0.06"
+        diaginertia="0.0000145 0.0000162 0.0000088"/>
       <geom
         pos="0 0 0"
         type="ellipsoid"
@@ -14,21 +18,32 @@
         contype="0"
         group="1"/>
       <geom
-        pos="0 0 0"
+        pos="0.001 0 -0.004"
         type="ellipsoid"
-        size="0.021 0.0165 0.03"
+        size="0.0215 0.0168 0.023"
         conaffinity="1"
         contype="1"
         group="3"
-        mass="0.06"
         condim="6"
-        friction="0.8 0.03 0.0008"
+        friction="0.8 0.015 0.00005"
+        solimp="0.9 0.999 0.0002"
+        solref="0.001 0.8"
+        margin="0.001"/>
+      <geom
+        pos="-0.0008 0 0.012"
+        type="ellipsoid"
+        size="0.0175 0.014 0.016"
+        conaffinity="1"
+        contype="1"
+        group="3"
+        condim="6"
+        friction="0.8 0.015 0.00005"
         solimp="0.9 0.999 0.0002"
         solref="0.001 0.8"
         margin="0.001"/>
     </body>
   </worldbody>
   <keyframe>
-    <key name="upright" qpos="0 0 0.03 1 0 0 0"/>
+    <key name="upright" qpos="0 0 0.0308 0.99904822 0.04361939 0 0"/>
   </keyframe>
 </mujoco>
