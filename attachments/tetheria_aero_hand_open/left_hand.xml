@@ -9,9 +9,8 @@
     <numeric data="12" name="max_geom_pairs" />
   </custom>
   <asset>
-    <material name="black" rgba="0.2 0.2 0.2 1" />
-    <material name="gray" rgba="0.5 0.5 0.5 1" />
-    <material name="white" rgba="0.7 0.7 0.7 1" />
+    <material name="gray" rgba="0.137255 0.137255 0.121569 1" metallic="0" roughness="1" />
+    <material name="white" rgba="0.380392 0.380392 0.380392 1" metallic="0" roughness="0.25" />
     <mesh name="tetheria_mount" file="left_palm_mount_link.STL" />
     <mesh name="left_frame_link" content_type="model/stl" file="base_link.STL" />
     <mesh name="left_index_f_link" content_type="model/stl" file="left_index_f_link.STL" />

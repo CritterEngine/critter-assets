@@ -262,15 +262,6 @@
       "xmlPath": "robots/robot_soccer_kit/robot_soccer_kit.xml"
     },
     {
-      "id": "robotiq_2f85_v4",
-      "name": "Robotiq 2f85 V4",
-      "category": "robot",
-      "folder": "robots",
-      "source": "critter-assets",
-      "xmlFilename": "2f85.xml",
-      "xmlPath": "robots/robotiq_2f85_v4/2f85.xml"
-    },
-    {
       "id": "robotis_op3",
       "name": "Robotis Op3",
       "category": "robot",

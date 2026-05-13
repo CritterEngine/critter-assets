@@ -400,16 +400,6 @@ A copy of the license is included at robots/robot_soccer_kit/LICENSE when provid
 
 ---
 
-## Robotiq 2f85 V4
-
-Location: robots/robotiq_2f85_v4/
-License: Copyright (c) 2013, ROS-Industrial
-Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/robotiq_2f85_v4
-
-A copy of the license is included at robots/robotiq_2f85_v4/LICENSE when provided upstream.
-
----
-
 ## Robotis Op3
 
 Location: robots/robotis_op3/
