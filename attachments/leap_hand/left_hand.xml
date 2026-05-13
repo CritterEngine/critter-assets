@@ -67,7 +67,7 @@ Naming Conventions
   <option integrator="implicitfast" cone="elliptic" impratio="100"/>
 
   <asset>
-    <material name="black" rgba="0.2 0.2 0.2 1" />
+    <material name="black" rgba="0.109804 0.109804 0.109804 1" metallic="1" roughness="0.77" />
     <material name="white" rgba="1 1 1 1" />
 
     <mesh name="palm" file="palm_left.obj"/>
@@ -100,10 +100,10 @@ Naming Conventions
       <geom material="black" />
     </default>
     <default class="tip">
-      <geom type="mesh" mesh="tip" friction="0.5" material="white" />
+      <geom type="mesh" mesh="tip" friction="0.5" />
     </default>
     <default class="thumb_tip">
-      <geom type="mesh" mesh="thumb_tip" friction="0.5" material="white" />
+      <geom type="mesh" mesh="thumb_tip" friction="0.5" />
     </default>
 
     <!-- joint class defaults -->
@@ -278,7 +278,7 @@ Naming Conventions
             <body name="if_ds" pos="0 -0.0361 0.0002">
               <inertial pos="-0.0008794 -0.027019 0.014594" quat="0.702905 0.710643 -0.0212937 -0.0214203" mass="0.016" diaginertia="3.71863e-06 3.02396e-06 1.6518e-06"/>
               <joint name="if_dip" class="dip"/>
-              <geom name="if_ds_visual" pos="0.0132 -0.0061 0.0144" quat="2.67949e-08 1 0 0" class="visual" mesh="distal"/>
+              <geom name="if_ds_visual" pos="0.0132 -0.0061 0.0144" quat="2.67949e-08 1 0 0" class="visual" mesh="distal" material="white"/>
               <geom name="if_ds_collision_1" size="0.01 0.003 0.015" pos="0 -0.017 0.015" type="box" class="collision"/>
               <geom name="if_ds_collision_2" size="0.007 0.011 0.002" pos="0 -0.006 0.03" type="box" class="collision"/>
               <geom name="if_ds_collision_3" size="0.007 0.011 0.002" pos="0 -0.006 -0.001" type="box" class="collision"/>
@@ -321,7 +321,7 @@ Naming Conventions
             <body name="mf_ds" pos="0 -0.0361 0.0002">
               <inertial pos="-0.0008794 -0.027019 0.014594" quat="0.702905 0.710643 -0.0212937 -0.0214203" mass="0.016" diaginertia="3.71863e-06 3.02396e-06 1.6518e-06"/>
               <joint name="mf_dip" class="dip"/>
-              <geom name="mf_ds_visual" pos="0.0132 -0.0061 0.0145" quat="1.32679e-06 1 0 0" class="visual" mesh="distal"/>
+              <geom name="mf_ds_visual" pos="0.0132 -0.0061 0.0145" quat="1.32679e-06 1 0 0" class="visual" mesh="distal" material="white"/>
               <geom name="mf_ds_collision_1" size="0.01 0.003 0.015" pos="0 -0.017 0.015" type="box" class="collision"/>
               <geom name="mf_ds_collision_2" size="0.007 0.011 0.002" pos="0 -0.006 0.03" type="box" class="collision"/>
               <geom name="mf_ds_collision_3" size="0.007 0.011 0.002" pos="0 -0.006 -0.001" type="box" class="collision"/>
@@ -364,7 +364,7 @@ Naming Conventions
             <body name="rf_ds" pos="0 -0.03609 0.0002">
               <inertial pos="-0.0008794 -0.027019 0.014594" quat="0.702905 0.710643 -0.0212937 -0.0214203" mass="0.016" diaginertia="3.71863e-06 3.02396e-06 1.6518e-06"/>
               <joint name="rf_dip" class="dip"/>
-              <geom name="rf_ds_visual" pos="0.0132 -0.0061 0.0145" quat="1.32679e-06 1 0 0" class="visual" mesh="distal"/>
+              <geom name="rf_ds_visual" pos="0.0132 -0.0061 0.0145" quat="1.32679e-06 1 0 0" class="visual" mesh="distal" material="white"/>
               <geom name="rf_ds_collision_1" size="0.01 0.003 0.015" pos="0 -0.017 0.015" type="box" class="collision"/>
               <geom name="rf_ds_collision_2" size="0.007 0.011 0.002" pos="0 -0.006 0.03" type="box" class="collision"/>
               <geom name="rf_ds_collision_3" size="0.007 0.011 0.002" pos="0 -0.006 -0.001" type="box" class="collision"/>
@@ -404,7 +404,7 @@ Naming Conventions
             <body name="th_ds" pos="0 0.0466 0.0002" quat="1.32679e-06 0 0 1">
               <inertial pos="0.00096191 -0.024203 -0.014419" quat="0.35287 0.311272 -0.632839 0.614904" mass="0.049" diaginertia="2.08591e-05 2.0402e-05 4.71335e-06"/>
               <joint name="th_ipl" class="thumb_ipl"/>
-              <geom name="th_ds_visual" pos="0.0625 0.0784 0.0489" quat="1 0 0 0" class="visual" mesh="thumb_distal"/>
+              <geom name="th_ds_visual" pos="0.0625 0.0784 0.0489" quat="1 0 0 0" class="visual" mesh="thumb_distal" material="white"/>
               <geom name="th_ds_collision_1" size="0.01 0.018 0.012" pos="0 -0.0085 -0.015" type="box" class="collision"/>
               <geom name="th_ds_collision_2" size="0.01 0.002 0.015" pos="0 -0.029 -0.014" type="box" class="collision"/>
               <geom name="th_ds_collision_3" size="0.004 0.012 0.009" pos="0.015 -0.0175 -0.0115" type="box" class="collision"/>
