@@ -5,7 +5,7 @@
 
   <default>
     <default class="ur10e">
-      <material specular="0.5" shininess="0.25"/>
+      <material specular="0.5" shininess="0.25" metallic="0.0" roughness="0.75"/>
       <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.1"/>
       <position ctrlrange="-6.2831 6.2831"/>
       <general biastype="affine" ctrlrange="-6.2831 6.2831" gainprm="5000" biasprm="0 -5000 -500"/>
@@ -39,10 +39,10 @@
   </default>
 
   <asset>
-    <material class="ur10e" name="black" rgba="0.033 0.033 0.033 1"/>
-    <material class="ur10e" name="jointgray" rgba="0.278 0.278 0.278 1"/>
-    <material class="ur10e" name="linkgray" rgba="0.82 0.82 0.82 1"/>
-    <material class="ur10e" name="urblue" rgba="0.49 0.678 0.8 1"/>
+    <material name="black" rgba="0.000000 0.000000 0.000000 1.000000" metallic="0.000000" roughness="0.670000"/>
+    <material name="jointgray" rgba="0.090196 0.090196 0.090196 1.000000" metallic="0.000000" roughness="0.600000"/>
+    <material name="linkgray" rgba="0.752941 0.803922 0.827451 1.000000" metallic="1.000000" roughness="0.490000"/>
+    <material name="urblue" rgba="0.094118 0.254902 0.427451 1.000000" metallic="0.000000" roughness="0.350000"/>
 
     <mesh file="base_0.obj"/>
     <mesh file="base_1.obj"/>
