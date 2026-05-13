@@ -52,6 +52,8 @@
     <body name="attachment_cube" pos="0 0 0" quat="-0.7071068 0.7071068 0 0">
       <inertial pos="-9.5664949e-05 -1.6749134000000002e-05 0.0013880927000000001" mass="0.45418805000000001"
         diaginertia="0.000179789 0.00017806823000000001 0.00016882624"/>
+      <geom name="attachment_cube_visual" class="standard_chain" type="mesh" material="black"
+        mesh="qb_move_advanced_for_mate"/>
       <geom name="attachment_cube_collision" class="collision" group="0" type="mesh" material="black"
         mesh="qb_move_advanced_for_mate"/>
 
@@ -59,6 +61,8 @@
       <body name="posterior_arch" pos="0 0 0">
         <inertial pos="-0.030619549999999999 0.042380639999999997 0" mass="0.067640931000000001"
           fullinertia="9.8002560999999996e-05 8.6292888799999995e-05 4.8226456000000003e-05 2.0310002300000001e-05 -2.77008333e-07 3.4712049800000001e-07"/>
+        <geom name="posterior_arch_visual" class="standard_chain" type="mesh" material="white"
+          quat="0.45338800000000001 0 0 0.89131300000000002" mesh="cube_connection_back"/>
         <geom name="posterior_arch_collision" class="collision" group="0" type="mesh" material="white"
           quat="0.45338800000000001 0 0 0.89131300000000002" mesh="cube_connection_back"/>
 
@@ -883,6 +887,8 @@
           quat="0.51872200000000002 0.51872200000000002 0.480549 0.480549" mass="0.072026599999999996"
           diaginertia="0.00020493599999999999 0.000105624 0.00010463099999999999"/>
         <joint name="cube_to_frontal_arch" pos="0 0 0" axis="0 0 1" stiffness="0" armature="0.001" damping="0.001"/>
+        <geom name="frontal_arch_visual" class="standard_chain" type="mesh" material="white"
+          mesh="cube_connection_frontal"/>
         <geom name="frontal_arch_collision" class="collision" group="0" type="mesh" material="white"
           mesh="cube_connection_frontal"/>
       </body>
