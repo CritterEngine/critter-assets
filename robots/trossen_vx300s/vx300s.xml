@@ -4,7 +4,8 @@
   <option cone="elliptic" impratio="10"/>
 
   <asset>
-    <material name="black" rgba="1 1 1 1" metallic="1" roughness="0.54"/>
+    <texture type="2d" file="interbotix_black.png"/>
+    <material name="black" texture="interbotix_black"/>
 
     <mesh file="vx300s_1_base.stl" scale="0.001 0.001 0.001"/>
     <mesh file="vx300s_2_shoulder.stl" scale="0.001 0.001 0.001"/>
