@@ -1,0 +1,43 @@
+<mujoco model="Mug_1">
+  <compiler angle="radian" />
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" />
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="material_Mug_Decals_Off_Mat" class="/" rgba="0.011765 0.011765 0.011765 1" metallic="0" roughness="0.15" clearcoat="0.05" clearcoatroughness="0" />
+    <material name="material_Porcelain_Off_White_Mat" class="/" rgba="0.011765 0.011765 0.011765 1" metallic="0" roughness="0.15" clearcoat="0.05" clearcoatroughness="0" />
+    <mesh name="Mug_1_mug_1_0" class="/" content_type="model/obj" file="assets/Mug_1_mug_1/Mug_1_mug_1_0.obj" />
+    <mesh name="Mug_1_mug_1_1" class="/" content_type="model/obj" file="assets/Mug_1_mug_1/Mug_1_mug_1_1.obj" />
+  </asset>
+  <worldbody>
+    <body name="Mug_1">
+      <joint name="Mug_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
+      <geom name="Mug_1_mug_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Mug_Decals_Off_Mat" mesh="Mug_1_mug_1_0" pos="0.01154 -0.05182 0.00015" />
+      <geom name="Mug_1_mug_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Porcelain_Off_White_Mat" mesh="Mug_1_mug_1_1" pos="0.01154 -0.05182 0.00015" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0428719 0.0060202 0.0436388" pos="0.01154 -0.0457998 0.00015" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="0.01154 -2.6e-06 -0.04635" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="0.01154 -2.6e-06 0.04635" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="-0.03481 -2.6e-06 -2.04e-07" quat="0 0.707107 0 -0.707107" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="0.05789 -2.6e-06 -2.04e-07" quat="0 0.707107 0 -0.707107" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="-0.0212344 -2.6e-06 0.0327738" quat="0 0.382684 0 -0.923879" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.0203641 0.0518174 0.00490658" pos="0.0443144 -2.6e-06 -0.0327742" quat="0 0.382684 0 -0.923879" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.0203642 0.0518174 0.00490658" pos="0.0443135 -2.6e-06 0.0327742" quat="0 -0.382683 0 -0.92388" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.0203642 0.0518174 0.00490658" pos="-0.0212335 -2.6e-06 -0.0327747" quat="0 -0.382683 0 -0.92388" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Mug_1_mug_1_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.00986246 0.0352154 0.0140872" pos="0.0717835 0.01266 -2.15e-07" quat="0 0.707107 0 -0.707107" type="box" density="200" rgba="0 1 0 1" />
+      <site name="Mug_1_mug_1_ReceptacleCollider_0" class="/" pos="0.01154 0.0044158 0.00015" quat="0 1 0 0" size="0.040822 0.0474148 0.0378063" type="box" rgba="1 0 0 1" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="upright" qpos="0 0 0.057 0.707107 0.707107 0 0" />
+  </keyframe>
+</mujoco>

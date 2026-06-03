@@ -1,0 +1,46 @@
+<mujoco model="Cup_1">
+  <compiler angle="radian" />
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" />
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="Cup1_Mat" file="assets/BrushedIron_AlbedoTransparency.png" />
+    <material name="material_Cup_Decals_Off_Mat" class="/" rgba="0.858824 0.905882 1.000000 1.000000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <material name="material_Cup1_Mat" class="/" texture="Cup1_Mat" rgba="0.858824 0.905882 1.000000 1.000000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <mesh name="Cup_1_cup_1_0" class="/" content_type="model/obj" file="assets/Cup_1_cup_1/Cup_1_cup_1_0.obj" />
+    <mesh name="Cup_1_cup_1_1" class="/" content_type="model/obj" file="assets/Cup_1_cup_1/Cup_1_cup_1_1.obj" />
+  </asset>
+  <worldbody>
+    <body name="Cup_1">
+      <joint name="Cup_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
+      <geom name="Cup_1_cup_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Cup_Decals_Off_Mat" mesh="Cup_1_cup_1_0" pos="0 -0.07115 0.00039" />
+      <geom name="Cup_1_cup_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Cup1_Mat" mesh="Cup_1_cup_1_1" pos="0 -0.07115 0.00039" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0183736 0.0669554 0.00413516" pos="0 0.003925 -0.0361778" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0195148 0.0668771 0.00465837" pos="0 0.003925 0.0357707" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0183736 0.066945 0.00430479" pos="0.036151 0.003925 -0.000196512" quat="0 0.707108 0 0.707106" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0195148 0.0669333 0.00457359" pos="-0.0358823 0.003925 -0.000196428" quat="0 0.707108 0 0.707106" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0183736 0.066878 0.00472886" pos="-0.0258625 0.003925 -0.0260589" quat="0 0.92388 0 -0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0195148 0.0669444 0.00469778" pos="0.0254604 0.003925 0.025264" quat="0 0.92388 0 -0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.0183736 0.0669335 0.00418911" pos="0.0254808 0.003925 -0.0256772" quat="0 0.92388 0 0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.0195148 0.0669644 0.00469775" pos="-0.0254604 0.003925 0.025264" quat="0 0.92388 0 0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.0143809 0.00998984 0.0368513" pos="0 -0.0608896 0.0004081035" quat="0 1 0 0" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.0131506 0.00999146 0.0370475" pos="-4.91273e-08 -0.0608893 0.0004081448" quat="0 0.707108 0 -0.707106" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_10" class="__DYNAMIC_MJT__" size="0.0147059 0.00999151 0.0368512" pos="4.79631e-08 -0.0608893 0.0004080985" quat="0 0.92388 0 0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <geom name="Cup_1_cup_1_PrimitiveCollider_11" class="__DYNAMIC_MJT__" size="0.0132118 0.00999146 0.0368512" pos="-4.84288e-08 -0.0608893 0.0004080983" quat="0 0.92388 0 -0.382683" type="box" density="200" rgba="0 1 0 1" />
+      <site name="Cup_1_cup_1_ReceptacleCollider_0" class="/" pos="0 0.0094606 0.00039" quat="0 1 0 0" size="0.0261601 0.0609515 0.0273428" type="box" rgba="1 0 0 1" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="upright" qpos="0 0 0.073 0.707107 0.707107 0 0" />
+  </keyframe>
+</mujoco>
