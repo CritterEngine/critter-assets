@@ -61,7 +61,7 @@
 
   <worldbody>
     <light name="spotlight" mode="targetbodycom" target="torso" pos="0 -1 2"/>
-    <body name="torso" childclass="berkeley_humanoid" pos="0 0 0.6">
+    <body name="torso" childclass="berkeley_humanoid" pos="0 0 0.608091">
       <freejoint/>
       <site name="imu"/>
       <camera name="track" pos="1.210 -0.435 0.32" xyaxes="0.342 0.940 0.000 -0.321 0.117 0.940" mode="trackcom"/>
@@ -201,8 +201,8 @@
   <keyframe>
     <key name="home"
       qpos="
-    0 0 0.515
-    1 0 0 0
+    0 0 0.523091
+        1 0 0 0
     -0.071 0.103 -0.463 0.983 -0.350 0.126
     0.071 -0.103 -0.463 0.983 -0.350 -0.126"
       ctrl="

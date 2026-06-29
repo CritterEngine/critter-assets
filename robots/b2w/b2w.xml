@@ -55,7 +55,7 @@
     <mesh name="r_oc_link" file="r_oc_link.obj" />
   </asset>
   <worldbody>
-    <body name="base_link" pos="0 0 0.8" childclass="b2">
+    <body name="base_link" pos="0 0 0.81792" childclass="b2">
       <inertial pos="0.0212868 0.0045819 0.0106169" quat="0.00178111 0.675412 -0.000262894 0.737438"
         mass="40.8426" diaginertia="1.73786 1.66448 0.343734" />
       <joint name="floating_base_joint" type="free" />

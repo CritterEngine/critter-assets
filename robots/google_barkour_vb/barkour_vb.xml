@@ -63,7 +63,7 @@
   </asset>
 
   <worldbody>
-    <body name="torso" childclass="bkvb">
+    <body name="torso" childclass="bkvb" pos="0 0 0.10049">
       <freejoint name="torso"/>
       <camera name="track" pos="0.846 -1.465 0.916" xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940" mode="trackcom"/>
       <inertial pos="0.0055238 -0.000354563 0.00835899" quat="-0.00150849 0.694899 -0.000198355 0.719106" mass="6.04352"
