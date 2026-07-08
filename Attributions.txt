@@ -41,11 +41,14 @@ A copy of the MIT license is included at grippers/umi_gripper/LICENSE.
 ## MolmoSpaces THOR Object Subset
 
 Locations:
+- objects/book/
 - objects/bottle/
 - objects/bowl/
 - objects/cellphone/
+- objects/cup/
 - objects/desk_cabinet/
 - objects/fridge/
+- objects/mug/
 - objects/plate/
 
 License: CC BY 4.0
@@ -60,6 +63,15 @@ Fridge and desk cabinet include SOURCE.txt files with subset notes from the orig
 Location: objects/conveyor/
 License: Project-authored asset unless otherwise documented.
 
+---
+
+## Can
+
+Location: objects/can/
+License: Project-authored asset unless otherwise documented.
+
+---
+
 ## Aloha
 
 Location: robots/aloha/
@@ -67,6 +79,16 @@ License: Copyright (c) 2023, Trossen Robotics
 Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/aloha
 
 A copy of the license is included at robots/aloha/LICENSE when provided upstream.
+
+---
+
+## Agility Cassie
+
+Location: robots/agility_cassie/
+License: MIT
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/agility_cassie
+
+Copyright (c) 2022 Agility Robotics
 
 ---
 
@@ -507,6 +529,16 @@ License: Copyright (c) 2016-2023 HangZhou YuShu TECHNOLOGY CO.,LTD. ("Unitree Ro
 Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_h1
 
 A copy of the license is included at robots/unitree_h1/LICENSE when provided upstream.
+
+---
+
+## Unitree G1
+
+Location: robots/unitree_g1/
+License: BSD 3-Clause
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_g1
+
+Copyright (c) 2016-2023 HangZhou YuShu TECHNOLOGY CO.,LTD. ("Unitree Robotics")
 
 ---
 
