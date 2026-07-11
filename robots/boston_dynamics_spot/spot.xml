@@ -56,7 +56,6 @@
 
   <worldbody>
     <geom name="floor" type="plane" size="20 20 0.1" pos="0 0 0"/>
-    <light name="spotlight" mode="targetbodycom" target="body" pos="3 0 4" cutoff="30"/>
     <body name="body" childclass="spot" pos="0 0 0.758458">
       <light name="tracking" mode="trackcom" pos="0 0 2"/>
       <freejoint name="freejoint"/>

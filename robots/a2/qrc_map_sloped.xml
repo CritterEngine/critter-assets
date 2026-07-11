@@ -210,9 +210,6 @@
 
     <geom name="ground" type="plane" pos="0 0 0" size="20 20 0.1" material="mat_ground" />
 
-    <light name="light_main" directional="true" pos="10 -10 15" dir="-1 1 -1.2"
-      diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" />
-    <light name="light_ambient" directional="false" pos="0 0 10" diffuse="0.4 0.4 0.4" />
 
     <!-- ===== Obstacles ===== -->
     <body name="board_18x600x1032_38" pos="1.411 3.6025 0.3"

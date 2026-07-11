@@ -18,6 +18,5 @@
 
   <worldbody>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
-    <light name="spotlight" mode="targetbody" target="base_link" pos="1 0 20"/>
   </worldbody>
 </mujoco>

@@ -18,7 +18,6 @@ the foot's compliance against an obstacle.-->
   </asset>
 
   <worldbody>
-    <light pos="0 0 3" dir="0 0 -1" directional="false"/>
     <geom name="floor" size="0 0 .125" type="plane" material="groundplane" conaffinity="15" condim="3"/>
     <body name="sf_origin" pos="0 0 0.2">
       <joint name="load" type="slide" damping="100" axis="0 0 -1"/>

@@ -86,7 +86,6 @@
   </default>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="body" pos="3 0 4" cutoff="30"/>
     <body name="body" childclass="spot" pos="0 0 .75">
       <light name="tracking" mode="trackcom" pos="0 0 2"/>
       <freejoint name="freejoint"/>
