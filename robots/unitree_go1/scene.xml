@@ -16,7 +16,4 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
   </asset>
 
-  <worldbody>
-    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
-  </worldbody>
 </mujoco>
