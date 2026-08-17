@@ -16,7 +16,4 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
   </asset>
 
-  <worldbody>
-    <geom type="cylinder" size=".06 .06" pos="0 0 .06" rgba="1 1 1 1"/>
-  </worldbody>
 </mujoco>
