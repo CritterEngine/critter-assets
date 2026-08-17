@@ -1,0 +1,2 @@
+# Updating this file triggers a complete tracked-asset backfill to critter-library.
+request=2026-08-17-dev-catalog-backfill

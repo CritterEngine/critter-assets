@@ -5,15 +5,27 @@ on:
     branches: [main]
     paths:
       - "robots/**"
+      - "attachments/**"
+      - "objects/**"
+      - "scene/**"
       - "immutable_assets.json"
       - "scripts/plan_r2_deployment.py"
       - "scripts/validate_robot_assets.py"
+      - ".github/r2-backfill-request"
       - ".github/workflows/deploy-r2.yml"
   workflow_dispatch:
     inputs:
+      mode:
+        description: "Deployment scope"
+        required: true
+        default: "robot"
+        type: choice
+        options:
+          - robot
+          - all
       robot:
         description: "Robot directory name to redeploy"
-        required: true
+        required: false
         default: "berkeley_humanoid"
 
 permissions:
@@ -47,6 +59,7 @@ jobs:
         env:
           BEFORE_SHA: ${{ github.event.before }}
           CURRENT_SHA: ${{ github.sha }}
+          REQUESTED_MODE: ${{ inputs.mode }}
           REQUESTED_ROBOT: ${{ inputs.robot }}
         run: |
           set -euo pipefail
@@ -56,24 +69,34 @@ jobs:
           from pathlib import Path
 
           event_name = os.environ["GITHUB_EVENT_NAME"]
+          requested_mode = os.environ.get("REQUESTED_MODE", "")
           requested = os.environ.get("REQUESTED_ROBOT", "")
+          full_backfill = False
+
+          def git_files(*pathspecs: str) -> list[str]:
+              output = subprocess.check_output(
+                  ["git", "ls-files", "-z", "--", *pathspecs], text=False
+              )
+              return output.decode().split("\0")
+
+          def all_deployable_files() -> list[str]:
+              return git_files("robots", "attachments", "objects", "scene")
 
           if event_name == "workflow_dispatch":
-              directory = Path("robots") / requested
-              if not directory.is_dir() or directory.parent != Path("robots"):
-                  raise SystemExit(f"Unknown robot directory: {requested}")
-              output = subprocess.check_output(
-                  ["git", "ls-files", "-z", "--", str(directory)], text=False
-              )
-              paths = output.decode().split("\0")
+              if requested_mode == "all":
+                  paths = all_deployable_files()
+                  full_backfill = True
+              else:
+                  directory = Path("robots") / requested
+                  if not directory.is_dir() or directory.parent != Path("robots"):
+                      raise SystemExit(f"Unknown robot directory: {requested}")
+                  paths = git_files(str(directory))
           else:
               before = os.environ["BEFORE_SHA"]
               current = os.environ["CURRENT_SHA"]
               if before == "0" * 40:
-                  output = subprocess.check_output(
-                      ["git", "ls-files", "-z", "--", "robots"], text=False
-                  )
-                  paths = output.decode().split("\0")
+                  paths = all_deployable_files()
+                  full_backfill = True
               else:
                   try:
                       subprocess.run(
@@ -88,18 +111,35 @@ jobs:
                           check=True,
                       )
                   output = subprocess.check_output(
-                      ["git", "diff", "--name-only", "--diff-filter=ACMRTD", "-z", before, current, "--", "robots"],
+                      [
+                          "git",
+                          "diff",
+                          "--name-only",
+                          "--diff-filter=ACMRTD",
+                          "-z",
+                          before,
+                          current,
+                          "--",
+                          "robots",
+                          "attachments",
+                          "objects",
+                          "scene",
+                          ".github/r2-backfill-request",
+                      ],
                       text=False,
                   )
                   paths = output.decode().split("\0")
+                  if ".github/r2-backfill-request" in paths:
+                      paths = all_deployable_files()
+                      full_backfill = True
 
-          paths = sorted(path for path in paths if path)
+          paths = sorted(path for path in paths if path and Path(path).is_file())
           files = [path for path in paths if Path(path).is_file()]
           robot_directories = sorted(
               {
                   str(Path(*Path(path).parts[:2]))
                   for path in paths
-                  if len(Path(path).parts) > 2
+                  if len(Path(path).parts) > 2 and Path(path).parts[0] == "robots"
               }
           )
 
@@ -112,11 +152,15 @@ jobs:
               output_file.write(
                   f"has_directories={'true' if robot_directories else 'false'}\n"
               )
-          print(f"Selected {len(files)} files from {len(robot_directories)} directories")
+              output_file.write(f"full_backfill={'true' if full_backfill else 'false'}\n")
+          print(
+              f"Selected {len(files)} files from {len(robot_directories)} robot directories "
+              f"(full_backfill={full_backfill})"
+          )
           PY
 
       - name: Validate local asset references
-        if: steps.changes.outputs.has_directories == 'true'
+        if: steps.changes.outputs.has_directories == 'true' && steps.changes.outputs.full_backfill != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -143,7 +187,7 @@ jobs:
           aws --version
 
       - name: Upload stable assets
-        if: steps.changes.outputs.has_changes == 'true'
+        if: steps.changes.outputs.has_changes == 'true' && steps.changes.outputs.full_backfill != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -156,6 +200,33 @@ jobs:
               --cache-control "public,max-age=3600" \
               --no-progress
           done < .r2-deployment/stable-uploads.tsv
+
+      - name: Backfill all stable assets
+        if: steps.changes.outputs.full_backfill == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t immutable_robots < <(
+            python3 -c 'import json; print("\n".join(json.load(open("immutable_assets.json"))["robots"]))'
+          )
+          robot_excludes=()
+          for robot in "${immutable_robots[@]}"; do
+            robot_excludes+=(--exclude "$robot/*")
+          done
+          aws s3 cp robots "s3://$R2_BUCKET/robots" \
+            --recursive \
+            "${robot_excludes[@]}" \
+            --endpoint-url "$R2_ENDPOINT" \
+            --cache-control "public,max-age=3600" \
+            --no-progress
+          for prefix in attachments objects scene; do
+            test -d "$prefix" || continue
+            aws s3 cp "$prefix" "s3://$R2_BUCKET/$prefix" \
+              --recursive \
+              --endpoint-url "$R2_ENDPOINT" \
+              --cache-control "public,max-age=3600" \
+              --no-progress
+          done
 
       - name: Upload immutable asset releases
         if: steps.changes.outputs.has_changes == 'true'
@@ -175,6 +246,8 @@ jobs:
       - name: Verify asset objects
         if: steps.changes.outputs.has_changes == 'true'
         shell: bash
+        env:
+          FULL_BACKFILL: ${{ steps.changes.outputs.full_backfill }}
         run: |
           set -euo pipefail
           verify_uploads() {
@@ -193,7 +266,26 @@ jobs:
                 "https://assets.critterengine.com/$key" >/dev/null
             done < "$plan"
           }
-          verify_uploads .r2-deployment/stable-uploads.tsv
+          if [[ "$FULL_BACKFILL" == "true" ]]; then
+            mapfile -t immutable_robots < <(
+              python3 -c 'import json; print("\n".join(json.load(open("immutable_assets.json"))["robots"]))'
+            )
+            robot_excludes=()
+            for robot in "${immutable_robots[@]}"; do
+              robot_excludes+=(--exclude "$robot/*")
+            done
+            robot_diff="$(aws s3 sync robots "s3://$R2_BUCKET/robots" \
+              --dryrun --size-only "${robot_excludes[@]}" --endpoint-url "$R2_ENDPOINT")"
+            test -z "$robot_diff" || { echo "$robot_diff"; exit 1; }
+            for prefix in attachments objects scene; do
+              test -d "$prefix" || continue
+              prefix_diff="$(aws s3 sync "$prefix" "s3://$R2_BUCKET/$prefix" \
+                --dryrun --size-only --endpoint-url "$R2_ENDPOINT")"
+              test -z "$prefix_diff" || { echo "$prefix_diff"; exit 1; }
+            done
+          else
+            verify_uploads .r2-deployment/stable-uploads.tsv
+          fi
           verify_uploads .r2-deployment/immutable-uploads.tsv
 
       - name: Publish immutable release manifests
