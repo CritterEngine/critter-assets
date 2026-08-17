@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "robots/**"
+      - "immutable_assets.json"
+      - "scripts/plan_r2_deployment.py"
       - "scripts/validate_robot_assets.py"
       - ".github/workflows/deploy-r2.yml"
   workflow_dispatch:
@@ -63,7 +65,7 @@ jobs:
               output = subprocess.check_output(
                   ["git", "ls-files", "-z", "--", str(directory)], text=False
               )
-              files = output.decode().split("\0")
+              paths = output.decode().split("\0")
           else:
               before = os.environ["BEFORE_SHA"]
               current = os.environ["CURRENT_SHA"]
@@ -71,7 +73,7 @@ jobs:
                   output = subprocess.check_output(
                       ["git", "ls-files", "-z", "--", "robots"], text=False
                   )
-                  files = output.decode().split("\0")
+                  paths = output.decode().split("\0")
               else:
                   try:
                       subprocess.run(
@@ -86,16 +88,17 @@ jobs:
                           check=True,
                       )
                   output = subprocess.check_output(
-                      ["git", "diff", "--name-only", "--diff-filter=ACMRT", "-z", before, current, "--", "robots"],
+                      ["git", "diff", "--name-only", "--diff-filter=ACMRTD", "-z", before, current, "--", "robots"],
                       text=False,
                   )
-                  files = output.decode().split("\0")
+                  paths = output.decode().split("\0")
 
-          files = sorted(path for path in files if path and Path(path).is_file())
+          paths = sorted(path for path in paths if path)
+          files = [path for path in paths if Path(path).is_file()]
           robot_directories = sorted(
               {
                   str(Path(*Path(path).parts[:2]))
-                  for path in files
+                  for path in paths
                   if len(Path(path).parts) > 2
               }
           )
@@ -105,7 +108,7 @@ jobs:
               "\n".join(robot_directories), encoding="utf-8"
           )
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output_file:
-              output_file.write(f"has_files={'true' if files else 'false'}\n")
+              output_file.write(f"has_changes={'true' if files or robot_directories else 'false'}\n")
               output_file.write(
                   f"has_directories={'true' if robot_directories else 'false'}\n"
               )
@@ -120,8 +123,17 @@ jobs:
           mapfile -t directories < .r2-robot-directories
           python3 scripts/validate_robot_assets.py "${directories[@]}"
 
+      - name: Plan stable and immutable uploads
+        if: steps.changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/plan_r2_deployment.py \
+            --changed-files .r2-deploy-files \
+            --robot-directories .r2-robot-directories
+
       - name: Verify deployment credentials
-        if: steps.changes.outputs.has_files == 'true'
+        if: steps.changes.outputs.has_changes == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -130,36 +142,80 @@ jobs:
           test "$R2_ENDPOINT" != "https://.r2.cloudflarestorage.com"
           aws --version
 
-      - name: Upload added and modified files
-        if: steps.changes.outputs.has_files == 'true'
+      - name: Upload stable assets
+        if: steps.changes.outputs.has_changes == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          while IFS= read -r file; do
-            test -n "$file" || continue
-            content_type="$(file --brief --mime-type "$file")"
-            aws s3 cp "$file" "s3://$R2_BUCKET/$file" \
+          while IFS=$'\t' read -r source key; do
+            test -n "$source" || continue
+            content_type="$(file --brief --mime-type "$source")"
+            aws s3 cp "$source" "s3://$R2_BUCKET/$key" \
               --endpoint-url "$R2_ENDPOINT" \
               --content-type "$content_type" \
               --cache-control "public,max-age=3600" \
               --no-progress
-          done < .r2-deploy-files
+          done < .r2-deployment/stable-uploads.tsv
 
-      - name: Verify uploaded objects
-        if: steps.changes.outputs.has_files == 'true'
+      - name: Upload immutable asset releases
+        if: steps.changes.outputs.has_changes == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          while IFS= read -r file; do
-            test -n "$file" || continue
-            local_size="$(stat --format=%s "$file")"
+          while IFS=$'\t' read -r source key; do
+            test -n "$source" || continue
+            content_type="$(file --brief --mime-type "$source")"
+            aws s3 cp "$source" "s3://$R2_BUCKET/$key" \
+              --endpoint-url "$R2_ENDPOINT" \
+              --content-type "$content_type" \
+              --cache-control "public,max-age=31536000,immutable" \
+              --no-progress
+          done < .r2-deployment/immutable-uploads.tsv
+
+      - name: Verify asset objects
+        if: steps.changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          verify_uploads() {
+            local plan="$1"
+            while IFS=$'\t' read -r source key; do
+              test -n "$source" || continue
+              local_size="$(stat --format=%s "$source")"
+              remote_size="$(aws s3api head-object \
+                --bucket "$R2_BUCKET" \
+                --key "$key" \
+                --endpoint-url "$R2_ENDPOINT" \
+                --query ContentLength \
+                --output text)"
+              test "$local_size" = "$remote_size"
+              curl --fail --silent --show-error --head \
+                "https://assets.critterengine.com/$key" >/dev/null
+            done < "$plan"
+          }
+          verify_uploads .r2-deployment/stable-uploads.tsv
+          verify_uploads .r2-deployment/immutable-uploads.tsv
+
+      - name: Publish immutable release manifests
+        if: steps.changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS=$'\t' read -r source key; do
+            test -n "$source" || continue
+            aws s3 cp "$source" "s3://$R2_BUCKET/$key" \
+              --endpoint-url "$R2_ENDPOINT" \
+              --content-type "application/json" \
+              --cache-control "public,max-age=60,must-revalidate" \
+              --no-progress
+            local_size="$(stat --format=%s "$source")"
             remote_size="$(aws s3api head-object \
               --bucket "$R2_BUCKET" \
-              --key "$file" \
+              --key "$key" \
               --endpoint-url "$R2_ENDPOINT" \
               --query ContentLength \
               --output text)"
             test "$local_size" = "$remote_size"
             curl --fail --silent --show-error --head \
-              "https://assets.critterengine.com/$file" >/dev/null
-          done < .r2-deploy-files
+              "https://assets.critterengine.com/$key" >/dev/null
+          done < .r2-deployment/manifest-uploads.tsv

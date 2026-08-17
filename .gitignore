@@ -1,0 +1,4 @@
+.wrangler/
+.r2-deployment/
+.r2-deploy-files
+.r2-robot-directories
