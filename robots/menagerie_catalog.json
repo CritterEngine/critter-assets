@@ -271,6 +271,15 @@
       "xmlPath": "robots/robotis_op3/op3.xml"
     },
     {
+      "id": "shadow_dexee",
+      "name": "Shadow Dexee",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "shadow_dexee.xml",
+      "xmlPath": "robots/shadow_dexee/shadow_dexee.xml"
+    },
+    {
       "id": "skydio_x2",
       "name": "Skydio X2",
       "category": "robot",
