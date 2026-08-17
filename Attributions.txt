@@ -432,16 +432,6 @@ A copy of the license is included at robots/robotis_op3/LICENSE when provided up
 
 ---
 
-## Shadow Dexee
-
-Location: robots/shadow_dexee/
-License: Apache License 2.0
-Source: https://github.com/google-deepmind/mujoco_menagerie/tree/main/shadow_dexee
-
-A copy of the license is included at robots/shadow_dexee/LICENSE when provided upstream.
-
----
-
 ## Skydio X2
 
 Location: robots/skydio_x2/
