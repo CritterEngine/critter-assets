@@ -1,7 +1,7 @@
 <mujoco model="stretch">
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
 
-  <option integrator="implicitfast" impratio="20" cone="elliptic" noslip_iterations="5">
+  <option integrator="implicitfast" impratio="1" cone="pyramidal" noslip_iterations="0">
     <flag multiccd="enable" />
   </option>
 
@@ -487,7 +487,7 @@
   <sensor>
     <gyro name="base_gyro" site="imu" />
     <accelerometer name="base_accel" site="imu" />
-    <rangefinder name="base_lidar" site="lidar" cutoff="10.0" />
+    <rangefinder name="base_lidar" site="lidar" cutoff="10.0" interval="0.1" nsample="1" />
   </sensor>
 
   <keyframe>
