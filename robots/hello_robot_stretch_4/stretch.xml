@@ -5,8 +5,6 @@
     <flag multiccd="enable" />
   </option>
 
-  <size njmax="5000" nconmax="5000" />
-
   <default>
     <default class="stretch">
       <geom mass="0" solref="0.005 1" />
