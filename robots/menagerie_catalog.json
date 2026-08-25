@@ -154,6 +154,15 @@
       "xmlPath": "robots/hello_robot_stretch_3/stretch.xml"
     },
     {
+      "id": "hello_robot_stretch_4",
+      "name": "Hello Robot Stretch 4",
+      "category": "robot",
+      "folder": "robots",
+      "source": "critter-assets",
+      "xmlFilename": "stretch.xml",
+      "xmlPath": "robots/hello_robot_stretch_4/stretch.xml"
+    },
+    {
       "id": "i2rt_yam",
       "name": "I2rt Yam",
       "category": "robot",

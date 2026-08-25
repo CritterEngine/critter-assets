@@ -302,6 +302,16 @@ A copy of the license is included at robots/hello_robot_stretch_3/LICENSE when p
 
 ---
 
+## Hello Robot Stretch 4
+
+Location: robots/hello_robot_stretch_4/
+License: Clear BSD
+Source: https://github.com/hello-robot/stretch4_mujoco
+
+A copy of the license is included at robots/hello_robot_stretch_4/LICENSE.
+
+---
+
 ## I2rt Yam
 
 Location: robots/i2rt_yam/
