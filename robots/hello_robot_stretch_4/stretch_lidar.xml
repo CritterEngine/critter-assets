@@ -487,9 +487,8 @@
   </sensor>
 
   <keyframe>
-      <!-- <key name="home" ctrl="0 0 0.6 0.1 0 0 0 0 0 0"/>
-      <key name="stow" ctrl="0 0 0.23 0 3.14 -0.4 0 0 0 0"/> -->
-      <key name="home" ctrl="0 0 0 0.6 0.1 0 0 0 0 0" />
-      <key name="stow" ctrl="0 0 0 0.23 0 3.14 -0.4 0 0 0" />
-    </keyframe>
+    <key name="init" qpos="0 0 0.028 1 0 0 0 0.8640004883 0 0 0 0 0 0 0 0 0 0 0 0 0" ctrl="0 0 0 0.8640004883 0 0 0 0 0 0" />
+    <key name="home" qpos="0 0 0.028 1 0 0 0 0.8640004883 0 0 0 0 0 0 0 0 0 0 0 0 0" ctrl="0 0 0 0.8640004883 0 0 0 0 0 0" />
+    <key name="stow" ctrl="0 0 0 0.23 0 3.14 -0.4 0 0 0" />
+  </keyframe>
 </mujoco>
