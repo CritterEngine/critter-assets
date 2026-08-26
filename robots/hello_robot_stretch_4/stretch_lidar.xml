@@ -146,11 +146,8 @@
     <mesh file="wrist_aruco_link.STL" name="wrist_aruco_link" />
     <mesh file="wrist_reflector_collision_link.STL" name="wrist_reflector_collision_link" />
     <mesh file="wrist_reflector_link.STL" name="wrist_reflector_link" />
-    <mesh file="wheel_2_collision_link.STL" name="wheel_2_collision_link" />
     <mesh file="wheel_2_link.STL" name="wheel_2_link" />
-    <mesh file="wheel_1_collision_link.STL" name="wheel_1_collision_link" />
     <mesh file="wheel_1_link.STL" name="wheel_1_link" />
-    <mesh file="wheel_0_collision_link.STL" name="wheel_0_collision_link" />
     <mesh file="wheel_0_link.STL" name="wheel_0_link" />
   
   </asset>
