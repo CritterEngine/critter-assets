@@ -7,7 +7,7 @@ All notable changes to this model will be documented in this file.
 - Removed unused detailed wheel collision meshes; wheel physics continues to use the existing capsule geoms.
 - Removed redundant OBJ material groups from the base and head visual meshes without changing their geometry.
 - Restored the upstream physics configuration after resolving the rendering bottleneck.
-- Replaced the control-only home key with the user-authored raised `qpos`, and use it as the startup `init` pose.
+- Consolidated startup keyframes into one user-authored `home` pose with a raised lift, slight arm extension, and open gripper.
 
 ## [2026-08-24]
 - Initial library package from hello-robot/stretch4_mujoco, using the Critter project edits: robot-only scene and assigned visual materials.
