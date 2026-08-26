@@ -1,7 +1,11 @@
 <mujoco model="stretch">
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
 
-  <option integrator="implicitfast" impratio="1" cone="pyramidal" noslip_iterations="0"/>
+  <option integrator="implicitfast" impratio="20" cone="elliptic" noslip_iterations="5">
+    <flag multiccd="enable" />
+  </option>
+
+  <size njmax="5000" nconmax="5000" />
 
   <default>
     <default class="stretch">

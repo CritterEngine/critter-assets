@@ -22,7 +22,7 @@ This package contains the robot description (MJCF) of the [Hello Robot Stretch 4
 3. Rewrote mesh paths to `assets/` and copied the corresponding visual and collision meshes.
 4. Kept source default classes (`visualgeom`, `collision`, `rubber`, `omniwheel_collision`) so visual meshes stay non-colliding, gripper pads keep rubber contact, and the omni wheels keep capsule collision.
 5. Applied the Critter project visual materials.
-6. Split lidar into a library variant: `stretch.xml` has no lidar, and `stretch_lidar.xml` keeps the head HemiLidar frames/cameras plus the base 360° rangefinder sampled at 10 Hz. Scene physics uses pyramidal cone, impratio 1, and noslip iterations 0.
+6. Split lidar into a library variant: `stretch.xml` has no lidar, and `stretch_lidar.xml` keeps the head HemiLidar frames/cameras plus the base 360° rangefinder sampled at 10 Hz. Scene physics retains the upstream elliptic cone, impratio 20, noslip iterations 5, multiccd, and contact-buffer settings.
 7. Added `scene.xml` which includes the robot with a ground plane and the upstream floor-to-wheel contact pairs.
 
 ## License
