@@ -160,7 +160,8 @@
       "folder": "robots",
       "source": "critter-assets",
       "xmlFilename": "stretch.xml",
-      "xmlPath": "robots/hello_robot_stretch_4/stretch.xml"
+      "xmlPath": "robots/hello_robot_stretch_4/stretch.xml",
+      "spawnKeyframe": "spawn"
     },
     {
       "id": "i2rt_yam",
