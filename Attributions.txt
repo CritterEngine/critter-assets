@@ -1,5 +1,17 @@
 ﻿# Third-Party Attributions
 
+## Robotiq 3F Gripper
+
+Location: attachments/robotiq_3f/
+License: Apache License 2.0
+Source: https://github.com/cyberbotics/webots/blob/R2025a/projects/devices/robotiq/protos/Robotiq3fGripper.proto
+
+The Webots IndexedFaceSet geometry was converted to OBJ, and the model was ported to MuJoCo MJCF
+with Critter attachment sites, MuJoCo actuators, collision shapes, and contact parameters. A copy of
+the license and a modification notice are included with the asset.
+
+---
+
 ## TetherIA Aero Hand Open
 
 Location: grippers/tetheria_aero_hand_open/

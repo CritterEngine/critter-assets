@@ -1,0 +1,12 @@
+Robotiq 3F Gripper model
+
+Derived from the Robotiq3fGripper PROTO distributed in Cyberbotics Webots R2025a:
+https://github.com/cyberbotics/webots/blob/R2025a/projects/devices/robotiq/protos/Robotiq3fGripper.proto
+
+Upstream work is licensed under the Apache License, Version 2.0.
+
+Modifications:
+- Converted the six inline Webots IndexedFaceSet geometries to triangulated OBJ files.
+- Ported the Webots rigid-body and hinge hierarchy to MuJoCo MJCF.
+- Reoriented the model to Critter's +Z tool axis and added attachment/tool-center sites.
+- Added MuJoCo actuators, contact settings, and named open/closed keyframes.
