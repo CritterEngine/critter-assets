@@ -1,61 +1,81 @@
 <mujoco model="conveyor">
-  <compiler angle="radian"/>
+  <compiler angle="radian" meshdir="meshes"/>
   <option timestep="0.002"/>
 
   <asset>
-    <material name="conveyor_frame_mat" rgba="0.12 0.13 0.15 1" roughness="0.6"/>
-    <material name="conveyor_belt_mat" rgba="0.02 0.02 0.025 1" roughness="0.85"/>
-    <material name="conveyor_roller_mat" rgba="0.45 0.48 0.5 1" metallic="0.2" roughness="0.35"/>
+    <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_belt_mat" rgba="0.035 0.04 0.045 1" metallic="0" roughness="0.88"/>
+    <mesh name="conveyor_visual_0" file="visual_0.obj" inertia="shell"/>
+    <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
+    <mesh name="conveyor_visual_2" file="visual_2.obj" inertia="shell"/>
+    <mesh name="conveyor_visual_3" file="visual_3.obj" inertia="shell"/>
+    <mesh name="conveyor_belt_visual" file="visual_4.obj" inertia="shell"/>
   </asset>
 
   <worldbody>
     <body name="conveyor" pos="0 0 0">
-      <geom name="conveyor_frame" type="box" size="0.75 0.34 0.06" pos="0 0 0.06"
-            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
-      <geom name="conveyor_left_rail" type="box" size="0.78 0.025 0.055" pos="0 0.36 0.17"
-            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
-      <geom name="conveyor_right_rail" type="box" size="0.78 0.025 0.055" pos="0 -0.36 0.17"
-            material="conveyor_frame_mat" contype="0" conaffinity="0" group="1"/>
-      <geom name="conveyor_front_roller" type="cylinder" size="0.06 0.32" pos="0.72 0 0.17"
-            euler="1.57079632679 0 0" material="conveyor_roller_mat" contype="0" conaffinity="0" group="1"/>
-      <geom name="conveyor_back_roller" type="cylinder" size="0.06 0.32" pos="-0.72 0 0.17"
-            euler="1.57079632679 0 0" material="conveyor_roller_mat" contype="0" conaffinity="0" group="1"/>
+      <!-- The catalog mesh is visual-only. Stable primitive collision remains independent of it. -->
+      <geom name="conveyor_visual_0" type="mesh" mesh="conveyor_visual_0"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_visual_1" type="mesh" mesh="conveyor_visual_1"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_visual_2" type="mesh" mesh="conveyor_visual_2"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_visual_3" type="mesh" mesh="conveyor_visual_3"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_belt_visual" type="mesh" mesh="conveyor_belt_visual"
+            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
 
-      <body name="conveyor_belt_segment_0" pos="-0.6 0 0.23">
-        <joint name="conveyor_belt_segment_0_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
-        <geom name="conveyor_belt_segment_0_contact" type="box" size="0.15 0.3 0.025"
-              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+      <!-- Simplified frame/rail collision; these boxes stop below or beside the moving belt surface. -->
+      <geom name="conveyor_frame_collision" type="box"
+            pos="0.0179964 -0.000125 0.3527419" size="0.5205209 0.7775945 0.3527419"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="conveyor_left_rail_collision" type="box"
+            pos="-0.4912142 -0.000125 0.7242926" size="0.097543 1.24975 0.21227"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="conveyor_right_rail_collision" type="box"
+            pos="0.5092106 -0.000125 0.8212732" size="0.0795466 1.24975 0.1152895"
+            group="3" rgba="0 0 0 0"/>
+
+      <!-- Five synchronized tiles form a continuous 2.5 m moving contact surface along local Y. -->
+      <body name="conveyor_belt_segment_0" pos="0.0179964 -1 0.88">
+        <joint name="conveyor_belt_segment_0_slide" type="slide" axis="0 1 0"
+               range="-0.25 0.25" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_0_contact" type="box" size="0.39 0.25 0.0125"
+              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
       </body>
-      <body name="conveyor_belt_segment_1" pos="-0.3 0 0.23">
-        <joint name="conveyor_belt_segment_1_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
-        <geom name="conveyor_belt_segment_1_contact" type="box" size="0.15 0.3 0.025"
-              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+      <body name="conveyor_belt_segment_1" pos="0.0179964 -0.5 0.88">
+        <joint name="conveyor_belt_segment_1_slide" type="slide" axis="0 1 0"
+               range="-0.25 0.25" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_1_contact" type="box" size="0.39 0.25 0.0125"
+              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
       </body>
-      <body name="conveyor_belt_segment_2" pos="0 0 0.23">
-        <joint name="conveyor_belt_segment_2_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
-        <geom name="conveyor_belt_segment_2_contact" type="box" size="0.15 0.3 0.025"
-              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+      <body name="conveyor_belt_segment_2" pos="0.0179964 0 0.88">
+        <joint name="conveyor_belt_segment_2_slide" type="slide" axis="0 1 0"
+               range="-0.25 0.25" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_2_contact" type="box" size="0.39 0.25 0.0125"
+              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
       </body>
-      <body name="conveyor_belt_segment_3" pos="0.3 0 0.23">
-        <joint name="conveyor_belt_segment_3_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
-        <geom name="conveyor_belt_segment_3_contact" type="box" size="0.15 0.3 0.025"
-              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+      <body name="conveyor_belt_segment_3" pos="0.0179964 0.5 0.88">
+        <joint name="conveyor_belt_segment_3_slide" type="slide" axis="0 1 0"
+               range="-0.25 0.25" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_3_contact" type="box" size="0.39 0.25 0.0125"
+              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
       </body>
-      <body name="conveyor_belt_segment_4" pos="0.6 0 0.23">
-        <joint name="conveyor_belt_segment_4_slide" type="slide" axis="1 0 0" range="-0.15 0.15" limited="false" damping="0"/>
-        <geom name="conveyor_belt_segment_4_contact" type="box" size="0.15 0.3 0.025"
-              material="conveyor_belt_mat" mass="0.02" condim="6" friction="1.8 0.08 0.02"
+      <body name="conveyor_belt_segment_4" pos="0.0179964 1 0.88">
+        <joint name="conveyor_belt_segment_4_slide" type="slide" axis="0 1 0"
+               range="-0.25 0.25" limited="false" damping="0"/>
+        <geom name="conveyor_belt_segment_4_contact" type="box" size="0.39 0.25 0.0125"
+              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
       </body>
     </body>
   </worldbody>
 
-  <!-- Chain joint equalities: q(i+1)=q(i), so all belt slides stay in sync. Named rows for strict
-       parsers; chain avoids some builds flagging redundant constraints when one joint is joint1 many times. -->
   <equality>
     <joint name="belt_eq_0_1" joint1="conveyor_belt_segment_0_slide" joint2="conveyor_belt_segment_1_slide" polycoef="0 1 0 0 0"/>
     <joint name="belt_eq_1_2" joint1="conveyor_belt_segment_1_slide" joint2="conveyor_belt_segment_2_slide" polycoef="0 1 0 0 0"/>
