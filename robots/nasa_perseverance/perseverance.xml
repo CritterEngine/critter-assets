@@ -1,0 +1,327 @@
+<mujoco model="nasa_perseverance">
+  <!-- Simulation-ready approximation from JPL visualization URDF.
+       Not a flight-accurate dynamics model. Credit NASA/JPL-Caltech. -->
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" cone="elliptic" impratio="10"/>
+  <default>
+    <default class="rover">
+      <joint damping="2" armature="0.2"/>
+      <default class="visual">
+        <geom type="mesh" material="rover" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3" contype="1" conaffinity="1" solref="0.01 1"/>
+      </default>
+      <default class="wheel">
+        <joint damping="0.15" armature="0.4" frictionloss="0.5"/>
+        <geom type="cylinder" group="3" condim="3" friction="1.4 0.8 0.005" solref="0.015 1" solimp="0.9 0.95 0.001"/>
+      </default>
+      <default class="steer">
+        <joint damping="2" armature="0.3" limited="true" range="-1.57 1.57"/>
+      </default>
+      <default class="suspension">
+        <joint damping="80" armature="0.5" limited="true"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="rover" file="M2020_Rover_Texture.png"/>
+    <material name="rover" texture="rover" texuniform="false" rgba="1 1 1 1" metallic="0" roughness="1"/>
+    <mesh name="chassis" file="chassis.obj"/>
+    <mesh name="rocker_left" file="rocker_left.obj"/>
+    <mesh name="bogie_left" file="bogie_left.obj"/>
+    <mesh name="steer_lr" file="steer_lr.obj"/>
+    <mesh name="wheel_lr" file="wheel_lr.obj"/>
+    <mesh name="wheel_lm" file="wheel_lm.obj"/>
+    <mesh name="steer_lf" file="steer_lf.obj"/>
+    <mesh name="wheel_lf" file="wheel_lf.obj"/>
+    <mesh name="rocker_right" file="rocker_right.obj"/>
+    <mesh name="bogie_right" file="bogie_right.obj"/>
+    <mesh name="steer_rr" file="steer_rr.obj"/>
+    <mesh name="wheel_rr" file="wheel_rr.obj"/>
+    <mesh name="wheel_rm" file="wheel_rm.obj"/>
+    <mesh name="steer_rf" file="steer_rf.obj"/>
+    <mesh name="wheel_rf" file="wheel_rf.obj"/>
+    <mesh name="rsm_az" file="rsm_az.obj"/>
+    <mesh name="rsm_el" file="rsm_el.obj"/>
+    <mesh name="hga_az" file="hga_az.obj"/>
+    <mesh name="hga_el" file="hga_el.obj"/>
+    <mesh name="ra_link1" file="ra_link1.obj"/>
+    <mesh name="ra_link2" file="ra_link2.obj"/>
+    <mesh name="ra_link3" file="ra_link3.obj"/>
+    <mesh name="ra_link4" file="ra_link4.obj"/>
+    <mesh name="ra_link5" file="ra_link5.obj"/>
+    <mesh name="turret" file="turret.obj"/>
+    <mesh name="corer_feed" file="corer_feed.obj"/>
+    <mesh name="stabilizer_far" file="stabilizer_far.obj"/>
+    <mesh name="stabilizer_near" file="stabilizer_near.obj"/>
+    <mesh name="watson_cap" file="watson_cap.obj"/>
+    <mesh name="sherloc_cap" file="sherloc_cap.obj"/>
+    <mesh name="differential" file="differential.obj"/>
+  </asset>
+  <worldbody>
+    <body name="chassis" pos="0 0 0.002412" childclass="rover">
+      <light name="tracking" mode="trackcom" pos="0 0 3"/>
+      <freejoint name="root"/>
+      <inertial pos="-0.128995 -0.0673295 1.204377" mass="652.255" diaginertia="244.192 587.067 650.916"/>
+      <geom mesh="chassis" class="visual"/>
+      <geom mesh="differential" class="visual"/>
+      <geom name="chassis_collision" class="collision" type="box" size="0.85 0.45 0.22" pos="0.05 0 0.95"/>
+      <body name="rocker_left" pos="0.30402 0.79959 0.89288" quat="1 0 0 0" childclass="rover">
+        <joint name="left_rocker" class="suspension" type="hinge" axis="0 -1 0" limited="true" range="-0.35 0.35"/>
+        <inertial pos="0.069102 0.1306575 -0.108713" mass="30.6944" diaginertia="0.904382 8.50565 8.60951"/>
+        <geom mesh="rocker_left" class="visual"/>
+        <geom name="rocker_left_collision" class="collision" type="box" size="0.55 0.06 0.06" pos="0.069102 0.1306575 -0.108713"/>
+        <body name="bogie_left" pos="-0.754 0.12 -0.23" quat="1 0 0 0" childclass="rover">
+          <joint name="left_bogie" class="suspension" type="hinge" axis="0 -1 0" limited="true" range="-0.4 0.4"/>
+          <inertial pos="-0.050438 0.077519 -0.1363555" mass="21.1024" diaginertia="1.24746 3.76493 3.48635"/>
+          <geom mesh="bogie_left" class="visual"/>
+          <geom name="bogie_left_collision" class="collision" type="box" size="0.38 0.06 0.06" pos="-0.050438 0.077519 -0.1363555"/>
+          <body name="steer_lr" pos="-0.625 0.14291 -0.4" quat="1 0 0 0" childclass="rover">
+            <joint name="lr_steer" class="steer" type="hinge" axis="0 0 -1" limited="true" range="-1.57 1.57"/>
+            <inertial pos="8e-05 -0.1126225 0.177625" mass="9.59199" diaginertia="0.338112 0.22318 0.184669"/>
+            <geom mesh="steer_lr" class="visual"/>
+            <geom name="steer_lr_collision" class="collision" type="cylinder" size="0.07 0.11" pos="0 0 0.30"/>
+            <body name="wheel_lr" pos="0 0 0" quat="1 0 0 0" childclass="rover">
+              <joint name="lr_drive" class="wheel" type="hinge" axis="0 1 0"/>
+              <inertial pos="-0.0002 -4e-06 -0.000413" mass="19.184" diaginertia="0.486278 0.623125 0.486278"/>
+              <geom mesh="wheel_lr" class="visual"/>
+              <geom name="wheel_lr_collision" class="wheel" size="0.254879 0.045" pos="-0.0002 -4e-06 -0.000413" euler="1.570796 0 0"/>
+            </body>
+          </body>
+          <body name="wheel_lm" pos="0.44998 0.26491 -0.4" quat="1 0 0 0" childclass="rover">
+            <joint name="lm_drive" class="wheel" type="hinge" axis="0 1 0"/>
+            <inertial pos="-0.0001785 -0.002005 -0.000414" mass="19.184" diaginertia="0.484761 0.620086 0.484761"/>
+            <geom mesh="wheel_lm" class="visual"/>
+            <geom name="wheel_lm_collision" class="wheel" size="0.254256 0.045" pos="-0.0001785 -0.002005 -0.000414" euler="1.570796 0 0"/>
+          </body>
+        </body>
+        <body name="steer_lf" pos="0.881 0.26291 -0.63" quat="1 0 0 0" childclass="rover">
+          <joint name="lf_steer" class="steer" type="hinge" axis="0 0 -1" limited="true" range="-1.57 1.57"/>
+          <inertial pos="-0.0063445 -0.1498865 0.2566045" mass="9.59199" diaginertia="0.582526 0.373005 0.287876"/>
+          <geom mesh="steer_lf" class="visual"/>
+          <geom name="steer_lf_collision" class="collision" type="cylinder" size="0.07 0.11" pos="0 0 0.30"/>
+          <body name="wheel_lf" pos="0 0 0" quat="1 0 0 0" childclass="rover">
+            <joint name="lf_drive" class="wheel" type="hinge" axis="0 1 0"/>
+            <inertial pos="-0.0001985 -4e-06 -0.000413" mass="19.184" diaginertia="0.486276 0.623121 0.486276"/>
+            <geom mesh="wheel_lf" class="visual"/>
+            <geom name="wheel_lf_collision" class="wheel" size="0.254878 0.045" pos="-0.0001985 -4e-06 -0.000413" euler="1.570796 0 0"/>
+          </body>
+        </body>
+      </body>
+      <body name="rocker_right" pos="0.30402 -0.79959 0.89288" quat="1 0 0 0" childclass="rover">
+        <joint name="right_rocker" class="suspension" type="hinge" axis="0 -1 0" limited="true" range="-0.35 0.35"/>
+        <inertial pos="0.069102 -0.1306575 -0.108713" mass="30.6944" diaginertia="0.904382 8.50565 8.60951"/>
+        <geom mesh="rocker_right" class="visual"/>
+        <geom name="rocker_right_collision" class="collision" type="box" size="0.55 0.06 0.06" pos="0.069102 -0.1306575 -0.108713"/>
+        <body name="bogie_right" pos="-0.754 -0.12 -0.23" quat="1 0 0 0" childclass="rover">
+          <joint name="right_bogie" class="suspension" type="hinge" axis="0 -1 0" limited="true" range="-0.4 0.4"/>
+          <inertial pos="-0.050438 -0.077519 -0.1363555" mass="21.1024" diaginertia="1.24746 3.76493 3.48635"/>
+          <geom mesh="bogie_right" class="visual"/>
+          <geom name="bogie_right_collision" class="collision" type="box" size="0.38 0.06 0.06" pos="-0.050438 -0.077519 -0.1363555"/>
+          <body name="steer_rr" pos="-0.625 -0.14291 -0.4" quat="1 0 0 0" childclass="rover">
+            <joint name="rr_steer" class="steer" type="hinge" axis="0 0 -1" limited="true" range="-1.57 1.57"/>
+            <inertial pos="8e-05 0.1126225 0.177625" mass="9.59199" diaginertia="0.338112 0.22318 0.184669"/>
+            <geom mesh="steer_rr" class="visual"/>
+            <geom name="steer_rr_collision" class="collision" type="cylinder" size="0.07 0.11" pos="0 0 0.30"/>
+            <body name="wheel_rr" pos="0 0 0" quat="1 0 0 0" childclass="rover">
+              <joint name="rr_drive" class="wheel" type="hinge" axis="0 1 0"/>
+              <inertial pos="-0.0001865 -6e-06 -0.000414" mass="19.184" diaginertia="0.486269 0.623107 0.486269"/>
+              <geom mesh="wheel_rr" class="visual"/>
+              <geom name="wheel_rr_collision" class="wheel" size="0.254875 0.045" pos="-0.0001865 -6e-06 -0.000414" euler="1.570796 0 0"/>
+            </body>
+          </body>
+          <body name="wheel_rm" pos="0.44998 -0.26491 -0.4" quat="1 0 0 0" childclass="rover">
+            <joint name="rm_drive" class="wheel" type="hinge" axis="0 1 0"/>
+            <inertial pos="-0.0001815 5e-06 -0.000412" mass="19.184" diaginertia="0.486086 0.622737 0.486086"/>
+            <geom mesh="wheel_rm" class="visual"/>
+            <geom name="wheel_rm_collision" class="wheel" size="0.254799 0.045" pos="-0.0001815 5e-06 -0.000412" euler="1.570796 0 0"/>
+          </body>
+        </body>
+        <body name="steer_rf" pos="0.881 -0.26291 -0.63" quat="1 0 0 0" childclass="rover">
+          <joint name="rf_steer" class="steer" type="hinge" axis="0 0 -1" limited="true" range="-1.57 1.57"/>
+          <inertial pos="-0.0063445 0.1498865 0.2566045" mass="9.59199" diaginertia="0.582526 0.373005 0.287876"/>
+          <geom mesh="steer_rf" class="visual"/>
+          <geom name="steer_rf_collision" class="collision" type="cylinder" size="0.07 0.11" pos="0 0 0.30"/>
+          <body name="wheel_rf" pos="0 0 0" quat="1 0 0 0" childclass="rover">
+            <joint name="rf_drive" class="wheel" type="hinge" axis="0 1 0"/>
+            <inertial pos="-0.0001975 4e-06 -0.000414" mass="19.184" diaginertia="0.486274 0.623116 0.486274"/>
+            <geom mesh="wheel_rf" class="visual"/>
+            <geom name="wheel_rf_collision" class="wheel" size="0.254877 0.045" pos="-0.0001975 4e-06 -0.000414" euler="1.570796 0 0"/>
+          </body>
+        </body>
+      </body>
+      <body name="rsm_az" pos="0.804037 -0.559028 1.91927" quat="-0.008726216 0 0 0.99996193" childclass="rover">
+        <joint name="mast_az" class="rover" type="hinge" axis="0 0 -1" limited="true" range="0 6.31809"/>
+        <inertial pos="-1.15e-05 -7.9e-05 -0.084906" mass="7.67359" diaginertia="0.0867923 0.0874965 0.0661379"/>
+        <geom mesh="rsm_az" class="visual"/>
+        <geom name="rsm_az_collision" class="collision" type="box" size="0.062868575 0.0622028 0.07996945" pos="-1.15e-05 -7.9e-05 -0.084906"/>
+        <body name="rsm_el" pos="0 0 0" quat="0.70090818 -1.8762999e-06 0.71325151 1.8762999e-06" childclass="rover">
+          <joint name="mast_el" class="rover" type="hinge" axis="0 -1 0" limited="true" range="0 3.1765"/>
+          <inertial pos="-0.0122145 0.0035235 0.0775645" mass="11.5104" diaginertia="0.499595 0.298602 0.377966"/>
+          <geom mesh="rsm_el" class="visual"/>
+          <geom name="rsm_el_collision" class="collision" type="box" size="0.083524925 0.15107318 0.12870853" pos="-0.0122145 0.0035235 0.0775645"/>
+        </body>
+      </body>
+      <body name="hga_az" pos="-0.36998 0.475 1.13288" quat="0.97629604 0 0 -0.21643946" childclass="rover">
+        <joint name="hga_az" class="rover" type="hinge" axis="0 0 -1"/>
+        <inertial pos="-0.053 -4.15e-05 0.1942195" mass="2.8776" diaginertia="0.0184475 0.0375912 0.0350012"/>
+        <geom mesh="hga_az" class="visual"/>
+        <geom name="hga_az_collision" class="collision" type="box" size="0.0924 0.050004625 0.057595725" pos="-0.053 -4.15e-05 0.1942195"/>
+        <body name="hga_el" pos="0 0 0.248" quat="0.92387956 0.38268336 0 0" childclass="rover">
+          <joint name="hga_el" class="rover" type="hinge" axis="1 0 0"/>
+          <inertial pos="0.201444 0.010474 0.0111135" mass="4.79599" diaginertia="0.0493675 0.0593756 0.0593861"/>
+          <geom mesh="hga_el" class="visual"/>
+          <geom name="hga_el_collision" class="collision" type="box" size="0.0810271 0.0683496 0.068335025" pos="0.201444 0.010474 0.0111135"/>
+        </body>
+      </body>
+      <body name="ra_base" pos="0.09002 0 1.13338" quat="1 0 0 0" childclass="rover">
+        <inertial pos="0 0 0" mass="1.9184" diaginertia="0.00319733 0.00319733 0.00319733"/>
+        <geom class="collision" type="box" size="0.04 0.04 0.04"/>
+        <body name="ra_link1" pos="1.1756 0.4515 -0.3116" quat="1 0 0 0" childclass="rover">
+          <joint name="arm_joint1" class="rover" type="hinge" axis="0 0 -1" limited="true" range="-3.145 1.592"/>
+          <inertial pos="0.081965 0.0124565 0.0231115" mass="11.5104" diaginertia="0.234326 0.263808 0.288002"/>
+          <geom mesh="ra_link1" class="visual"/>
+          <geom name="ra_link1_collision" class="collision" type="capsule" size="0.0642416 0.203405" pos="0.081965 0.0124565 0.0231115" euler="0 1.570796 0"/>
+          <body name="ra_link2" pos="0.166 0 0" quat="1 0 0 0" childclass="rover">
+            <joint name="arm_joint2" class="rover" type="hinge" axis="0 1 0" limited="true" range="-3.267 0.126"/>
+            <inertial pos="0.41712 -0.1613765 4.45e-05" mass="15.3472" diaginertia="0.123573 1.32786 1.35358"/>
+            <geom mesh="ra_link2" class="visual"/>
+            <geom name="ra_link2_collision" class="collision" type="capsule" size="0.0422781 0.5" pos="0.41712 -0.1613765 4.45e-05" euler="0 1.570796 0"/>
+            <body name="ra_link3" pos="0.8194 0 0" quat="1 0 0 0" childclass="rover">
+              <joint name="arm_joint3" class="rover" type="hinge" axis="0 1 0" limited="true" range="-2.866 2.866"/>
+              <inertial pos="0.3702 0.0059495 0.001224" mass="13.4288" diaginertia="0.200187 1.08757 1.15983"/>
+              <geom mesh="ra_link3" class="visual"/>
+              <geom name="ra_link3_collision" class="collision" type="capsule" size="0.0610573 0.4782" pos="0.3702 0.0059495 0.001224" euler="0 1.570796 0"/>
+              <body name="ra_link4" pos="0.7533 0 0" quat="1 0 0 0" childclass="rover">
+                <joint name="arm_joint4" class="rover" type="hinge" axis="0 1 0" limited="true" range="-0.178 3.669"/>
+                <inertial pos="-0.104065 -0.171089 -0.0279455" mass="9.59199" diaginertia="0.130314 0.195047 0.156247"/>
+                <geom mesh="ra_link4" class="visual"/>
+                <geom name="ra_link4_collision" class="collision" type="capsule" size="0.0569179 0.185895" pos="-0.104065 -0.171089 -0.0279455" euler="0 1.570796 0"/>
+                <body name="ra_link5" pos="-0.1757 -0.1791 0" quat="1 0 0 0" childclass="rover">
+                  <joint name="arm_joint5" class="rover" type="hinge" axis="0 0 -1" limited="true" range="-0.353 6.636"/>
+                  <inertial pos="-0.00308 -0.0086275 0.114969" mass="7.67359" diaginertia="0.0829243 0.0742939 0.112818"/>
+                  <geom mesh="ra_link5" class="visual"/>
+                  <geom name="ra_link5_collision" class="collision" type="capsule" size="0.0499485 0.154079" pos="-0.00308 -0.0086275 0.114969" euler="1.570796 0 0"/>
+                  <body name="turret" pos="-2.7386 -0.2724 0.3116" quat="1 0 0 0" childclass="rover">
+                    <inertial pos="2.721945 0.2656075 0.0079265" mass="21.1024" diaginertia="0.943939 1.05246 1.66268"/>
+                    <geom mesh="turret" class="visual"/>
+                    <geom name="turret_collision" class="collision" type="capsule" size="0.116331 0.354825" pos="2.721945 0.2656075 0.0079265" euler="0 1.570796 0"/>
+                    <body name="corer_feed" pos="2.5301 0.272349 0.0168656" quat="1 0 0 0" childclass="rover">
+                      <joint name="drill_feed" class="rover" type="slide" axis="1 0 0" limited="true" range="0 0.12"/>
+                      <inertial pos="0.4319185 -2.75e-05 0.0003385" mass="3.8368" diaginertia="0.00270857 0.00680239 0.00683302"/>
+                      <geom mesh="corer_feed" class="visual"/>
+                      <geom name="corer_feed_collision" class="collision" type="capsule" size="0.035 0.0653595" pos="0.4319185 -2.75e-05 0.0003385" euler="0 1.570796 0"/>
+                    </body>
+                    <body name="stabilizer_far" pos="2.5301 0.272349 0.0168656" quat="1 0 0 0" childclass="rover">
+                      <joint name="stabilizer_lower" class="rover" type="slide" axis="-1 0 0" limited="true" range="0 0.12"/>
+                      <inertial pos="0.304999 6e-05 -0.0801865" mass="1.4388" diaginertia="0.000220247 0.0372965 0.0373214"/>
+                      <geom mesh="stabilizer_far" class="visual"/>
+                      <geom name="stabilizer_far_collision" class="collision" type="capsule" size="0.035 0.2785" pos="0.304999 6e-05 -0.0801865" euler="0 1.570796 0"/>
+                    </body>
+                    <body name="stabilizer_near" pos="2.5301 0.272349 0.0168656" quat="1 0 0 0" childclass="rover">
+                      <joint name="stabilizer_upper" class="rover" type="slide" axis="-1 0 0" limited="true" range="0 0.12"/>
+                      <inertial pos="0.304999 5.95e-05 0.080255" mass="1.4388" diaginertia="0.000220522 0.0372965 0.0373217"/>
+                      <geom mesh="stabilizer_near" class="visual"/>
+                      <geom name="stabilizer_near_collision" class="collision" type="capsule" size="0.035 0.2785" pos="0.304999 5.95e-05 0.080255" euler="0 1.570796 0"/>
+                    </body>
+                    <body name="watson_cap" pos="2.6025 0.581204 0.0309103" quat="1 0 0 0" childclass="rover">
+                      <joint name="watson_cap" class="rover" type="hinge" axis="0 0 1" limited="true" range="-0.2 1.8"/>
+                      <inertial pos="0.019445 0.0075315 0.000315" mass="0.767359" diaginertia="0.000187565 0.000293826 0.000161428"/>
+                      <geom mesh="watson_cap" class="visual"/>
+                      <geom name="watson_cap_collision" class="collision" type="box" size="0.01258125 0.005711475 0.01375495" pos="0.019445 0.0075315 0.000315"/>
+                    </body>
+                    <body name="sherloc_cap" pos="2.86084 0.58439 -0.0124626" quat="1 0 0 0" childclass="rover">
+                      <joint name="sherloc_cap" class="rover" type="hinge" axis="0 0 1" limited="true" range="-0.2 1.8"/>
+                      <inertial pos="0.019745 -0.0068005 -0.0069615" mass="0.767359" diaginertia="0.000182889 0.000295573 0.000159943"/>
+                      <geom mesh="sherloc_cap" class="visual"/>
+                      <geom name="sherloc_cap_collision" class="collision" type="box" size="0.01269675 0.0055 0.013723875" pos="0.019745 -0.0068005 -0.0069615"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="chassis" body2="wheel_lf"/>
+    <exclude body1="chassis" body2="wheel_lm"/>
+    <exclude body1="chassis" body2="wheel_lr"/>
+    <exclude body1="chassis" body2="wheel_rf"/>
+    <exclude body1="chassis" body2="wheel_rm"/>
+    <exclude body1="chassis" body2="wheel_rr"/>
+    <exclude body1="chassis" body2="steer_lf"/>
+    <exclude body1="chassis" body2="steer_lr"/>
+    <exclude body1="chassis" body2="steer_rf"/>
+    <exclude body1="chassis" body2="steer_rr"/>
+    <exclude body1="chassis" body2="bogie_left"/>
+    <exclude body1="chassis" body2="bogie_right"/>
+    <exclude body1="chassis" body2="rocker_left"/>
+    <exclude body1="chassis" body2="rocker_right"/>
+    <exclude body1="chassis" body2="ra_link1"/>
+    <exclude body1="chassis" body2="ra_link2"/>
+    <exclude body1="chassis" body2="ra_link3"/>
+    <exclude body1="chassis" body2="ra_base"/>
+    <exclude body1="chassis" body2="turret"/>
+    <exclude body1="rocker_left" body2="wheel_lf"/>
+    <exclude body1="rocker_left" body2="wheel_lm"/>
+    <exclude body1="rocker_left" body2="wheel_lr"/>
+    <exclude body1="rocker_left" body2="steer_lf"/>
+    <exclude body1="rocker_left" body2="steer_lr"/>
+    <exclude body1="rocker_right" body2="wheel_rf"/>
+    <exclude body1="rocker_right" body2="wheel_rm"/>
+    <exclude body1="rocker_right" body2="wheel_rr"/>
+    <exclude body1="rocker_right" body2="steer_rf"/>
+    <exclude body1="rocker_right" body2="steer_rr"/>
+    <exclude body1="bogie_left" body2="wheel_lr"/>
+    <exclude body1="bogie_left" body2="steer_lr"/>
+    <exclude body1="bogie_right" body2="wheel_rr"/>
+    <exclude body1="bogie_right" body2="steer_rr"/>
+    <exclude body1="steer_lf" body2="ra_link1"/>
+    <exclude body1="steer_lf" body2="ra_link2"/>
+    <exclude body1="steer_rf" body2="ra_link1"/>
+    <exclude body1="steer_rf" body2="ra_link2"/>
+    <exclude body1="wheel_lf" body2="ra_link1"/>
+    <exclude body1="ra_link1" body2="ra_link3"/>
+    <exclude body1="ra_link1" body2="ra_link4"/>
+    <exclude body1="ra_link2" body2="ra_link4"/>
+    <exclude body1="ra_link2" body2="ra_link5"/>
+    <exclude body1="ra_link3" body2="ra_link5"/>
+    <exclude body1="ra_link3" body2="turret"/>
+  </contact>
+  <equality>
+    <joint name="rocker_differential" joint1="left_rocker" joint2="right_rocker" polycoef="0 -1 0 0 0" solref="0.02 1"/>
+  </equality>
+  <actuator>
+    <velocity name="lf_drive" joint="lf_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <velocity name="lm_drive" joint="lm_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <velocity name="lr_drive" joint="lr_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <velocity name="rf_drive" joint="rf_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <velocity name="rm_drive" joint="rm_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <velocity name="rr_drive" joint="rr_drive" kv="80" ctrllimited="true" ctrlrange="-8 8"/>
+    <position name="lf_steer" joint="lf_steer" kp="800" kv="40" ctrlrange="-1.57 1.57"/>
+    <position name="rf_steer" joint="rf_steer" kp="800" kv="40" ctrlrange="-1.57 1.57"/>
+    <position name="lr_steer" joint="lr_steer" kp="800" kv="40" ctrlrange="-1.57 1.57"/>
+    <position name="rr_steer" joint="rr_steer" kp="800" kv="40" ctrlrange="-1.57 1.57"/>
+    <position name="mast_az_hold" joint="mast_az" kp="2200" kv="200"/>
+    <position name="mast_el_hold" joint="mast_el" kp="2200" kv="200"/>
+    <position name="hga_az_hold" joint="hga_az" kp="2200" kv="200"/>
+    <position name="hga_el_hold" joint="hga_el" kp="2200" kv="200"/>
+    <position name="arm_joint1_hold" joint="arm_joint1" kp="2200" kv="200"/>
+    <position name="arm_joint2_hold" joint="arm_joint2" kp="2200" kv="200"/>
+    <position name="arm_joint3_hold" joint="arm_joint3" kp="2200" kv="200"/>
+    <position name="arm_joint4_hold" joint="arm_joint4" kp="2200" kv="200"/>
+    <position name="arm_joint5_hold" joint="arm_joint5" kp="2200" kv="200"/>
+    <position name="drill_feed_hold" joint="drill_feed" kp="2200" kv="200"/>
+    <position name="stabilizer_lower_hold" joint="stabilizer_lower" kp="2200" kv="200"/>
+    <position name="stabilizer_upper_hold" joint="stabilizer_upper" kp="2200" kv="200"/>
+    <position name="watson_cap_hold" joint="watson_cap" kp="2200" kv="200"/>
+    <position name="sherloc_cap_hold" joint="sherloc_cap" kp="2200" kv="200"/>
+  </actuator>
+  <keyframe>
+    <key name="home" qpos="0 0 0.002412 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>

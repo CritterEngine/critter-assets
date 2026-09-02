@@ -1,0 +1,9 @@
+NASA Perseverance rover model
+Credit: NASA/JPL-Caltech
+Rover modeling and texturing by Zareh Gorjian
+Source: https://github.com/nasa-jpl/m2020-urdf-models
+Release ids: URS307049, URS309682
+
+This is a simulation-ready approximation for Critter, not a flight-accurate
+dynamics model. NASA does not endorse Critter. Do not use the NASA logo or
+Insignia as branding.

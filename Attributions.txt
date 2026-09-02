@@ -574,6 +574,18 @@ A copy of the license is included at robots/universal_robots_ur10e/LICENSE when 
 
 ---
 
+## NASA Perseverance
+
+Location: robots/nasa_perseverance/
+License: NASA/JPL public release (URS307049, URS309682). Credit NASA/JPL-Caltech.
+Source: https://github.com/nasa-jpl/m2020-urdf-models
+
+Rover modeling and texturing by Zareh Gorjian. Converted to an approximate MuJoCo
+model for Critter; this is not a flight-accurate dynamics model. NASA does not
+endorse Critter. Do not use the NASA logo or Insignia as branding.
+
+---
+
 ## Wonik Allegro
 
 Location: robots/wonik_allegro/
