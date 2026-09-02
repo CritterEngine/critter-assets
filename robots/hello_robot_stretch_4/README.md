@@ -24,6 +24,7 @@ This package contains the robot description (MJCF) of the [Hello Robot Stretch 4
 5. Applied the Critter project visual materials.
 6. Split lidar into a library variant: `stretch.xml` has no lidar, and `stretch_lidar.xml` keeps the head HemiLidar frames/cameras plus the base 360° rangefinder sampled at 10 Hz. Its rangefinder `user="1 0 0 0 0 0"` metadata asks Critter to raycast only against scene geom group 0, matching the upstream runtime and preventing the robot from sensing its own base. Scene physics retains the upstream elliptic cone, impratio 20, noslip iterations 5, multiccd, and contact-buffer settings.
 7. Added `scene.xml` which includes the robot with a ground plane and the upstream floor-to-wheel contact pairs. The robot initializes from the user-authored `spawn` pose with enough arm extension to clear the wrist and with the gripper open. Control-only `home` and `stow` keyframes preserve the upstream actuator targets and import into Critter as independently playable controllers.
+8. Applied the mass corrections from `hello-robot/stretch4_urdf` commit `a8445cf`: the fixed camera, head-lidar, and docking-contact frames no longer duplicate mass already represented by their parent links.
 
 ## License
 

@@ -2,6 +2,9 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-09-02]
+- Updated both MJCF variants to the latest upstream Stretch 4 URDF masses (`a8445cf`). Camera, head-lidar, and docking-contact frames are now massless fixed frames, eliminating mass duplicated from the head and base links.
+
 ## [2026-08-28]
 - Marked the base rangefinder with a scene-only geom-group mask so Critter's filtered raycasting excludes the robot, matching the PR runtime instead of terminating rays inside the base.
 - Renamed the collision-free startup keyframe to `spawn` and added the upstream control-only `home` and `stow` actuator targets for Critter's Controller.

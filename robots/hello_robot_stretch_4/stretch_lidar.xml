@@ -181,29 +181,24 @@
           <geom class="collision" mesh="head_collision_link" name="head_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" />
           <geom class="visualgeom" mesh="head_link" name="head_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" density="0" group="1" material="plastic" />
           <body name="lidar_right_link" pos="0.131744211811827 -0.0264137425448753 -0.0583279884119643" quat="-0.33944435018566044 -0.35355339059327595 -0.8535533905932726 0.17670354420260315">
-            <inertial diaginertia="0.0492829863501233 0.0349356509390749 0.0486907192779151" mass="5.62562935738041" pos="0.0766909452916593 0.0306840664060523 -0.123358114205567" quat="1.0 0.0 0.0 0.0" />
             <site name="lidar_right" pos="0 0 0" quat="1 0 0 0" />
             <camera name="cam_hemilidar_right" pos="0 0 0" quat="0 1 0 0" />
           </body>
           <body name="lidar_left_link" pos="0.131744211811846 0.222413742544858 -0.0583279884119634" quat="0.17670354420260637 -0.8535533905932763 -0.35355339059326646 -0.3394443501856592">
-            <inertial diaginertia="0.0495631508318921 0.034541985578385 0.0488042201568361" mass="5.62562935738041" pos="-0.0761200642618001 0.0298724095594048 -0.122718664995054" quat="1.0 0.0 0.0 0.0" />
             <site name="lidar_left" pos="0 0 0" quat="1 0 0 0" />
             <camera name="cam_hemilidar_left" pos="0 0 0" quat="0 1 0 0" />
           </body>
           <body name="camera_right_link" pos="0.171840602787894 0.0230000000000032 -0.0157566987072475" quat="0.6484593973531595 0.6484593973531617 0.28195817062886386 -0.28195817062886486">
-            <inertial diaginertia="0.0518045670378195 0.0504717539658347 0.0306330355634591" mass="5.62562935738041" pos="-0.0693850700494765 -0.0909126816993031 -0.0755902514887177" quat="1.0 0.0 0.0 0.0" />
             <body name="camera_right_optical_link" pos="0.0212000000000001 0 0" quat="0.49999999999999833 -0.5000000000000001 0.5000000000000018 -0.5000000000000001">
               <camera name="camera_right_link" pos="0.0 0.0 0.0" quat="6.123233995736766e-17 1.0 0.0 0.0" />
             </body>
           </body>
           <body name="camera_left_link" pos="0.171840602787895 0.173 -0.0157566987072475" quat="0.6484593973531595 -0.6484593973531617 0.28195817062886386 0.28195817062886486">
-            <inertial diaginertia="0.0518045670378195 0.0504717539658347 0.0306330355634591" mass="5.62562935738041" pos="-0.0693850700494769 0.0909126816993033 -0.0744097485112792" quat="1.0 0.0 0.0 0.0" />
             <body name="camera_left_optical_link" pos="0.0211999999999999 0 0" quat="0.49999999999999833 -0.5000000000000001 0.5000000000000018 -0.5000000000000001">
               <camera name="camera_left_link" pos="0.0 0.0 0.0" quat="6.123233995736766e-17 1.0 0.0 0.0" />
             </body>
           </body>
           <body name="camera_center_link" pos="0.177245603402412 0.0980000000000004 -0.0239069097938973" quat="0.6743797232066264 0.6743797232066288 0.21263110997159443 -0.21263110997159518">
-            <inertial diaginertia="0.0465206803724917 0.0557556406311624 0.0306330355634591" mass="5.62562935738041" pos="-0.0958729354978766 0.0709239731668887 0.000590251488720675" quat="1.0 0.0 0.0 0.0" />
             <body name="camera_center_optical_link" pos="0.00170000000000003 0 0" quat="0.49999999999999833 -0.5000000000000001 0.5000000000000018 -0.5000000000000001">
               <camera name="camera_center_link" pos="0.0 0.0 0.0" quat="6.123233995736766e-17 1.0 0.0 0.0" />
             </body>
@@ -370,7 +365,6 @@
           <geom name="left_wheel_link" class="omniwheel_collision" />
         </body>
         <body name="docking_contact_link" pos="0 0.1768 0.107500004308165" quat="1.0 0.0 0.0 0.0">
-          <inertial diaginertia="0.214992663147159 0.22301041696344 0.327845792807285" mass="18.9261039673325" pos="0.000438848617413434 -0.178577146715673 -0.0110316356083883" quat="1.0 0.0 0.0 0.0" />
           <geom class="collision" mesh="docking_contact_link" name="docking_contact_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" />
           <geom class="visualgeom" mesh="docking_contact_link" name="docking_contact_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" density="0" group="1" material="plastic" />
         </body>
