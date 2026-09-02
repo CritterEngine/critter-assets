@@ -8,4 +8,6 @@ scailman, distributed through Objaverse under CC BY 4.0.
 - Changes: converted from GLB to OBJ, converted from Y-up to Z-up, normalized to a
   reusable 2.5 m module, assigned Critter materials, and combined with a custom
   generated MuJoCo conveyor mechanism and simplified collision geometry. The 5 m
-  variant joins two visual modules over one continuous physical belt.
+  variant joins two visual modules over one continuous physical belt. The 90-degree
+  corner belt and rails are new procedural meshes generated for Critter; their
+  tangent-aligned contact tiles use the same physical conveyor mechanism.
