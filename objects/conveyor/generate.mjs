@@ -6,9 +6,6 @@ const BELT_TILE_LENGTH = 0.5;
 const BELT_WRAP_HALF_TRAVEL = 0.05;
 const HANDOFF_OVERLAP = 0.04;
 const CURVE_RADIUS = 1.25;
-const CURVE_ANGLE = Math.PI / 2;
-const CURVE_SEGMENT_COUNT = 10;
-const CURVE_MESH_STEPS = 32;
 
 const straightVariants = [
   {
@@ -32,6 +29,9 @@ const curveVariants = [
     bodyName: "conveyor_curve_left",
     id: "left",
     direction: 1,
+    angle: Math.PI / 2,
+    segmentCount: 10,
+    meshSteps: 32,
   },
   {
     filename: "conveyor-curve-right.xml",
@@ -39,6 +39,29 @@ const curveVariants = [
     bodyName: "conveyor_curve_right",
     id: "right",
     direction: -1,
+    angle: Math.PI / 2,
+    segmentCount: 10,
+    meshSteps: 32,
+  },
+  {
+    filename: "conveyor-curve-left-45.xml",
+    model: "conveyor_curve_left_45",
+    bodyName: "conveyor_curve_left_45",
+    id: "left-45",
+    direction: 1,
+    angle: Math.PI / 4,
+    segmentCount: 5,
+    meshSteps: 16,
+  },
+  {
+    filename: "conveyor-curve-right-45.xml",
+    model: "conveyor_curve_right_45",
+    bodyName: "conveyor_curve_right_45",
+    id: "right-45",
+    direction: -1,
+    angle: Math.PI / 4,
+    segmentCount: 5,
+    meshSteps: 16,
   },
 ];
 
@@ -67,8 +90,8 @@ const createAnnularPrismObj = ({
 }) => {
   const vertices = [];
   const faces = [];
-  for (let index = 0; index <= CURVE_MESH_STEPS; index += 1) {
-    const angle = (index / CURVE_MESH_STEPS) * CURVE_ANGLE;
+  for (let index = 0; index <= turn.meshSteps; index += 1) {
+    const angle = (index / turn.meshSteps) * turn.angle;
     vertices.push(
       curvePoint(turn, innerRadius, angle, zBottom),
       curvePoint(turn, outerRadius, angle, zBottom),
@@ -86,7 +109,7 @@ const createAnnularPrismObj = ({
     addTriangle(a, c, d);
   };
 
-  for (let index = 0; index < CURVE_MESH_STEPS; index += 1) {
+  for (let index = 0; index < turn.meshSteps; index += 1) {
     const current = index * 4 + 1;
     const next = current + 4;
     const [innerBottom, outerBottom, innerTop, outerTop] = [
@@ -108,7 +131,7 @@ const createAnnularPrismObj = ({
   }
 
   const first = 1;
-  const last = CURVE_MESH_STEPS * 4 + 1;
+  const last = turn.meshSteps * 4 + 1;
   addQuad(first, first + 1, first + 3, first + 2);
   addQuad(last, last + 2, last + 3, last + 1);
 
@@ -192,7 +215,7 @@ const renderCurveFrameSection = (turn, index, angle, halfArcLength) => {
 const renderCurveBeltSegment = (turn, index, angle, halfArcLength) => {
   const position = curvePoint(turn, CURVE_RADIUS, angle, 0.88);
   const quat = yawQuaternion(turn.direction * angle);
-  const isEndpoint = index === 0 || index === CURVE_SEGMENT_COUNT - 1;
+  const isEndpoint = index === 0 || index === turn.segmentCount - 1;
   const contactHalfLength =
     halfArcLength * 1.08 + (isEndpoint ? BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP : 0);
   return `      <body name="conveyor_belt_segment_${index}" pos="${formatVector(position)}" quat="${formatVector(quat)}">
@@ -268,11 +291,11 @@ ${Array.from({ length: segmentCount - 1 }, (_, index) => renderEquality(index)).
 };
 
 const renderCurveVariant = (turn) => {
-  const arcLength = CURVE_RADIUS * CURVE_ANGLE;
-  const halfArcLength = arcLength / CURVE_SEGMENT_COUNT / 2;
+  const arcLength = CURVE_RADIUS * turn.angle;
+  const halfArcLength = arcLength / turn.segmentCount / 2;
   const sectionAngles = Array.from(
-    { length: CURVE_SEGMENT_COUNT },
-    (_, index) => ((index + 0.5) / CURVE_SEGMENT_COUNT) * CURVE_ANGLE
+    { length: turn.segmentCount },
+    (_, index) => ((index + 0.5) / turn.segmentCount) * turn.angle
   );
   const meshPrefix = `curve-${turn.id}`;
 
@@ -300,8 +323,8 @@ const renderCurveVariant = (turn) => {
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
 
       <!-- Two reusable support stations follow the curve. -->
-${renderCurveSupport(turn, 0, CURVE_ANGLE / 3)}
-${renderCurveSupport(turn, 1, (CURVE_ANGLE * 2) / 3)}
+${renderCurveSupport(turn, 0, turn.angle / 3)}
+${renderCurveSupport(turn, 1, (turn.angle * 2) / 3)}
 
       <!-- Overlapping tangent boxes approximate stable curved frame and rail collision. -->
 ${sectionAngles
@@ -316,7 +339,7 @@ ${sectionAngles
   </worldbody>
 
   <equality>
-${Array.from({ length: CURVE_SEGMENT_COUNT - 1 }, (_, index) => renderEquality(index)).join("\n")}
+${Array.from({ length: turn.segmentCount - 1 }, (_, index) => renderEquality(index)).join("\n")}
   </equality>
 
   <actuator>
