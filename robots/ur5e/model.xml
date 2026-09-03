@@ -61,6 +61,7 @@
 
   <worldbody>
     <body name="base" quat="0 0 0 -1" childclass="ur5e">
+      <site name="robot_base_attachment_site" pos="0 0 0" quat="0 0 0 1" size="0.025" group="4"/>
       <inertial mass="4.0" pos="0 0 0" diaginertia="0.00443333156 0.00443333156 0.0072"/>
       <geom mesh="base_0" material="black" class="visual"/>
       <geom mesh="base_1" material="jointgray" class="visual"/>

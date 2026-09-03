@@ -103,6 +103,7 @@
 
   <worldbody>
     <body name="base" childclass="sawyer">
+      <site name="robot_base_attachment_site" pos="0 0 0" quat="1 0 0 0" size="0.025" group="4"/>
       <inertial mass="2.0687" pos="-0.0006241 -2.8025E-05 0.065404"
         fullinertia="0.0067599 0.0067877 0.0074031 -4.2024E-05 -6.1904E-07 1.5888E-05"/>
       <geom mesh="base_0" material="black" class="visual"/>

@@ -68,6 +68,7 @@
 
   <worldbody>
     <body name="base" childclass="fr3">
+      <site name="robot_base_attachment_site" pos="0 0 0" quat="1 0 0 0" size="0.025" group="4"/>
       <body name="fr3_link0">
         <geom mesh="link0_0" material="black" class="visual"/>
         <geom mesh="link0_1" material="white" class="visual"/>

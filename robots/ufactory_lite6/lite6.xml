@@ -49,6 +49,7 @@
 
   <worldbody>
     <body name="link_base" childclass="lite6">
+      <site name="robot_base_attachment_site" pos="0 0 0" quat="1 0 0 0" size="0.025" group="4"/>
       <inertial pos="-0.00829545 3.26357e-05 0.0631195" mass="1.65394" diaginertia="0 0 0"/>
       <geom class="visual" mesh="link_base"/>
       <geom name="link_base_c" class="collision" mesh="link_base_c"/>
