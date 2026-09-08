@@ -12,9 +12,10 @@
       <default class="collision">
         <geom group="3" contype="1" conaffinity="1" solref="0.01 1"/>
       </default>
+      <!-- Compliant wheel contact approximates spoke flex; suspension stays articulated. -->
       <default class="wheel">
         <joint damping="0.15" armature="0.4" frictionloss="0.5"/>
-        <geom type="cylinder" group="3" condim="3" friction="1.4 0.8 0.005" solref="0.015 1" solimp="0.9 0.95 0.001"/>
+        <geom type="cylinder" group="3" condim="3" friction="1.4 0.8 0.005" solref="0.04 1" solimp="0.9 0.95 0.001"/>
       </default>
       <default class="steer">
         <joint damping="2" armature="0.3" limited="true" range="-1.57 1.57"/>
@@ -310,11 +311,12 @@
     <position name="mast_el_hold" joint="mast_el" kp="2200" kv="200"/>
     <position name="hga_az_hold" joint="hga_az" kp="2200" kv="200"/>
     <position name="hga_el_hold" joint="hga_el" kp="2200" kv="200"/>
-    <position name="arm_joint1_hold" joint="arm_joint1" kp="2200" kv="200"/>
-    <position name="arm_joint2_hold" joint="arm_joint2" kp="2200" kv="200"/>
-    <position name="arm_joint3_hold" joint="arm_joint3" kp="2200" kv="200"/>
-    <position name="arm_joint4_hold" joint="arm_joint4" kp="2200" kv="200"/>
-    <position name="arm_joint5_hold" joint="arm_joint5" kp="2200" kv="200"/>
+    <!-- Estimated holding gains tuned under Earth gravity, not NASA motor specifications. -->
+    <position name="arm_joint1_hold" joint="arm_joint1" kp="60000" kv="1200"/>
+    <position name="arm_joint2_hold" joint="arm_joint2" kp="60000" kv="1200"/>
+    <position name="arm_joint3_hold" joint="arm_joint3" kp="60000" kv="1200"/>
+    <position name="arm_joint4_hold" joint="arm_joint4" kp="60000" kv="1200"/>
+    <position name="arm_joint5_hold" joint="arm_joint5" kp="60000" kv="1200"/>
     <position name="drill_feed_hold" joint="drill_feed" kp="2200" kv="200"/>
     <position name="stabilizer_lower_hold" joint="stabilizer_lower" kp="2200" kv="200"/>
     <position name="stabilizer_upper_hold" joint="stabilizer_upper" kp="2200" kv="200"/>
