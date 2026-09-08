@@ -5,7 +5,14 @@
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
-    <material name="conveyor_belt_mat" rgba="0.035 0.04 0.045 1" metallic="0" roughness="0.88"/>
+    <texture name="belt_color" type="2d" file="textures/rubber-color.png"/>
+    <texture name="belt_normal" type="2d" file="textures/rubber-normal.png"/>
+    <texture name="belt_roughness" type="2d" file="textures/rubber-roughness.png"/>
+    <material name="conveyor_belt_mat" rgba="1 1 1 1" metallic="0" roughness="1">
+      <layer role="rgb" texture="belt_color"/>
+      <layer role="normal" texture="belt_normal"/>
+      <layer role="roughness" texture="belt_roughness"/>
+    </material>
     <mesh name="conveyor_curve_belt_visual" file="curve-left-45-belt.obj" inertia="shell"/>
     <mesh name="conveyor_curve_inner_rail_visual" file="curve-left-45-inner-rail.obj" inertia="shell"/>
     <mesh name="conveyor_curve_outer_rail_visual" file="curve-left-45-outer-rail.obj" inertia="shell"/>

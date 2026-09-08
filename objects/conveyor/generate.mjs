@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const MODULE_LENGTH = 2.5;
@@ -247,12 +247,19 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
-    <material name="conveyor_belt_mat" rgba="0.035 0.04 0.045 1" metallic="0" roughness="0.88"/>
+    <texture name="belt_color" type="2d" file="textures/rubber-color.png"/>
+    <texture name="belt_normal" type="2d" file="textures/rubber-normal.png"/>
+    <texture name="belt_roughness" type="2d" file="textures/rubber-roughness.png"/>
+    <material name="conveyor_belt_mat" rgba="1 1 1 1" metallic="0" roughness="1">
+      <layer role="rgb" texture="belt_color"/>
+      <layer role="normal" texture="belt_normal"/>
+      <layer role="roughness" texture="belt_roughness"/>
+    </material>
     <mesh name="conveyor_visual_0" file="visual_0.obj" inertia="shell"/>
     <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
     <mesh name="conveyor_visual_2" file="visual_2.obj" inertia="shell"/>
     <mesh name="conveyor_visual_3" file="visual_3.obj" inertia="shell"/>
-    <mesh name="conveyor_belt_visual" file="visual_4.obj" inertia="shell"/>
+    <mesh name="conveyor_belt_visual" file="${moduleCount > 1 ? "visual_4-long.obj" : "visual_4.obj"}" inertia="shell"/>
   </asset>
 
   <worldbody>
@@ -306,7 +313,14 @@ const renderCurveVariant = (turn) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
-    <material name="conveyor_belt_mat" rgba="0.035 0.04 0.045 1" metallic="0" roughness="0.88"/>
+    <texture name="belt_color" type="2d" file="textures/rubber-color.png"/>
+    <texture name="belt_normal" type="2d" file="textures/rubber-normal.png"/>
+    <texture name="belt_roughness" type="2d" file="textures/rubber-roughness.png"/>
+    <material name="conveyor_belt_mat" rgba="1 1 1 1" metallic="0" roughness="1">
+      <layer role="rgb" texture="belt_color"/>
+      <layer role="normal" texture="belt_normal"/>
+      <layer role="roughness" texture="belt_roughness"/>
+    </material>
     <mesh name="conveyor_curve_belt_visual" file="${meshPrefix}-belt.obj" inertia="shell"/>
     <mesh name="conveyor_curve_inner_rail_visual" file="${meshPrefix}-inner-rail.obj" inertia="shell"/>
     <mesh name="conveyor_curve_outer_rail_visual" file="${meshPrefix}-outer-rail.obj" inertia="shell"/>
@@ -391,4 +405,30 @@ for (const turn of curveVariants) {
     );
   }
   console.log(`Generated ${turn.filename} and curved meshes in ${outputDirectory}`);
+}
+
+// Rubber atlas covers one metre across and five metres along the belt.
+// Map in metres so changing conveyor length never stretches the grip pattern.
+function writeBeltUvs(filename, mapUv, output = filename) {
+  const file = new URL('meshes/' + filename, import.meta.url);
+  const lines = readFileSync(file, 'utf8').split(/\r?\n/);
+  const vertices = lines.filter(line => line.startsWith('v ')).map(line => line.trim().split(/\s+/).slice(1).map(Number));
+  const result = lines.filter(line => !line.startsWith('vt ')).map(line => {
+    if (!line.startsWith('f ')) return line;
+    return 'f ' + line.slice(2).trim().split(/\s+/).map(token => {
+      const [v, , n] = token.split('/');
+      return v + '/' + v + (n ? '/' + n : '');
+    }).join(' ');
+  });
+  const firstFace = result.findIndex(line => line.startsWith('f '));
+  result.splice(firstFace, 0, ...vertices.map(v => 'vt ' + mapUv(v).map(formatNumber).join(' ')));
+  writeFileSync(new URL('meshes/' + output, import.meta.url), result.join('\n'));
+}
+writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y + 1.25) / 5]);
+writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y * 2 + 2.5) / 5], 'visual_4-long.obj');
+for (const turn of curveVariants) {
+  writeBeltUvs('curve-' + turn.id + '-belt.obj', ([x,y]) => {
+    const radialX = turn.direction * x + CURVE_RADIUS;
+    return [Math.hypot(radialX,y) - CURVE_RADIUS + 0.5, Math.atan2(y,radialX) * CURVE_RADIUS / 5];
+  });
 }
