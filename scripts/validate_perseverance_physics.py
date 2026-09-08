@@ -17,7 +17,7 @@ import numpy as np
 SOURCE = Path(__file__).resolve().parents[1] / 'robots/nasa_perseverance/perseverance.xml'
 ASSET_DIR = None
 
-def run(contact=None, terrain='both', speed=3, duration=14):
+def build_model(contact=None, terrain='flat'):
     root = ET.parse(SOURCE).getroot()
     for attr in ('meshdir', 'texturedir'):
         root.find('compiler').set(attr, str(ASSET_DIR or SOURCE.parent / 'assets'))
@@ -30,7 +30,10 @@ def run(contact=None, terrain='both', speed=3, duration=14):
             if terrain == 'left' and side == 'right':
                 continue
             ET.SubElement(world, 'geom', name='bump_' + side, type='cylinder', size='.12 .25', pos=f'2.5 {y} 0', euler='1.57079632679 0 0', solref='.015 1')
-    model = mj.MjModel.from_xml_string(ET.tostring(root, encoding='unicode'))
+    return mj.MjModel.from_xml_string(ET.tostring(root, encoding='unicode'))
+
+def run(contact=None, terrain='both', speed=3, duration=14):
+    model = build_model(contact, terrain)
     data = mj.MjData(model)
     mj.mj_resetDataKeyframe(model, data, 0)
     sus = [model.joint(n).qposadr[0] for n in ['left_rocker', 'right_rocker', 'left_bogie', 'right_bogie']]
@@ -99,6 +102,41 @@ def run(contact=None, terrain='both', speed=3, duration=14):
     assert max(report['arm_max_error_deg']) < 4, report
     print(json.dumps(report), flush=True)
     return report
+
+
+def check_arm_target_changes():
+    """Exercise pointer-like target jumps in both directions on every arm joint."""
+    model = build_model()
+    data = mj.MjData(model)
+    step_count = round(8 / model.opt.timestep)
+    for index, target in enumerate([0.35, -0.35, 0.35, 0.35, 0.35], start=1):
+        joint = model.joint(f"arm_joint{index}")
+        actuator = model.actuator(f"arm_joint{index}_hold")
+        mj.mj_resetDataKeyframe(model, data, 0)
+        for _ in range(step_count):
+            mj.mj_step(model, data)
+        for command in (target, 0):
+            data.ctrl[actuator.id] = command
+            peak_speed = 0.0
+            for _ in range(step_count):
+                mj.mj_step(model, data)
+                assert np.all(np.isfinite(data.qpos))
+                assert np.all(np.isfinite(data.qvel))
+                peak_speed = max(peak_speed, abs(float(data.qvel[joint.dofadr[0]])))
+            error = abs(float(data.qpos[joint.qposadr[0]]) - command)
+            report = {
+                "joint": joint.name,
+                "target_deg": round(float(np.rad2deg(command)), 2),
+                "peak_speed_deg_s": round(float(np.rad2deg(peak_speed)), 2),
+                "final_error_deg": round(float(np.rad2deg(error)), 3),
+            }
+            # A 20-degree pointer jump should take a controlled motion, not a snap.
+            assert peak_speed < np.deg2rad(30), report
+            assert error < np.deg2rad(1), report
+            assert not any(w.number for w in data.warning), report
+            print(json.dumps(report), flush=True)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model', type=Path, default=SOURCE)
@@ -107,6 +145,7 @@ if __name__ == '__main__':
     SOURCE = args.model.resolve()
     ASSET_DIR = args.asset_dir.resolve() if args.asset_dir else None
     run(terrain='flat', speed=0, duration=10)
+    check_arm_target_changes()
     for terrain, count in [('both', 6), ('left', 3)]:
         # Isolate wheel compliance by using the shipped arm gains in both runs.
         baseline = run(contact=0.015, terrain=terrain)
@@ -115,4 +154,4 @@ if __name__ == '__main__':
         assert tuned['distance'] > 5, tuned
         assert tuned['vertical_acc_peak'] < 0.7 * baseline['vertical_acc_peak'], tuned
         assert tuned['vertical_acc_rms'] < 0.8 * baseline['vertical_acc_rms'], tuned
-    print('Perseverance hold and bump regressions passed.')
+    print('Perseverance hold, target-change, and bump regressions passed.')
