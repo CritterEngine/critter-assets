@@ -49,10 +49,10 @@
       <geom name="conveyor_visual_3_module_1" type="mesh" mesh="conveyor_visual_3"
             pos="0 1.25 0" material="conveyor_frame_mat" group="1"
             contype="0" conaffinity="0" density="0"/>
-      <!-- Connection frames share the +Y belt-travel axis for drag-to-attach placement. -->
-      <site name="attachment_site" pos="0 -2.5 0.88" zaxis="0 1 0"
+      <!-- Connection frames use local +Y as belt travel for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 -2.5 0.88" xyaxes="1 0 0 0 1 0"
             size="0.035" group="4"/>
-      <site name="attachment_site_outlet" pos="0 2.5 0.88" zaxis="0 1 0"
+      <site name="attachment_site_outlet" pos="0 2.5 0.88" xyaxes="1 0 0 0 1 0"
             size="0.035" group="4"/>
       <!-- Static dark backing prevents brief seams between moving belt tiles from exposing the frame. -->
       <geom name="conveyor_belt_underlay_visual" type="box"
@@ -63,20 +63,20 @@
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
             pos="0.0179964 0 0.3527419" size="0.5205209 2.5 0.3527419"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_left_rail_collision" type="box"
             pos="-0.4912142 0 0.7242926" size="0.097543 2.5 0.21227"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_right_rail_collision" type="box"
             pos="0.5092106 0 0.8212732" size="0.0795466 2.5 0.1152895"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
 
       <!-- Synchronized 0.5 m tiles form one continuous moving contact surface. -->
       <body name="conveyor_belt_segment_0" pos="0.0179964 -2.25 0.88">
         <joint name="conveyor_belt_segment_0_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_0_contact" type="box" size="0.39 0.34 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_0_visual" type="mesh" mesh="conveyor_belt_end_tile"
@@ -86,7 +86,7 @@
         <joint name="conveyor_belt_segment_1_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_1_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_1_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -96,7 +96,7 @@
         <joint name="conveyor_belt_segment_2_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_2_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_2_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -106,7 +106,7 @@
         <joint name="conveyor_belt_segment_3_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_3_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_3_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -116,7 +116,7 @@
         <joint name="conveyor_belt_segment_4_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_4_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_4_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -126,7 +126,7 @@
         <joint name="conveyor_belt_segment_5_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_5_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_5_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -136,7 +136,7 @@
         <joint name="conveyor_belt_segment_6_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_6_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_6_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -146,7 +146,7 @@
         <joint name="conveyor_belt_segment_7_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_7_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_7_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -156,7 +156,7 @@
         <joint name="conveyor_belt_segment_8_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_8_contact" type="box" size="0.39 0.25 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_8_visual" type="mesh" mesh="conveyor_belt_tile"
@@ -166,7 +166,7 @@
         <joint name="conveyor_belt_segment_9_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_9_contact" type="box" size="0.39 0.34 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_9_visual" type="mesh" mesh="conveyor_belt_end_tile"

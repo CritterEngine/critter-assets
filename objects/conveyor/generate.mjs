@@ -231,10 +231,10 @@ ${endFrame}      <geom name="conveyor_visual_1_${suffix}" type="mesh" mesh="conv
             contype="0" conaffinity="0" density="0"/>`;
 };
 
-const renderStraightAttachmentSites = (length) => `      <!-- Connection frames share the +Y belt-travel axis for drag-to-attach placement. -->
-      <site name="attachment_site" pos="0 ${formatNumber(-length / 2)} 0.88" zaxis="0 1 0"
+const renderStraightAttachmentSites = (length) => `      <!-- Connection frames use local +Y as belt travel for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 ${formatNumber(-length / 2)} 0.88" xyaxes="1 0 0 0 1 0"
             size="0.035" group="4"/>
-      <site name="attachment_site_outlet" pos="0 ${formatNumber(length / 2)} 0.88" zaxis="0 1 0"
+      <site name="attachment_site_outlet" pos="0 ${formatNumber(length / 2)} 0.88" xyaxes="1 0 0 0 1 0"
             size="0.035" group="4"/>`;
 
 const renderStraightBeltUnderlay = (length) => `      <!-- Static dark backing prevents brief seams between moving belt tiles from exposing the frame. -->
@@ -246,10 +246,11 @@ const renderStraightBeltUnderlay = (length) => `      <!-- Static dark backing p
 const renderCurveAttachmentSites = (turn) => {
   const exitPosition = curveConnectionPoint(turn, CURVE_RADIUS, turn.angle, 0.88);
   const exitDirection = [-turn.direction * Math.sin(turn.angle), Math.cos(turn.angle), 0];
-  return `      <!-- Connection frames share the forward belt-travel axis for drag-to-attach placement. -->
-      <site name="attachment_site" pos="0 0 0.88" zaxis="0 1 0" size="0.035" group="4"/>
+  const exitLateral = [exitDirection[1], -exitDirection[0], 0];
+  return `      <!-- Connection frames use local +Y as belt travel for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 0 0.88" xyaxes="1 0 0 0 1 0" size="0.035" group="4"/>
       <site name="attachment_site_outlet" pos="${formatVector(exitPosition)}"
-            zaxis="${formatVector(exitDirection)}" size="0.035" group="4"/>`;
+            xyaxes="${formatVector(exitLateral)} ${formatVector(exitDirection)}" size="0.035" group="4"/>`;
 };
 
 const renderBeltSegment = (index, centerY, segmentCount) => {
@@ -261,7 +262,7 @@ const renderBeltSegment = (index, centerY, segmentCount) => {
         <joint name="conveyor_belt_segment_${index}_slide" type="slide" axis="0 1 0"
                range="-${formatNumber(BELT_WRAP_HALF_TRAVEL)} ${formatNumber(BELT_WRAP_HALF_TRAVEL)}" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_${index}_contact" type="box" size="0.39 ${formatNumber(contactHalfLength)} 0.0125"
-              mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
+              mass="0.02" group="3" rgba="0 0 0 0" contype="1" conaffinity="2" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_${index}_visual" type="mesh" mesh="${visualMesh}"
@@ -311,13 +312,13 @@ const renderCurveFrameSection = (turn, index, angle, frameHalfLength) => {
   const quat = yawQuaternion(turn.direction * angle);
   return `      <geom name="conveyor_curve_frame_collision_${index}" type="box"
             pos="${formatVector(center)}" quat="${formatVector(quat)}"
-            size="0.52 ${formatNumber(frameHalfLength)} 0.35" group="3" rgba="0 0 0 0"/>
+            size="0.52 ${formatNumber(frameHalfLength)} 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_curve_inner_rail_collision_${index}" type="box"
             pos="${formatVector(innerRail)}" quat="${formatVector(quat)}"
-            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0"/>
+            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_curve_outer_rail_collision_${index}" type="box"
             pos="${formatVector(outerRail)}" quat="${formatVector(quat)}"
-            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0"/>`;
+            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>`;
 };
 
 const renderCurveBeltSegment = (turn, index, angle, beltHalfLength) => {
@@ -331,7 +332,7 @@ const renderCurveBeltSegment = (turn, index, angle, beltHalfLength) => {
         <joint name="conveyor_belt_segment_${index}_slide" type="slide" axis="0 1 0"
                range="-${formatNumber(BELT_WRAP_HALF_TRAVEL)} ${formatNumber(BELT_WRAP_HALF_TRAVEL)}" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_${index}_contact" type="box"
-              size="0.39 ${formatNumber(contactHalfLength)} 0.0125" mass="0.02" group="3"
+              size="0.39 ${formatNumber(contactHalfLength)} 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
@@ -399,13 +400,13 @@ ${renderStraightBeltUnderlay(length)}
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
             pos="0.0179964 0 0.3527419" size="0.5205209 ${formatNumber(length / 2)} 0.3527419"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_left_rail_collision" type="box"
             pos="-0.4912142 0 0.7242926" size="0.097543 ${formatNumber(length / 2)} 0.21227"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
       <geom name="conveyor_right_rail_collision" type="box"
             pos="0.5092106 0 0.8212732" size="0.0795466 ${formatNumber(length / 2)} 0.1152895"
-            group="3" rgba="0 0 0 0"/>
+            group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
 
       <!-- Synchronized 0.5 m tiles form one continuous moving contact surface. -->
 ${segmentCenters
