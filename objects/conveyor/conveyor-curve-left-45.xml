@@ -5,6 +5,7 @@
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_hardware_mat" rgba="0.16 0.18 0.22 1" metallic="0.82" roughness="0.24"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
     <texture name="belt_roughness" type="2d" file="rubber-roughness.png"/>
@@ -32,6 +33,17 @@
       <site name="attachment_site_outlet" pos="-0.366116524 0.883883476 0.88"
             zaxis="-0.707106781 0.707106781 0" size="0.035" group="4"/>
 
+      <!-- Driven roller and end caps make each curve interface read as a real conveyor transition. -->
+      <geom name="conveyor_curve_inlet_roller" type="cylinder" fromto="-0.405 0 0.81 0.405 0 0.81" size="0.075"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_inlet_roller_caps" type="cylinder" fromto="-0.455 0 0.81 0.455 0 0.81" size="0.031"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <!-- Driven roller and end caps make each curve interface read as a real conveyor transition. -->
+      <geom name="conveyor_curve_outlet_roller" type="cylinder" fromto="-0.65249477 0.59750523 0.81 -0.079738277 1.170261723 0.81" size="0.075"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outlet_roller_caps" type="cylinder" fromto="-0.687850109 0.562149891 0.81 -0.044382938 1.205617062 0.81" size="0.031"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+
       <!-- Two reusable support stations follow the curve. -->
       <body name="conveyor_curve_support_0" pos="-0.042592717 0.323523806 0" quat="0.991444861 0 0 0.130526192">
         <geom name="conveyor_curve_crossbeam_0" type="box" pos="0 0 0.66" size="0.55 0.06 0.06"
@@ -57,6 +69,62 @@
         <geom name="conveyor_curve_foot_outer_1" type="cylinder" pos="0.45 0 0.025" size="0.13 0.025"
               material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
+      <!-- Finished support station: top plate, braced legs, leveling screws, and foot pads. -->
+      <body name="conveyor_curve_support_detail_0" pos="-0.042592717 0.323523806 0" quat="0.991444861 0 0 0.130526192">
+        <geom name="conveyor_curve_support_plate_0" type="box" pos="0 0 0.71" size="0.53 0.095 0.025"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_left_0" type="box" pos="-0.38 0 0.51" euler="0 0 -0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_right_0" type="box" pos="0.38 0 0.51" euler="0 0 0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_left_0" type="cylinder" pos="-0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_right_0" type="cylinder" pos="0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_left_0" type="cylinder" pos="-0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_right_0" type="cylinder" pos="0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      </body>
+      <!-- Finished support station: top plate, braced legs, leveling screws, and foot pads. -->
+      <body name="conveyor_curve_support_detail_1" pos="-0.167468245 0.625 0" quat="0.965925826 0 0 0.258819045">
+        <geom name="conveyor_curve_support_plate_1" type="box" pos="0 0 0.71" size="0.53 0.095 0.025"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_left_1" type="box" pos="-0.38 0 0.51" euler="0 0 -0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_right_1" type="box" pos="0.38 0 0.51" euler="0 0 0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_left_1" type="cylinder" pos="-0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_right_1" type="cylinder" pos="0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_left_1" type="cylinder" pos="-0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_right_1" type="cylinder" pos="0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      </body>
+
+      <!-- Fasteners along both guard rails give the curve the same manufactured detail as the straight modules. -->
+      <geom name="conveyor_curve_inner_fastener_0" type="cylinder" pos="-0.507296586 0.058452026 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_0" type="cylinder" pos="0.499589921 0.137695713 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_inner_fastener_1" type="cylinder" pos="-0.525584409 0.173916796 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_1" type="cylinder" pos="0.45650921 0.409696614 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_inner_fastener_2" type="cylinder" pos="-0.561709748 0.285099157 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_2" type="cylinder" pos="0.37140858 0.671609424 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_inner_fastener_3" type="cylinder" pos="-0.614783078 0.389261431 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_3" type="cylinder" pos="0.246383488 0.916984981 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_inner_fastener_4" type="cylinder" pos="-0.683497556 0.483838796 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_4" type="cylinder" pos="0.08451247 1.139781325 0.955" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
 
       <!-- Overlapping tangent boxes approximate stable curved frame and rail collision. -->
       <geom name="conveyor_curve_frame_collision_0" type="box"

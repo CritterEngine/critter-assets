@@ -80,6 +80,9 @@ const curvePoint = ({ direction }, radius, angle, z = 0) => [
 
 const yawQuaternion = (yaw) => [Math.cos(yaw / 2), 0, 0, Math.sin(yaw / 2)];
 
+const addVectors = (left, right) => left.map((value, index) => value + right[index]);
+const scaleVector = (vector, scale) => vector.map((value) => value * scale);
+
 const createAnnularPrismObj = ({
   name,
   turn,
@@ -211,6 +214,50 @@ const renderCurveSupport = (turn, index, angle) => {
       </body>`;
 };
 
+const renderCurveSupportDetails = (turn, index, angle) => {
+  const center = curvePoint(turn, CURVE_RADIUS, angle, 0);
+  const quat = yawQuaternion(turn.direction * angle);
+  return `      <!-- Finished support station: top plate, braced legs, leveling screws, and foot pads. -->
+      <body name="conveyor_curve_support_detail_${index}" pos="${formatVector(center)}" quat="${formatVector(quat)}">
+        <geom name="conveyor_curve_support_plate_${index}" type="box" pos="0 0 0.71" size="0.53 0.095 0.025"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_left_${index}" type="box" pos="-0.38 0 0.51" euler="0 0 -0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_support_brace_right_${index}" type="box" pos="0.38 0 0.51" euler="0 0 0.44" size="0.032 0.045 0.26"
+              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_left_${index}" type="cylinder" pos="-0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_level_right_${index}" type="cylinder" pos="0.45 0 0.095" size="0.038 0.10"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_left_${index}" type="cylinder" pos="-0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+        <geom name="conveyor_curve_foot_ring_right_${index}" type="cylinder" pos="0.45 0 0.047" size="0.145 0.016"
+              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      </body>`;
+};
+
+const renderCurveRailFastener = (turn, index, angle) => {
+  const inner = curvePoint(turn, CURVE_RADIUS - 0.505, angle, 0.955);
+  const outer = curvePoint(turn, CURVE_RADIUS + 0.505, angle, 0.955);
+  return `      <geom name="conveyor_curve_inner_fastener_${index}" type="cylinder" pos="${formatVector(inner)}" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_outer_fastener_${index}" type="cylinder" pos="${formatVector(outer)}" size="0.022 0.008"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>`;
+};
+
+const renderCurveEndRoller = (turn, name, center, tangent) => {
+  const lateral = [tangent[1], -tangent[0], 0];
+  const rollerStart = addVectors(center, scaleVector(lateral, -0.405));
+  const rollerEnd = addVectors(center, scaleVector(lateral, 0.405));
+  const capStart = addVectors(center, scaleVector(lateral, -0.455));
+  const capEnd = addVectors(center, scaleVector(lateral, 0.455));
+  return `      <!-- Driven roller and end caps make each curve interface read as a real conveyor transition. -->
+      <geom name="conveyor_curve_${name}_roller" type="cylinder" fromto="${formatVector(rollerStart)} ${formatVector(rollerEnd)}" size="0.075"
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_${name}_roller_caps" type="cylinder" fromto="${formatVector(capStart)} ${formatVector(capEnd)}" size="0.031"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>`;
+};
+
 const renderCurveFrameSection = (turn, index, angle, halfArcLength) => {
   const center = curvePoint(turn, CURVE_RADIUS, angle, 0.35);
   const innerRail = curvePoint(turn, CURVE_RADIUS - 0.51, angle, 0.82);
@@ -329,6 +376,7 @@ const renderCurveVariant = (turn) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_hardware_mat" rgba="0.16 0.18 0.22 1" metallic="0.82" roughness="0.24"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
     <texture name="belt_roughness" type="2d" file="rubber-roughness.png"/>
@@ -353,9 +401,22 @@ const renderCurveVariant = (turn) => {
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
 ${renderCurveAttachmentSites(turn)}
 
+${renderCurveEndRoller(turn, "inlet", [0, 0, 0.81], [0, 1, 0])}
+${renderCurveEndRoller(
+  turn,
+  "outlet",
+  curvePoint(turn, CURVE_RADIUS, turn.angle, 0.81),
+  [-turn.direction * Math.sin(turn.angle), Math.cos(turn.angle), 0]
+)}
+
       <!-- Two reusable support stations follow the curve. -->
 ${renderCurveSupport(turn, 0, turn.angle / 3)}
 ${renderCurveSupport(turn, 1, (turn.angle * 2) / 3)}
+${renderCurveSupportDetails(turn, 0, turn.angle / 3)}
+${renderCurveSupportDetails(turn, 1, (turn.angle * 2) / 3)}
+
+      <!-- Fasteners along both guard rails give the curve the same manufactured detail as the straight modules. -->
+${sectionAngles.map((angle, index) => renderCurveRailFastener(turn, index, angle)).join("\n")}
 
       <!-- Overlapping tangent boxes approximate stable curved frame and rail collision. -->
 ${sectionAngles
