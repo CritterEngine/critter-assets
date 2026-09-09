@@ -143,14 +143,17 @@ const createAnnularPrismObj = ({
   );
 };
 
-const renderVisualModule = (moduleIndex, centerY) => {
+const renderVisualModule = (moduleIndex, centerY, { includeEndFrame = true } = {}) => {
   const suffix = `module_${moduleIndex}`;
   const pos = `0 ${formatNumber(centerY)} 0`;
-  return `      <!-- Reusable polished 2.5 m visual module. -->
-      <geom name="conveyor_visual_0_${suffix}" type="mesh" mesh="conveyor_visual_0"
+  const endFrame = includeEndFrame
+    ? `      <geom name="conveyor_visual_0_${suffix}" type="mesh" mesh="conveyor_visual_0"
             pos="${pos}" material="conveyor_frame_mat" group="1"
             contype="0" conaffinity="0" density="0"/>
-      <geom name="conveyor_visual_1_${suffix}" type="mesh" mesh="conveyor_visual_1"
+`
+    : "";
+  return `      <!-- Reusable polished 2.5 m visual module. -->
+${endFrame}      <geom name="conveyor_visual_1_${suffix}" type="mesh" mesh="conveyor_visual_1"
             pos="${pos}" material="conveyor_frame_mat" group="1"
             contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_visual_2_${suffix}" type="mesh" mesh="conveyor_visual_2"
@@ -264,6 +267,17 @@ const renderCurveBeltSegment = (turn, index, angle, halfArcLength) => {
 const renderVariant = ({ model, bodyName, moduleCount }) => {
   const length = moduleCount * MODULE_LENGTH;
   const segmentCount = Math.round(length / BELT_TILE_LENGTH);
+  const longEndFrameMesh =
+    moduleCount > 1
+      ? '    <mesh name="conveyor_visual_0_long" file="visual_0-long.obj" inertia="shell"/>\n'
+      : "";
+  const longEndFrameVisual =
+    moduleCount > 1
+      ? `      <!-- A single scaled frame keeps end crossbars at the physical ends of the 5 m conveyor. -->
+      <geom name="conveyor_visual_0_long" type="mesh" mesh="conveyor_visual_0_long"
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+`
+      : "";
   const moduleCenters = Array.from(
     { length: moduleCount },
     (_, index) => -length / 2 + MODULE_LENGTH / 2 + index * MODULE_LENGTH
@@ -289,7 +303,7 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
       <layer role="roughness" texture="belt_roughness"/>
     </material>
     <mesh name="conveyor_visual_0" file="visual_0.obj" inertia="shell"/>
-    <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
+${longEndFrameMesh}    <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
     <mesh name="conveyor_visual_2" file="visual_2.obj" inertia="shell"/>
     <mesh name="conveyor_visual_3" file="visual_3.obj" inertia="shell"/>
     <mesh name="conveyor_belt_visual" file="${moduleCount > 1 ? "visual_4-long.obj" : "visual_4.obj"}" inertia="shell"/>
@@ -298,7 +312,9 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
   <worldbody>
     <body name="${bodyName}" pos="0 0 0">
       <!-- Visual meshes never participate in collision. -->
-${moduleCenters.map((centerY, index) => renderVisualModule(index, centerY)).join("\n")}
+${longEndFrameVisual}${moduleCenters
+  .map((centerY, index) => renderVisualModule(index, centerY, { includeEndFrame: moduleCount === 1 }))
+  .join("\n")}
 ${renderBeltVisual()}
 ${renderStraightAttachmentSites(length)}
 
@@ -496,6 +512,8 @@ function writeScaledMesh(filename, output, scale) {
 
 // The 45° curve needs the same finished support silhouette in a shorter footprint.
 writeScaledMesh('visual_3.obj', 'curve-support-short.obj', [1, 0.6, 1]);
+// The 5 m frame needs one extended end-frame mesh, not two 2.5 m end frames at the center join.
+writeScaledMesh('visual_0.obj', 'visual_0-long.obj', [1, 2, 1]);
 writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y + 1.25) / 5]);
 writeBeltUvs(
   'visual_4.obj',
