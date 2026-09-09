@@ -5,6 +5,7 @@
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_belt_underlay_mat" rgba="0.018 0.022 0.028 1" metallic="0" roughness="0.9"/>
     <material name="conveyor_hardware_mat" rgba="0.16 0.18 0.22 1" metallic="0.82" roughness="0.24"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
@@ -14,9 +15,11 @@
       <layer role="normal" texture="belt_normal"/>
       <layer role="roughness" texture="belt_roughness"/>
     </material>
-    <mesh name="conveyor_curve_belt_visual" file="curve-left-belt.obj" inertia="shell"/>
     <mesh name="conveyor_curve_inner_rail_visual" file="curve-left-inner-rail.obj" inertia="shell"/>
     <mesh name="conveyor_curve_outer_rail_visual" file="curve-left-outer-rail.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_underlay_visual" file="curve-left-belt-underlay.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_tile" file="belt-curve-tile.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_end_tile" file="belt-curve-end-tile.obj" inertia="shell"/>
     <mesh name="conveyor_curve_support_visual"
           file="visual_3.obj" inertia="shell"/>
   </asset>
@@ -24,8 +27,8 @@
   <worldbody>
     <body name="conveyor_curve_left" pos="0 0 0">
       <!-- The incoming connection is centered at the origin and points along local +Y. -->
-      <geom name="conveyor_curve_belt_visual" type="mesh" mesh="conveyor_curve_belt_visual"
-            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_belt_underlay_visual" type="mesh" mesh="conveyor_curve_belt_underlay_visual"
+            material="conveyor_belt_underlay_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_inner_rail_visual" type="mesh" mesh="conveyor_curve_inner_rail_visual"
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_outer_rail_visual" type="mesh" mesh="conveyor_curve_outer_rail_visual"
@@ -375,6 +378,9 @@
               size="0.39 0.169211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_0_visual" type="mesh" mesh="conveyor_curve_belt_end_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_1" pos="0.011890651 0.124285381 0.88" quat="0.998795456 0 0 0.049067674">
         <joint name="conveyor_belt_segment_1_slide" type="slide" axis="0 1 0"
@@ -383,6 +389,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_1_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_2" pos="0.001060193 0.206550874 0.88" quat="0.996655239 0 0 0.081721074">
         <joint name="conveyor_belt_segment_2_slide" type="slide" axis="0 1 0"
@@ -391,6 +400,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_2_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_3" pos="-0.015127496 0.287931884 0.88" quat="0.993447779 0 0 0.114286965">
         <joint name="conveyor_belt_segment_3_slide" type="slide" axis="0 1 0"
@@ -399,6 +411,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_3_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_4" pos="-0.036603099 0.368079926 0.88" quat="0.98917651 0 0 0.146730474">
         <joint name="conveyor_belt_segment_4_slide" type="slide" axis="0 1 0"
@@ -407,6 +422,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_4_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_5" pos="-0.063274654 0.446651793 0.88" quat="0.983846006 0 0 0.179016861">
         <joint name="conveyor_belt_segment_5_slide" type="slide" axis="0 1 0"
@@ -415,6 +433,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_5_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_6" pos="-0.095027949 0.523311028 0.88" quat="0.977461975 0 0 0.211111552">
         <joint name="conveyor_belt_segment_6_slide" type="slide" axis="0 1 0"
@@ -423,6 +444,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_6_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_7" pos="-0.131727012 0.597729365 0.88" quat="0.970031253 0 0 0.24298018">
         <joint name="conveyor_belt_segment_7_slide" type="slide" axis="0 1 0"
@@ -431,6 +455,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_7_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_8" pos="-0.173214691 0.669588134 0.88" quat="0.961561798 0 0 0.274588618">
         <joint name="conveyor_belt_segment_8_slide" type="slide" axis="0 1 0"
@@ -439,6 +466,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_8_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_9" pos="-0.21931333 0.738579623 0.88" quat="0.952062678 0 0 0.30590302">
         <joint name="conveyor_belt_segment_9_slide" type="slide" axis="0 1 0"
@@ -447,6 +477,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_9_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_10" pos="-0.269825528 0.804408401 0.88" quat="0.941544065 0 0 0.336889853">
         <joint name="conveyor_belt_segment_10_slide" type="slide" axis="0 1 0"
@@ -455,6 +488,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_10_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_11" pos="-0.324534983 0.866792578 0.88" quat="0.930017224 0 0 0.367515937">
         <joint name="conveyor_belt_segment_11_slide" type="slide" axis="0 1 0"
@@ -463,6 +499,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_11_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_12" pos="-0.383207422 0.925465017 0.88" quat="0.917494496 0 0 0.397748475">
         <joint name="conveyor_belt_segment_12_slide" type="slide" axis="0 1 0"
@@ -471,6 +510,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_12_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_13" pos="-0.445591599 0.980174472 0.88" quat="0.903989293 0 0 0.427555093">
         <joint name="conveyor_belt_segment_13_slide" type="slide" axis="0 1 0"
@@ -479,6 +521,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_13_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_14" pos="-0.511420377 1.03068667 0.88" quat="0.889516075 0 0 0.456903876">
         <joint name="conveyor_belt_segment_14_slide" type="slide" axis="0 1 0"
@@ -487,6 +532,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_14_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_15" pos="-0.580411866 1.076785309 0.88" quat="0.874090342 0 0 0.485763394">
         <joint name="conveyor_belt_segment_15_slide" type="slide" axis="0 1 0"
@@ -495,6 +543,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_15_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_16" pos="-0.652270635 1.118272988 0.88" quat="0.85772861 0 0 0.514102744">
         <joint name="conveyor_belt_segment_16_slide" type="slide" axis="0 1 0"
@@ -503,6 +554,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_16_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_17" pos="-0.726688972 1.154972051 0.88" quat="0.840448401 0 0 0.541891581">
         <joint name="conveyor_belt_segment_17_slide" type="slide" axis="0 1 0"
@@ -511,6 +565,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_17_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_18" pos="-0.803348207 1.186725346 0.88" quat="0.822268219 0 0 0.569100146">
         <joint name="conveyor_belt_segment_18_slide" type="slide" axis="0 1 0"
@@ -519,6 +576,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_18_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_19" pos="-0.881920074 1.213396901 0.88" quat="0.803207531 0 0 0.595699304">
         <joint name="conveyor_belt_segment_19_slide" type="slide" axis="0 1 0"
@@ -527,6 +587,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_19_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_20" pos="-0.962068116 1.234872504 0.88" quat="0.783286749 0 0 0.621660573">
         <joint name="conveyor_belt_segment_20_slide" type="slide" axis="0 1 0"
@@ -535,6 +598,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_20_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_21" pos="-1.043449126 1.251060193 0.88" quat="0.762527204 0 0 0.646956153">
         <joint name="conveyor_belt_segment_21_slide" type="slide" axis="0 1 0"
@@ -543,6 +609,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_21_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_22" pos="-1.125714619 1.261890651 0.88" quat="0.740951125 0 0 0.671558955">
         <joint name="conveyor_belt_segment_22_slide" type="slide" axis="0 1 0"
@@ -551,6 +620,9 @@
               size="0.39 0.079211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_22_visual" type="mesh" mesh="conveyor_curve_belt_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
       <body name="conveyor_belt_segment_23" pos="-1.208512321 1.267317499 0.88" quat="0.718581618 0 0 0.695442635">
         <joint name="conveyor_belt_segment_23_slide" type="slide" axis="0 1 0"
@@ -559,6 +631,9 @@
               size="0.39 0.169211827 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_23_visual" type="mesh" mesh="conveyor_curve_belt_end_tile"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>
     </body>
   </worldbody>

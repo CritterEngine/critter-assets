@@ -10,6 +10,13 @@ const BELT_CENTER_RIGHT_OFFSET = 0.0179964;
 const CURVE_BELT_OUTER_RADIUS = CURVE_RADIUS + 0.406;
 const CURVE_FRAME_OUTER_RADIUS = CURVE_RADIUS + 0.59;
 const CURVE_CONTACT_OVERLAP = 0.025;
+const BELT_VISUAL_HALF_WIDTH = 0.4061687;
+const BELT_VISUAL_TILE_LENGTH = BELT_TILE_LENGTH;
+const BELT_UNDERLAY_BOTTOM = 0.85;
+const BELT_UNDERLAY_TOP = 0.866;
+const RUBBER_PATTERN_METERS = 0.04;
+const CURVE_VISUAL_TILE_LENGTH =
+  2 * (CURVE_BELT_OUTER_RADIUS * Math.tan(Math.PI / 96) + CURVE_CONTACT_OVERLAP);
 
 const straightVariants = [
   {
@@ -158,6 +165,51 @@ const createAnnularPrismObj = ({
   );
 };
 
+const createBeltTileObj = ({ name, length }) => {
+  const halfLength = length / 2;
+  const zBottom = -0.0125;
+  const zTop = 0.0125;
+  const vertices = [
+    [-BELT_VISUAL_HALF_WIDTH, -halfLength, zBottom],
+    [BELT_VISUAL_HALF_WIDTH, -halfLength, zBottom],
+    [BELT_VISUAL_HALF_WIDTH, halfLength, zBottom],
+    [-BELT_VISUAL_HALF_WIDTH, halfLength, zBottom],
+    [-BELT_VISUAL_HALF_WIDTH, -halfLength, zTop],
+    [BELT_VISUAL_HALF_WIDTH, -halfLength, zTop],
+    [BELT_VISUAL_HALF_WIDTH, halfLength, zTop],
+    [-BELT_VISUAL_HALF_WIDTH, halfLength, zTop],
+  ];
+  // The rubber atlas spans one metre across and five metres along. Quantizing
+  // a tile to whole 40 mm diamond repeats avoids a visible phase jump where
+  // adjacent moving tiles meet, while keeping its physical texture scale close.
+  const wrappedLength = Math.round(length / RUBBER_PATTERN_METERS) * RUBBER_PATTERN_METERS;
+  const u0 = 0.5 - BELT_VISUAL_HALF_WIDTH;
+  const u1 = 0.5 + BELT_VISUAL_HALF_WIDTH;
+  const v0 = 0.5 - wrappedLength / 10;
+  const v1 = 0.5 + wrappedLength / 10;
+  const uvs = [
+    [u0, v0],
+    [u1, v0],
+    [u1, v1],
+    [u0, v1],
+    [u0, v0],
+    [u1, v0],
+    [u1, v1],
+    [u0, v1],
+  ];
+  const faces = [
+    [5, 6, 7], [5, 7, 8], [1, 3, 2], [1, 4, 3], [1, 2, 6], [1, 6, 5],
+    [2, 3, 7], [2, 7, 6], [3, 4, 8], [3, 8, 7], [4, 1, 5], [4, 5, 8],
+  ];
+  return [
+    `o ${name}`,
+    ...vertices.map((vertex) => `v ${formatVector(vertex)}`),
+    ...uvs.map((uv) => `vt ${formatVector(uv)}`),
+    ...faces.map((face) => `f ${face.map((index) => `${index}/${index}`).join(" ")}`),
+    "",
+  ].join("\n");
+};
+
 const renderVisualModule = (moduleIndex, centerY, { includeEndFrame = true } = {}) => {
   const suffix = `module_${moduleIndex}`;
   const pos = `0 ${formatNumber(centerY)} 0`;
@@ -179,16 +231,17 @@ ${endFrame}      <geom name="conveyor_visual_1_${suffix}" type="mesh" mesh="conv
             contype="0" conaffinity="0" density="0"/>`;
 };
 
-const renderBeltVisual = () => `      <!-- One continuous belt skin hides the joins between frame modules. -->
-      <geom name="conveyor_belt_visual" type="mesh" mesh="conveyor_belt_visual"
-            material="conveyor_belt_mat" group="1"
-            contype="0" conaffinity="0" density="0"/>`;
-
 const renderStraightAttachmentSites = (length) => `      <!-- Connection frames share the +Y belt-travel axis for drag-to-attach placement. -->
       <site name="attachment_site" pos="0 ${formatNumber(-length / 2)} 0.88" zaxis="0 1 0"
             size="0.035" group="4"/>
       <site name="attachment_site_outlet" pos="0 ${formatNumber(length / 2)} 0.88" zaxis="0 1 0"
             size="0.035" group="4"/>`;
+
+const renderStraightBeltUnderlay = (length) => `      <!-- Static dark backing prevents brief seams between moving belt tiles from exposing the frame. -->
+      <geom name="conveyor_belt_underlay_visual" type="box"
+            pos="0.0179964 0 ${formatNumber((BELT_UNDERLAY_BOTTOM + BELT_UNDERLAY_TOP) / 2)}"
+            size="${formatNumber(BELT_VISUAL_HALF_WIDTH)} ${formatNumber(length / 2 + HANDOFF_OVERLAP)} ${formatNumber((BELT_UNDERLAY_TOP - BELT_UNDERLAY_BOTTOM) / 2)}"
+            material="conveyor_belt_underlay_mat" group="1" contype="0" conaffinity="0" density="0"/>`;
 
 const renderCurveAttachmentSites = (turn) => {
   const exitPosition = curveConnectionPoint(turn, CURVE_RADIUS, turn.angle, 0.88);
@@ -203,12 +256,16 @@ const renderBeltSegment = (index, centerY, segmentCount) => {
   const isEndpoint = index === 0 || index === segmentCount - 1;
   const contactHalfLength =
     BELT_TILE_LENGTH / 2 + (isEndpoint ? BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP : 0);
+  const visualMesh = isEndpoint ? "conveyor_belt_end_tile" : "conveyor_belt_tile";
   return `      <body name="conveyor_belt_segment_${index}" pos="0.0179964 ${formatNumber(centerY)} 0.88">
         <joint name="conveyor_belt_segment_${index}_slide" type="slide" axis="0 1 0"
                range="-${formatNumber(BELT_WRAP_HALF_TRAVEL)} ${formatNumber(BELT_WRAP_HALF_TRAVEL)}" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_${index}_contact" type="box" size="0.39 ${formatNumber(contactHalfLength)} 0.0125"
               mass="0.02" group="3" rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_${index}_visual" type="mesh" mesh="${visualMesh}"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>`;
 };
 
@@ -269,6 +326,7 @@ const renderCurveBeltSegment = (turn, index, angle, beltHalfLength) => {
   const isEndpoint = index === 0 || index === turn.segmentCount - 1;
   const contactHalfLength =
     beltHalfLength + (isEndpoint ? BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP : 0);
+  const visualMesh = isEndpoint ? "conveyor_curve_belt_end_tile" : "conveyor_curve_belt_tile";
   return `      <body name="conveyor_belt_segment_${index}" pos="${formatVector(position)}" quat="${formatVector(quat)}">
         <joint name="conveyor_belt_segment_${index}_slide" type="slide" axis="0 1 0"
                range="-${formatNumber(BELT_WRAP_HALF_TRAVEL)} ${formatNumber(BELT_WRAP_HALF_TRAVEL)}" limited="false" damping="0"/>
@@ -276,6 +334,9 @@ const renderCurveBeltSegment = (turn, index, angle, beltHalfLength) => {
               size="0.39 ${formatNumber(contactHalfLength)} 0.0125" mass="0.02" group="3"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
               solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+        <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
+        <geom name="conveyor_belt_segment_${index}_visual" type="mesh" mesh="${visualMesh}"
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       </body>`;
 };
 
@@ -309,6 +370,7 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_belt_underlay_mat" rgba="0.018 0.022 0.028 1" metallic="0" roughness="0.9"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
     <texture name="belt_roughness" type="2d" file="rubber-roughness.png"/>
@@ -321,7 +383,8 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
 ${longEndFrameMesh}    <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
     <mesh name="conveyor_visual_2" file="visual_2.obj" inertia="shell"/>
     <mesh name="conveyor_visual_3" file="visual_3.obj" inertia="shell"/>
-    <mesh name="conveyor_belt_visual" file="${moduleCount > 1 ? "visual_4-long.obj" : "visual_4.obj"}" inertia="shell"/>
+    <mesh name="conveyor_belt_tile" file="belt-tile.obj" inertia="shell"/>
+    <mesh name="conveyor_belt_end_tile" file="belt-end-tile.obj" inertia="shell"/>
   </asset>
 
   <worldbody>
@@ -330,8 +393,8 @@ ${longEndFrameMesh}    <mesh name="conveyor_visual_1" file="visual_1.obj" inerti
 ${longEndFrameVisual}${moduleCenters
   .map((centerY, index) => renderVisualModule(index, centerY, { includeEndFrame: moduleCount === 1 }))
   .join("\n")}
-${renderBeltVisual()}
 ${renderStraightAttachmentSites(length)}
+${renderStraightBeltUnderlay(length)}
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
@@ -380,6 +443,7 @@ const renderCurveVariant = (turn) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
+    <material name="conveyor_belt_underlay_mat" rgba="0.018 0.022 0.028 1" metallic="0" roughness="0.9"/>
     <material name="conveyor_hardware_mat" rgba="0.16 0.18 0.22 1" metallic="0.82" roughness="0.24"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
@@ -389,9 +453,11 @@ const renderCurveVariant = (turn) => {
       <layer role="normal" texture="belt_normal"/>
       <layer role="roughness" texture="belt_roughness"/>
     </material>
-    <mesh name="conveyor_curve_belt_visual" file="${meshPrefix}-belt.obj" inertia="shell"/>
     <mesh name="conveyor_curve_inner_rail_visual" file="${meshPrefix}-inner-rail.obj" inertia="shell"/>
     <mesh name="conveyor_curve_outer_rail_visual" file="${meshPrefix}-outer-rail.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_underlay_visual" file="${meshPrefix}-belt-underlay.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_tile" file="belt-curve-tile.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_belt_end_tile" file="belt-curve-end-tile.obj" inertia="shell"/>
     <mesh name="conveyor_curve_support_visual"
           file="${turn.angle < Math.PI / 2 ? "curve-support-short.obj" : "visual_3.obj"}" inertia="shell"/>
   </asset>
@@ -399,8 +465,8 @@ const renderCurveVariant = (turn) => {
   <worldbody>
     <body name="${turn.bodyName}" pos="0 0 0">
       <!-- The incoming connection is centered at the origin and points along local +Y. -->
-      <geom name="conveyor_curve_belt_visual" type="mesh" mesh="conveyor_curve_belt_visual"
-            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+      <geom name="conveyor_curve_belt_underlay_visual" type="mesh" mesh="conveyor_curve_belt_underlay_visual"
+            material="conveyor_belt_underlay_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_inner_rail_visual" type="mesh" mesh="conveyor_curve_inner_rail_visual"
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_outer_rail_visual" type="mesh" mesh="conveyor_curve_outer_rail_visual"
@@ -459,6 +525,14 @@ for (const turn of curveVariants) {
       outerRadius: CURVE_RADIUS + 0.406,
       zBottom: 0.717,
       zTop: 0.892,
+    },
+    {
+      filename: `curve-${turn.id}-belt-underlay.obj`,
+      name: `conveyor_curve_${turn.id}_belt_underlay`,
+      innerRadius: CURVE_RADIUS - 0.406,
+      outerRadius: CURVE_RADIUS + 0.406,
+      zBottom: BELT_UNDERLAY_BOTTOM,
+      zTop: BELT_UNDERLAY_TOP,
     },
     {
       filename: `curve-${turn.id}-inner-rail.obj`,
@@ -531,6 +605,26 @@ function writeScaledMesh(filename, output, scale) {
 writeScaledMesh('visual_3.obj', 'curve-support-short.obj', [1, 0.6, 1]);
 // The 5 m frame needs one extended end-frame mesh, not two 2.5 m end frames at the center join.
 writeScaledMesh('visual_0.obj', 'visual_0-long.obj', [1, 2, 1]);
+writeFileSync(
+  new URL("meshes/belt-tile.obj", import.meta.url),
+  createBeltTileObj({ name: "conveyor_belt_tile", length: BELT_VISUAL_TILE_LENGTH }),
+  "utf8"
+);
+writeFileSync(
+  new URL("meshes/belt-end-tile.obj", import.meta.url),
+  createBeltTileObj({ name: "conveyor_belt_end_tile", length: 2 * (BELT_TILE_LENGTH / 2 + BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP) }),
+  "utf8"
+);
+writeFileSync(
+  new URL("meshes/belt-curve-tile.obj", import.meta.url),
+  createBeltTileObj({ name: "conveyor_curve_belt_tile", length: CURVE_VISUAL_TILE_LENGTH }),
+  "utf8"
+);
+writeFileSync(
+  new URL("meshes/belt-curve-end-tile.obj", import.meta.url),
+  createBeltTileObj({ name: "conveyor_curve_belt_end_tile", length: CURVE_VISUAL_TILE_LENGTH + 2 * (BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP) }),
+  "utf8"
+);
 writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y + 1.25) / 5]);
 writeBeltUvs(
   'visual_4.obj',
