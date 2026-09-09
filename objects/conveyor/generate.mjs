@@ -6,6 +6,7 @@ const BELT_TILE_LENGTH = 0.5;
 const BELT_WRAP_HALF_TRAVEL = 0.05;
 const HANDOFF_OVERLAP = 0.04;
 const CURVE_RADIUS = 1.25;
+const BELT_CENTER_RIGHT_OFFSET = 0.0179964;
 
 const straightVariants = [
   {
@@ -72,11 +73,22 @@ const formatNumber = (value) => {
 
 const formatVector = (values) => values.map(formatNumber).join(" ");
 
-const curvePoint = ({ direction }, radius, angle, z = 0) => [
+const curveConnectionPoint = ({ direction }, radius, angle, z = 0) => [
   -direction * CURVE_RADIUS + direction * radius * Math.cos(angle),
   radius * Math.sin(angle),
   z,
 ];
+
+const curvePoint = (turn, radius, angle, z = 0) => {
+  const point = curveConnectionPoint(turn, radius, angle, z);
+  const tangent = [-turn.direction * Math.sin(angle), Math.cos(angle), 0];
+  // Match the straight conveyor's belt center, which is offset to the local right of its snap frame.
+  return addVectors(point, [
+    tangent[1] * BELT_CENTER_RIGHT_OFFSET,
+    -tangent[0] * BELT_CENTER_RIGHT_OFFSET,
+    0,
+  ]);
+};
 
 const yawQuaternion = (yaw) => [Math.cos(yaw / 2), 0, 0, Math.sin(yaw / 2)];
 
@@ -176,7 +188,7 @@ const renderStraightAttachmentSites = (length) => `      <!-- Connection frames 
             size="0.035" group="4"/>`;
 
 const renderCurveAttachmentSites = (turn) => {
-  const exitPosition = curvePoint(turn, CURVE_RADIUS, turn.angle, 0.88);
+  const exitPosition = curveConnectionPoint(turn, CURVE_RADIUS, turn.angle, 0.88);
   const exitDirection = [-turn.direction * Math.sin(turn.angle), Math.cos(turn.angle), 0];
   return `      <!-- Connection frames share the forward belt-travel axis for drag-to-attach placement. -->
       <site name="attachment_site" pos="0 0 0.88" zaxis="0 1 0" size="0.035" group="4"/>
