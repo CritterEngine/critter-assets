@@ -27,3 +27,8 @@ references can still be loaded during QA; normal incremental robot deployments r
 To migrate another robot, first deploy its immutable release and manifest by adding its ID to
 `immutable_assets.json` and manually running the workflow. After that succeeds, set
 `immutableAssets: true` on the matching Critter application catalog entry.
+
+Object studio thumbnails are generated from the sibling `critter-object-library` with
+`pnpm thumbnail:render-assets`. The renderer preserves PBR maps and physical glass properties,
+uses authored poses, and saves both primary and hover images. Correct material definitions in
+the source XML before regenerating; thumbnails should match the asset loaded in Critter.

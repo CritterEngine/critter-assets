@@ -14,9 +14,8 @@
     </default>
   </default>
   <asset>
-    <texture type="2d" name="Cup1_Mat" file="assets/BrushedIron_AlbedoTransparency.png" />
-    <material name="material_Cup_Decals_Off_Mat" class="/" rgba="0.858824 0.905882 1.000000 1.000000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
-    <material name="material_Cup1_Mat" class="/" texture="Cup1_Mat" rgba="0.858824 0.905882 1.000000 1.000000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <material name="material_Cup_Decals_Off_Mat" class="/" rgba="1 1 1 1" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="0.002" ior="1.50" />
+    <material name="material_Cup1_Mat" class="/" rgba="1 1 1 1" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="0.002" ior="1.50" />
     <mesh name="Cup_1_cup_1_0" class="/" content_type="model/obj" file="assets/Cup_1_cup_1/Cup_1_cup_1_0.obj" />
     <mesh name="Cup_1_cup_1_1" class="/" content_type="model/obj" file="assets/Cup_1_cup_1/Cup_1_cup_1_1.obj" />
   </asset>

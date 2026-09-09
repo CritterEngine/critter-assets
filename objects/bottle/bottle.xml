@@ -14,7 +14,7 @@
     </default>
   </default>
   <asset>
-    <material name="material_Glass_Detailed_White_Mat" class="/" rgba="0.921569 0.988235 1.000000 0.500000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="1.00" ior="1.50" />
+    <material name="material_Glass_Detailed_White_Mat" class="/" rgba="0.921569 0.988235 1.000000 1.000000" metallic="0.000000" roughness="0.020000" clearcoat="0.25" clearcoatroughness="0.05" transmission="1.00" thickness="0.002" ior="1.50" />
     <mesh name="Bottle_1_bottle_1" class="/" content_type="model/obj" file="assets/Bottle_1_bottle_1/Bottle_1_bottle_1.obj" />
   </asset>
   <worldbody>
