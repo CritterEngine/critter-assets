@@ -163,6 +163,21 @@ const renderBeltVisual = () => `      <!-- One continuous belt skin hides the jo
             material="conveyor_belt_mat" group="1"
             contype="0" conaffinity="0" density="0"/>`;
 
+const renderStraightAttachmentSites = (length) => `      <!-- Connection frames share the +Y belt-travel axis for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 ${formatNumber(-length / 2)} 0.88" zaxis="0 1 0"
+            size="0.035" group="4"/>
+      <site name="attachment_site_outlet" pos="0 ${formatNumber(length / 2)} 0.88" zaxis="0 1 0"
+            size="0.035" group="4"/>`;
+
+const renderCurveAttachmentSites = (turn) => {
+  const exitPosition = curvePoint(turn, CURVE_RADIUS, turn.angle, 0.88);
+  const exitDirection = [-turn.direction * Math.sin(turn.angle), Math.cos(turn.angle), 0];
+  return `      <!-- Connection frames share the forward belt-travel axis for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 0 0.88" zaxis="0 1 0" size="0.035" group="4"/>
+      <site name="attachment_site_outlet" pos="${formatVector(exitPosition)}"
+            zaxis="${formatVector(exitDirection)}" size="0.035" group="4"/>`;
+};
+
 const renderBeltSegment = (index, centerY, segmentCount) => {
   const isEndpoint = index === 0 || index === segmentCount - 1;
   const contactHalfLength =
@@ -267,6 +282,7 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
       <!-- Visual meshes never participate in collision. -->
 ${moduleCenters.map((centerY, index) => renderVisualModule(index, centerY)).join("\n")}
 ${renderBeltVisual()}
+${renderStraightAttachmentSites(length)}
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
@@ -335,6 +351,7 @@ const renderCurveVariant = (turn) => {
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_outer_rail_visual" type="mesh" mesh="conveyor_curve_outer_rail_visual"
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+${renderCurveAttachmentSites(turn)}
 
       <!-- Two reusable support stations follow the curve. -->
 ${renderCurveSupport(turn, 0, turn.angle / 3)}

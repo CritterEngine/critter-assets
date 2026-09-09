@@ -40,6 +40,11 @@
       <geom name="conveyor_belt_visual" type="mesh" mesh="conveyor_belt_visual"
             material="conveyor_belt_mat" group="1"
             contype="0" conaffinity="0" density="0"/>
+      <!-- Connection frames share the +Y belt-travel axis for drag-to-attach placement. -->
+      <site name="attachment_site" pos="0 -1.25 0.88" zaxis="0 1 0"
+            size="0.035" group="4"/>
+      <site name="attachment_site_outlet" pos="0 1.25 0.88" zaxis="0 1 0"
+            size="0.035" group="4"/>
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
