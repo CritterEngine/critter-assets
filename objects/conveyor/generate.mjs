@@ -197,43 +197,14 @@ const renderBeltSegment = (index, centerY, segmentCount) => {
 const renderEquality = (index) =>
   `    <joint name="belt_eq_${index}_${index + 1}" joint1="conveyor_belt_segment_${index}_slide" joint2="conveyor_belt_segment_${index + 1}_slide" polycoef="0 1 0 0 0"/>`;
 
-const renderCurveSupport = (turn, index, angle) => {
+const renderCurveSupportMesh = (turn) => {
+  const angle = turn.angle / 2;
   const position = curvePoint(turn, CURVE_RADIUS, angle, 0);
   const quat = yawQuaternion(turn.direction * angle);
-  return `      <body name="conveyor_curve_support_${index}" pos="${formatVector(position)}" quat="${formatVector(quat)}">
-        <geom name="conveyor_curve_crossbeam_${index}" type="box" pos="0 0 0.66" size="0.55 0.06 0.06"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_leg_inner_${index}" type="box" pos="-0.45 0 0.34" size="0.065 0.065 0.34"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_leg_outer_${index}" type="box" pos="0.45 0 0.34" size="0.065 0.065 0.34"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_foot_inner_${index}" type="cylinder" pos="-0.45 0 0.025" size="0.13 0.025"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_foot_outer_${index}" type="cylinder" pos="0.45 0 0.025" size="0.13 0.025"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-      </body>`;
-};
-
-const renderCurveSupportDetails = (turn, index, angle) => {
-  const center = curvePoint(turn, CURVE_RADIUS, angle, 0);
-  const quat = yawQuaternion(turn.direction * angle);
-  return `      <!-- Finished support station: top plate, braced legs, leveling screws, and foot pads. -->
-      <body name="conveyor_curve_support_detail_${index}" pos="${formatVector(center)}" quat="${formatVector(quat)}">
-        <geom name="conveyor_curve_support_plate_${index}" type="box" pos="0 0 0.71" size="0.53 0.095 0.025"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_support_brace_left_${index}" type="box" pos="-0.38 0 0.51" euler="0 0 -0.44" size="0.032 0.045 0.26"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_support_brace_right_${index}" type="box" pos="0.38 0 0.51" euler="0 0 0.44" size="0.032 0.045 0.26"
-              material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_level_left_${index}" type="cylinder" pos="-0.45 0 0.095" size="0.038 0.10"
-              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_level_right_${index}" type="cylinder" pos="0.45 0 0.095" size="0.038 0.10"
-              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_foot_ring_left_${index}" type="cylinder" pos="-0.45 0 0.047" size="0.145 0.016"
-              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
-        <geom name="conveyor_curve_foot_ring_right_${index}" type="cylinder" pos="0.45 0 0.047" size="0.145 0.016"
-              material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
-      </body>`;
+  return `      <!-- Reuse the straight conveyor's finished, adjustable-leg support assembly. -->
+      <geom name="conveyor_curve_support_visual" type="mesh" mesh="conveyor_curve_support_visual"
+            pos="${formatVector(position)}" quat="${formatVector(quat)}" material="conveyor_frame_mat"
+            group="1" contype="0" conaffinity="0" density="0"/>`;
 };
 
 const renderCurveRailFastener = (turn, index, angle) => {
@@ -388,6 +359,8 @@ const renderCurveVariant = (turn) => {
     <mesh name="conveyor_curve_belt_visual" file="${meshPrefix}-belt.obj" inertia="shell"/>
     <mesh name="conveyor_curve_inner_rail_visual" file="${meshPrefix}-inner-rail.obj" inertia="shell"/>
     <mesh name="conveyor_curve_outer_rail_visual" file="${meshPrefix}-outer-rail.obj" inertia="shell"/>
+    <mesh name="conveyor_curve_support_visual"
+          file="${turn.angle < Math.PI / 2 ? "curve-support-short.obj" : "visual_3.obj"}" inertia="shell"/>
   </asset>
 
   <worldbody>
@@ -409,11 +382,7 @@ ${renderCurveEndRoller(
   [-turn.direction * Math.sin(turn.angle), Math.cos(turn.angle), 0]
 )}
 
-      <!-- Two reusable support stations follow the curve. -->
-${renderCurveSupport(turn, 0, turn.angle / 3)}
-${renderCurveSupport(turn, 1, (turn.angle * 2) / 3)}
-${renderCurveSupportDetails(turn, 0, turn.angle / 3)}
-${renderCurveSupportDetails(turn, 1, (turn.angle * 2) / 3)}
+${renderCurveSupportMesh(turn)}
 
       <!-- Fasteners along both guard rails give the curve the same manufactured detail as the straight modules. -->
 ${sectionAngles.map((angle, index) => renderCurveRailFastener(turn, index, angle)).join("\n")}
@@ -506,6 +475,27 @@ function writeBeltUvs(filename, mapUv, output = filename, transformVertex = (ver
   result.splice(firstFace, 0, ...vertices.map(v => 'vt ' + mapUv(v).map(formatNumber).join(' ')));
   writeFileSync(new URL('meshes/' + output, import.meta.url), result.join('\n'));
 }
+
+function writeScaledMesh(filename, output, scale) {
+  const file = new URL('meshes/' + filename, import.meta.url);
+  const lines = readFileSync(file, 'utf8').split(/\r?\n/);
+  const scaledLines = lines.map((line) => {
+    const [kind, ...rawValues] = line.trim().split(/\s+/);
+    if (kind === 'v') {
+      return 'v ' + formatVector(rawValues.map(Number).map((value, index) => value * scale[index]));
+    }
+    if (kind === 'vn') {
+      const normal = rawValues.map(Number).map((value, index) => value / scale[index]);
+      const length = Math.hypot(...normal);
+      return 'vn ' + formatVector(normal.map((value) => value / length));
+    }
+    return line;
+  });
+  writeFileSync(new URL('meshes/' + output, import.meta.url), scaledLines.join('\n'));
+}
+
+// The 45° curve needs the same finished support silhouette in a shorter footprint.
+writeScaledMesh('visual_3.obj', 'curve-support-short.obj', [1, 0.6, 1]);
 writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y + 1.25) / 5]);
 writeBeltUvs(
   'visual_4.obj',
