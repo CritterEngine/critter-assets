@@ -158,9 +158,9 @@ const renderVisualModule = (moduleIndex, centerY) => {
             contype="0" conaffinity="0" density="0"/>`;
 };
 
-const renderBeltVisual = (moduleCount) => `      <!-- One continuous belt skin hides the joins between frame modules. -->
+const renderBeltVisual = () => `      <!-- One continuous belt skin hides the joins between frame modules. -->
       <geom name="conveyor_belt_visual" type="mesh" mesh="conveyor_belt_visual"
-            scale="1 ${formatNumber(moduleCount)} 1" material="conveyor_belt_mat" group="1"
+            material="conveyor_belt_mat" group="1"
             contype="0" conaffinity="0" density="0"/>`;
 
 const renderBeltSegment = (index, centerY, segmentCount) => {
@@ -266,7 +266,7 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
     <body name="${bodyName}" pos="0 0 0">
       <!-- Visual meshes never participate in collision. -->
 ${moduleCenters.map((centerY, index) => renderVisualModule(index, centerY)).join("\n")}
-${renderBeltVisual(moduleCount)}
+${renderBeltVisual()}
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
@@ -409,11 +409,15 @@ for (const turn of curveVariants) {
 
 // Rubber atlas covers one metre across and five metres along the belt.
 // Map in metres so changing conveyor length never stretches the grip pattern.
-function writeBeltUvs(filename, mapUv, output = filename) {
+function writeBeltUvs(filename, mapUv, output = filename, transformVertex = (vertex) => vertex) {
   const file = new URL('meshes/' + filename, import.meta.url);
   const lines = readFileSync(file, 'utf8').split(/\r?\n/);
-  const vertices = lines.filter(line => line.startsWith('v ')).map(line => line.trim().split(/\s+/).slice(1).map(Number));
+  const vertices = lines
+    .filter(line => line.startsWith('v '))
+    .map(line => transformVertex(line.trim().split(/\s+/).slice(1).map(Number)));
+  let vertexIndex = 0;
   const result = lines.filter(line => !line.startsWith('vt ')).map(line => {
+    if (line.startsWith('v ')) return 'v ' + formatVector(vertices[vertexIndex++]);
     if (!line.startsWith('f ')) return line;
     return 'f ' + line.slice(2).trim().split(/\s+/).map(token => {
       const [v, , n] = token.split('/');
@@ -425,7 +429,12 @@ function writeBeltUvs(filename, mapUv, output = filename) {
   writeFileSync(new URL('meshes/' + output, import.meta.url), result.join('\n'));
 }
 writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y + 1.25) / 5]);
-writeBeltUvs('visual_4.obj', ([x,y]) => [x + 0.5, (y * 2 + 2.5) / 5], 'visual_4-long.obj');
+writeBeltUvs(
+  'visual_4.obj',
+  ([x, y]) => [x + 0.5, (y + 2.5) / 5],
+  'visual_4-long.obj',
+  ([x, y, z]) => [x, y * 2, z]
+);
 for (const turn of curveVariants) {
   writeBeltUvs('curve-' + turn.id + '-belt.obj', ([x,y]) => {
     const radialX = turn.direction * x + CURVE_RADIUS;

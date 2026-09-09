@@ -38,7 +38,7 @@
             contype="0" conaffinity="0" density="0"/>
       <!-- One continuous belt skin hides the joins between frame modules. -->
       <geom name="conveyor_belt_visual" type="mesh" mesh="conveyor_belt_visual"
-            scale="1 1 1" material="conveyor_belt_mat" group="1"
+            material="conveyor_belt_mat" group="1"
             contype="0" conaffinity="0" density="0"/>
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
