@@ -7,6 +7,9 @@ const BELT_WRAP_HALF_TRAVEL = 0.05;
 const HANDOFF_OVERLAP = 0.04;
 const CURVE_RADIUS = 1.25;
 const BELT_CENTER_RIGHT_OFFSET = 0.0179964;
+const CURVE_BELT_OUTER_RADIUS = CURVE_RADIUS + 0.406;
+const CURVE_FRAME_OUTER_RADIUS = CURVE_RADIUS + 0.59;
+const CURVE_CONTACT_OVERLAP = 0.025;
 
 const straightVariants = [
   {
@@ -31,8 +34,8 @@ const curveVariants = [
     id: "left",
     direction: 1,
     angle: Math.PI / 2,
-    segmentCount: 10,
-    meshSteps: 32,
+    segmentCount: 24,
+    meshSteps: 48,
   },
   {
     filename: "conveyor-curve-right.xml",
@@ -41,8 +44,8 @@ const curveVariants = [
     id: "right",
     direction: -1,
     angle: Math.PI / 2,
-    segmentCount: 10,
-    meshSteps: 32,
+    segmentCount: 24,
+    meshSteps: 48,
   },
   {
     filename: "conveyor-curve-left-45.xml",
@@ -51,8 +54,8 @@ const curveVariants = [
     id: "left-45",
     direction: 1,
     angle: Math.PI / 4,
-    segmentCount: 5,
-    meshSteps: 16,
+    segmentCount: 12,
+    meshSteps: 24,
   },
   {
     filename: "conveyor-curve-right-45.xml",
@@ -61,8 +64,8 @@ const curveVariants = [
     id: "right-45",
     direction: -1,
     angle: Math.PI / 4,
-    segmentCount: 5,
-    meshSteps: 16,
+    segmentCount: 12,
+    meshSteps: 24,
   },
 ];
 
@@ -244,28 +247,28 @@ const renderCurveEndRoller = (turn, name, center, tangent) => {
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>`;
 };
 
-const renderCurveFrameSection = (turn, index, angle, halfArcLength) => {
+const renderCurveFrameSection = (turn, index, angle, frameHalfLength) => {
   const center = curvePoint(turn, CURVE_RADIUS, angle, 0.35);
   const innerRail = curvePoint(turn, CURVE_RADIUS - 0.51, angle, 0.82);
   const outerRail = curvePoint(turn, CURVE_RADIUS + 0.51, angle, 0.82);
   const quat = yawQuaternion(turn.direction * angle);
   return `      <geom name="conveyor_curve_frame_collision_${index}" type="box"
             pos="${formatVector(center)}" quat="${formatVector(quat)}"
-            size="0.52 ${formatNumber(halfArcLength * 1.08)} 0.35" group="3" rgba="0 0 0 0"/>
+            size="0.52 ${formatNumber(frameHalfLength)} 0.35" group="3" rgba="0 0 0 0"/>
       <geom name="conveyor_curve_inner_rail_collision_${index}" type="box"
             pos="${formatVector(innerRail)}" quat="${formatVector(quat)}"
-            size="0.09 ${formatNumber(halfArcLength * 1.08)} 0.12" group="3" rgba="0 0 0 0"/>
+            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0"/>
       <geom name="conveyor_curve_outer_rail_collision_${index}" type="box"
             pos="${formatVector(outerRail)}" quat="${formatVector(quat)}"
-            size="0.09 ${formatNumber(halfArcLength * 1.08)} 0.12" group="3" rgba="0 0 0 0"/>`;
+            size="0.09 ${formatNumber(frameHalfLength)} 0.12" group="3" rgba="0 0 0 0"/>`;
 };
 
-const renderCurveBeltSegment = (turn, index, angle, halfArcLength) => {
+const renderCurveBeltSegment = (turn, index, angle, beltHalfLength) => {
   const position = curvePoint(turn, CURVE_RADIUS, angle, 0.88);
   const quat = yawQuaternion(turn.direction * angle);
   const isEndpoint = index === 0 || index === turn.segmentCount - 1;
   const contactHalfLength =
-    halfArcLength * 1.08 + (isEndpoint ? BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP : 0);
+    beltHalfLength + (isEndpoint ? BELT_WRAP_HALF_TRAVEL + HANDOFF_OVERLAP : 0);
   return `      <body name="conveyor_belt_segment_${index}" pos="${formatVector(position)}" quat="${formatVector(quat)}">
         <joint name="conveyor_belt_segment_${index}_slide" type="slide" axis="0 1 0"
                range="-${formatNumber(BELT_WRAP_HALF_TRAVEL)} ${formatNumber(BELT_WRAP_HALF_TRAVEL)}" limited="false" damping="0"/>
@@ -360,8 +363,10 @@ ${Array.from({ length: segmentCount - 1 }, (_, index) => renderEquality(index)).
 };
 
 const renderCurveVariant = (turn) => {
-  const arcLength = CURVE_RADIUS * turn.angle;
-  const halfArcLength = arcLength / turn.segmentCount / 2;
+  const halfSegmentAngle = turn.angle / turn.segmentCount / 2;
+  // Tangent boxes must cover the outer arc, not just the centerline, or their outside corners leave gaps.
+  const frameHalfLength = CURVE_FRAME_OUTER_RADIUS * Math.tan(halfSegmentAngle) + CURVE_CONTACT_OVERLAP;
+  const beltHalfLength = CURVE_BELT_OUTER_RADIUS * Math.tan(halfSegmentAngle) + CURVE_CONTACT_OVERLAP;
   const sectionAngles = Array.from(
     { length: turn.segmentCount },
     (_, index) => ((index + 0.5) / turn.segmentCount) * turn.angle
@@ -417,12 +422,12 @@ ${sectionAngles.map((angle, index) => renderCurveRailFastener(turn, index, angle
 
       <!-- Overlapping tangent boxes approximate stable curved frame and rail collision. -->
 ${sectionAngles
-  .map((angle, index) => renderCurveFrameSection(turn, index, angle, halfArcLength))
+  .map((angle, index) => renderCurveFrameSection(turn, index, angle, frameHalfLength))
   .join("\n")}
 
       <!-- Tangent-aligned moving contact tiles steer objects continuously through the turn. -->
 ${sectionAngles
-  .map((angle, index) => renderCurveBeltSegment(turn, index, angle, halfArcLength))
+  .map((angle, index) => renderCurveBeltSegment(turn, index, angle, beltHalfLength))
   .join("\n")}
     </body>
   </worldbody>
