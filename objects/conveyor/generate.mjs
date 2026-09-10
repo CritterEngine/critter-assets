@@ -12,8 +12,10 @@ const CURVE_FRAME_OUTER_RADIUS = CURVE_RADIUS + 0.59;
 const CURVE_CONTACT_OVERLAP = 0.025;
 const BELT_VISUAL_HALF_WIDTH = 0.4061687;
 const BELT_VISUAL_TILE_LENGTH = BELT_TILE_LENGTH;
-const BELT_UNDERLAY_BOTTOM = 0.85;
-const BELT_UNDERLAY_TOP = 0.866;
+// Clear the frame (0.8921966 m) while staying below the moving tread (0.8925 m).
+const BELT_UNDERLAY_BOTTOM = 0.8763;
+const BELT_UNDERLAY_TOP = 0.8923;
+const BELT_UNDERLAY_HALF_WIDTH = 0.469;
 const RUBBER_PATTERN_METERS = 0.04;
 const CURVE_VISUAL_TILE_LENGTH =
   2 * (CURVE_BELT_OUTER_RADIUS * Math.tan(Math.PI / 96) + CURVE_CONTACT_OVERLAP);
@@ -165,26 +167,30 @@ const createAnnularPrismObj = ({
   );
 };
 
-const createBeltTileObj = ({ name, length }) => {
+const createBeltTileObj = ({
+  name,
+  length,
+  halfWidth = BELT_VISUAL_HALF_WIDTH,
+  zBottom = -0.0125,
+  zTop = 0.0125,
+}) => {
   const halfLength = length / 2;
-  const zBottom = -0.0125;
-  const zTop = 0.0125;
   const vertices = [
-    [-BELT_VISUAL_HALF_WIDTH, -halfLength, zBottom],
-    [BELT_VISUAL_HALF_WIDTH, -halfLength, zBottom],
-    [BELT_VISUAL_HALF_WIDTH, halfLength, zBottom],
-    [-BELT_VISUAL_HALF_WIDTH, halfLength, zBottom],
-    [-BELT_VISUAL_HALF_WIDTH, -halfLength, zTop],
-    [BELT_VISUAL_HALF_WIDTH, -halfLength, zTop],
-    [BELT_VISUAL_HALF_WIDTH, halfLength, zTop],
-    [-BELT_VISUAL_HALF_WIDTH, halfLength, zTop],
+    [-halfWidth, -halfLength, zBottom],
+    [halfWidth, -halfLength, zBottom],
+    [halfWidth, halfLength, zBottom],
+    [-halfWidth, halfLength, zBottom],
+    [-halfWidth, -halfLength, zTop],
+    [halfWidth, -halfLength, zTop],
+    [halfWidth, halfLength, zTop],
+    [-halfWidth, halfLength, zTop],
   ];
   // The rubber atlas spans one metre across and five metres along. Quantizing
   // a tile to whole 40 mm diamond repeats avoids a visible phase jump where
   // adjacent moving tiles meet, while keeping its physical texture scale close.
   const wrappedLength = Math.round(length / RUBBER_PATTERN_METERS) * RUBBER_PATTERN_METERS;
-  const u0 = 0.5 - BELT_VISUAL_HALF_WIDTH;
-  const u1 = 0.5 + BELT_VISUAL_HALF_WIDTH;
+  const u0 = 0.5 - halfWidth;
+  const u1 = 0.5 + halfWidth;
   const v0 = 0.5 - wrappedLength / 10;
   const v1 = 0.5 + wrappedLength / 10;
   const uvs = [
@@ -237,11 +243,10 @@ const renderStraightAttachmentSites = (length) => `      <!-- Connection frames 
       <site name="attachment_site_outlet" pos="0 ${formatNumber(length / 2)} 0.88" xyaxes="1 0 0 0 1 0"
             size="0.035" group="4"/>`;
 
-const renderStraightBeltUnderlay = (length) => `      <!-- Static dark backing prevents brief seams between moving belt tiles from exposing the frame. -->
-      <geom name="conveyor_belt_underlay_visual" type="box"
-            pos="0.0179964 0 ${formatNumber((BELT_UNDERLAY_BOTTOM + BELT_UNDERLAY_TOP) / 2)}"
-            size="${formatNumber(BELT_VISUAL_HALF_WIDTH)} ${formatNumber(length / 2 + HANDOFF_OVERLAP)} ${formatNumber((BELT_UNDERLAY_TOP - BELT_UNDERLAY_BOTTOM) / 2)}"
-            material="conveyor_belt_underlay_mat" group="1" contype="0" conaffinity="0" density="0"/>`;
+const renderStraightBeltUnderlay = () => `      <!-- Raised rubber backing conceals tile seams and the frame beneath the rail edges. -->
+      <geom name="conveyor_belt_underlay_visual" type="mesh" mesh="conveyor_belt_underlay_visual"
+            pos="0.0179964 0 0" material="conveyor_belt_mat" group="1"
+            contype="0" conaffinity="0" density="0"/>`;
 
 const renderCurveAttachmentSites = (turn) => {
   const exitPosition = curveConnectionPoint(turn, CURVE_RADIUS, turn.angle, 0.88);
@@ -371,7 +376,6 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
-    <material name="conveyor_belt_underlay_mat" rgba="0.018 0.022 0.028 1" metallic="0" roughness="0.9"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
     <texture name="belt_roughness" type="2d" file="rubber-roughness.png"/>
@@ -384,6 +388,7 @@ const renderVariant = ({ model, bodyName, moduleCount }) => {
 ${longEndFrameMesh}    <mesh name="conveyor_visual_1" file="visual_1.obj" inertia="shell"/>
     <mesh name="conveyor_visual_2" file="visual_2.obj" inertia="shell"/>
     <mesh name="conveyor_visual_3" file="visual_3.obj" inertia="shell"/>
+    <mesh name="conveyor_belt_underlay_visual" file="${moduleCount > 1 ? "belt-underlay-long.obj" : "belt-underlay.obj"}" inertia="shell"/>
     <mesh name="conveyor_belt_tile" file="belt-tile.obj" inertia="shell"/>
     <mesh name="conveyor_belt_end_tile" file="belt-end-tile.obj" inertia="shell"/>
   </asset>
@@ -395,7 +400,7 @@ ${longEndFrameVisual}${moduleCenters
   .map((centerY, index) => renderVisualModule(index, centerY, { includeEndFrame: moduleCount === 1 }))
   .join("\n")}
 ${renderStraightAttachmentSites(length)}
-${renderStraightBeltUnderlay(length)}
+${renderStraightBeltUnderlay()}
 
       <!-- Stable primitive collision scales with the generated conveyor length. -->
       <geom name="conveyor_frame_collision" type="box"
@@ -444,7 +449,6 @@ const renderCurveVariant = (turn) => {
 
   <asset>
     <material name="conveyor_frame_mat" rgba="0.48 0.52 0.58 1" metallic="0.72" roughness="0.28"/>
-    <material name="conveyor_belt_underlay_mat" rgba="0.018 0.022 0.028 1" metallic="0" roughness="0.9"/>
     <material name="conveyor_hardware_mat" rgba="0.16 0.18 0.22 1" metallic="0.82" roughness="0.24"/>
     <texture name="belt_color" type="2d" file="rubber-color.png"/>
     <texture name="belt_normal" type="2d" file="rubber-normal.png"/>
@@ -467,7 +471,7 @@ const renderCurveVariant = (turn) => {
     <body name="${turn.bodyName}" pos="0 0 0">
       <!-- The incoming connection is centered at the origin and points along local +Y. -->
       <geom name="conveyor_curve_belt_underlay_visual" type="mesh" mesh="conveyor_curve_belt_underlay_visual"
-            material="conveyor_belt_underlay_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_inner_rail_visual" type="mesh" mesh="conveyor_curve_inner_rail_visual"
             material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
       <geom name="conveyor_curve_outer_rail_visual" type="mesh" mesh="conveyor_curve_outer_rail_visual"
@@ -530,8 +534,8 @@ for (const turn of curveVariants) {
     {
       filename: `curve-${turn.id}-belt-underlay.obj`,
       name: `conveyor_curve_${turn.id}_belt_underlay`,
-      innerRadius: CURVE_RADIUS - 0.406,
-      outerRadius: CURVE_RADIUS + 0.406,
+      innerRadius: CURVE_RADIUS - BELT_UNDERLAY_HALF_WIDTH,
+      outerRadius: CURVE_RADIUS + BELT_UNDERLAY_HALF_WIDTH,
       zBottom: BELT_UNDERLAY_BOTTOM,
       zTop: BELT_UNDERLAY_TOP,
     },
@@ -617,6 +621,28 @@ writeFileSync(
   "utf8"
 );
 writeFileSync(
+  new URL("meshes/belt-underlay.obj", import.meta.url),
+  createBeltTileObj({
+    name: "conveyor_belt_underlay",
+    length: MODULE_LENGTH + 2 * HANDOFF_OVERLAP,
+    halfWidth: BELT_UNDERLAY_HALF_WIDTH,
+    zBottom: BELT_UNDERLAY_BOTTOM,
+    zTop: BELT_UNDERLAY_TOP,
+  }),
+  "utf8"
+);
+writeFileSync(
+  new URL("meshes/belt-underlay-long.obj", import.meta.url),
+  createBeltTileObj({
+    name: "conveyor_belt_underlay_long",
+    length: 2 * MODULE_LENGTH + 2 * HANDOFF_OVERLAP,
+    halfWidth: BELT_UNDERLAY_HALF_WIDTH,
+    zBottom: BELT_UNDERLAY_BOTTOM,
+    zTop: BELT_UNDERLAY_TOP,
+  }),
+  "utf8"
+);
+writeFileSync(
   new URL("meshes/belt-curve-tile.obj", import.meta.url),
   createBeltTileObj({ name: "conveyor_curve_belt_tile", length: CURVE_VISUAL_TILE_LENGTH }),
   "utf8"
@@ -635,6 +661,10 @@ writeBeltUvs(
 );
 for (const turn of curveVariants) {
   writeBeltUvs('curve-' + turn.id + '-belt.obj', ([x,y]) => {
+    const radialX = turn.direction * x + CURVE_RADIUS;
+    return [Math.hypot(radialX,y) - CURVE_RADIUS + 0.5, Math.atan2(y,radialX) * CURVE_RADIUS / 5];
+  });
+  writeBeltUvs('curve-' + turn.id + '-belt-underlay.obj', ([x,y]) => {
     const radialX = turn.direction * x + CURVE_RADIUS;
     return [Math.hypot(radialX,y) - CURVE_RADIUS + 0.5, Math.atan2(y,radialX) * CURVE_RADIUS / 5];
   });
