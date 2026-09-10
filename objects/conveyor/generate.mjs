@@ -12,9 +12,9 @@ const CURVE_FRAME_OUTER_RADIUS = CURVE_RADIUS + 0.59;
 const CURVE_CONTACT_OVERLAP = 0.025;
 const BELT_VISUAL_HALF_WIDTH = 0.4061687;
 const BELT_VISUAL_TILE_LENGTH = BELT_TILE_LENGTH;
-// Clear the frame (0.8921966 m) while staying below the moving tread (0.8925 m).
-const BELT_UNDERLAY_BOTTOM = 0.8763;
-const BELT_UNDERLAY_TOP = 0.8923;
+// Keep the backup tread recessed below the moving tiles (top: 0.8925 m).
+const BELT_UNDERLAY_BOTTOM = 0.8648953;
+const BELT_UNDERLAY_TOP = 0.8808953;
 const BELT_UNDERLAY_HALF_WIDTH = 0.469;
 const RUBBER_PATTERN_METERS = 0.04;
 const CURVE_VISUAL_TILE_LENGTH =
