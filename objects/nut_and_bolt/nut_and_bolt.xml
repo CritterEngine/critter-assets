@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco model="nut_and_bolt">
+  <compiler angle="radian" meshdir="assets" autolimits="true" />
+  <size memory="64M" />
+  <option integrator="implicitfast" gravity="0 0 -9.81" wind="0 0 0" timestep="0.0002" iterations="100" tolerance="1e-8" solver="Newton" cone="pyramidal" jacobian="auto" impratio="1" noslip_iterations="0" noslip_tolerance="0.000001" ccd_iterations="50" sdf_iterations="10" sdf_initpoints="20" ccd_tolerance="0.000001" density="0" viscosity="0" o_margin="0" o_solref="0.02 1" o_solimp="0.9 0.95 0.001 0.5 2" />
+  <extension>
+    <plugin plugin="mujoco.sdf.nut">
+      <instance name="nut">
+        <config key="diameter" value=".008" />
+        <config key="pitch" value=".00125" />
+        <config key="length" value=".0065" />
+        <config key="depth" value=".00065" />
+        <config key="profile" value="0" />
+        <config key="handedness" value="1" />
+        <config key="clearance" value=".00005" />
+      </instance>
+    </plugin>
+    <plugin plugin="mujoco.sdf.bolt">
+      <instance name="bolt">
+        <config key="diameter" value=".008" />
+        <config key="pitch" value=".00125" />
+        <config key="length" value=".025" />
+        <config key="depth" value=".00065" />
+        <config key="profile" value="0" />
+        <config key="handedness" value="1" />
+        <config key="clearance" value=".00005" />
+      </instance>
+    </plugin>
+  </extension>
+  <default>
+    <default class="critter_main">
+      <material specular="0.5" shininess="0.25" metallic="0" roughness="0.75" />
+      <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.1" />
+      <general gaintype="fixed" biastype="affine" ctrlrange="-6.2831 6.2831" gainprm="2000" biasprm="0 -2000 -400" forcerange="-150 150" />
+      <default class="size3">
+        <default class="size3_limited">
+          <joint range="-3.1415 3.1415" />
+          <general ctrlrange="-3.1415 3.1415" />
+        </default>
+      </default>
+      <default class="size1">
+        <general gainprm="500" biasprm="0 -500 -100" forcerange="-28 28" />
+      </default>
+      <default class="visual">
+        <geom type="mesh" mass="0" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom type="capsule" group="3" />
+        <default class="eef_collision">
+          <geom type="cylinder" />
+        </default>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4" />
+    </default>
+  </default>
+  <asset>
+    <material name="default_mat" rgba="0.75 0.75 0.75 1" metallic="1" roughness="0.25" />
+    <material name="mjcf_rgba_0_7_0_7_0_7_1" rgba="0.6156862745 0.6078431373 0.6078431373 1" metallic="1" roughness="0.36" />
+    <material name="mjcf_rgba_0_83_0_68_0_4_1" rgba="0.83 0.68 0.4 1" metallic="1" roughness="0.3" />
+    <mesh name="bolt">
+      <plugin instance="bolt" />
+    </mesh>
+    <mesh name="nut">
+      <plugin instance="nut" />
+    </mesh>
+  </asset>
+  <worldbody>
+    <body name="Nut" pos="0 0 0.025">
+      <freejoint name="b_5d5ae9da-03c3-4713-ba1c-eb560110339f" align="false" />
+      <geom class="visual" type="sdf" name="b_06b050d0-70a3-47f2-a4c6-2757cd76cb2f" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" mass="0" contype="0" conaffinity="0">
+        <plugin instance="nut" />
+      </geom>
+      <geom class="collision" type="sdf" name="d33b5ed4-56ec-40fd-9a71-ef2db445b74b" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.003" contype="1" conaffinity="1">
+        <plugin instance="nut" />
+      </geom>
+    </body>
+    <body name="Bolt" pos="0 0 0.03">
+      <geom class="visual" type="sdf" name="b_6071c4fe-c2fc-4318-8190-b3d8d035c0a6" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" mass="0" contype="0" conaffinity="0">
+        <plugin instance="bolt" />
+      </geom>
+      <geom class="collision" type="sdf" name="aa2e9ee0-e4c2-4267-b76a-ec53c14797e0" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.014" contype="1" conaffinity="1">
+        <plugin instance="bolt" />
+      </geom>
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="init" qpos="0 0 0.025 1 0 0 0" />
+  </keyframe>
+</mujoco>

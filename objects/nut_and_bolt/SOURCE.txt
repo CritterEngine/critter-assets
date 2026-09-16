@@ -1,0 +1,6 @@
+Source: user-authored nut_and_bolt_critter_engine_project.critter (preserved as source.critter).
+Based on Critter small nut/bolt fixture and Apache-2.0 MuJoCo SDF example.
+Library XML retains authored materials, geometry, contact settings and poses; the scene floor is omitted for object insertion. Body display names restored from the canonical snapshot.
+Requires Critter configurable mujoco.sdf.nut and mujoco.sdf.bolt plugins.
+8 mm diameter; 1.25 mm pitch; 25 mm bolt thread; 6.5 mm nut thickness.
+Fixed bolt; free nut. Use a 0.0002 second physics timestep for small thread contacts.
