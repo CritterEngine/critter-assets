@@ -1,4 +1,7 @@
 <mujoco model="xarm7">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="0 255"/>
+  </custom>
   <compiler angle="radian" autolimits="true" meshdir="assets"/>
 
   <option integrator="implicitfast"/>

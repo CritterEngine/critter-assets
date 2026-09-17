@@ -1,4 +1,8 @@
 <mujoco model="stretch">
+  <custom>
+    <numeric name="critter_gripper:gripper_right_finger" data="0.5 0"/>
+    <numeric name="critter_gripper:gripper_left_finger" data="0.5 0"/>
+  </custom>
   <compiler angle="radian" assetdir="assets" autolimits="true" />
   <option integrator="implicitfast" impratio="20" cone="elliptic" noslip_iterations="5">
     <flag multiccd="enable" />

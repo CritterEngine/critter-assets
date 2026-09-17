@@ -1,4 +1,7 @@
 <mujoco model="panda">
+  <custom>
+    <numeric name="critter_gripper:actuator8" data="255 0"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option integrator="implicitfast"/>

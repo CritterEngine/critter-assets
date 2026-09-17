@@ -1,4 +1,7 @@
 <mujoco model="umi_gripper">
+  <custom>
+    <numeric name="critter_gripper:fingers_actuator" data="0 0.05"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" texturedir="assets" />
 
   <option integrator="implicitfast" impratio="10" cone="elliptic" noslip_iterations="2">

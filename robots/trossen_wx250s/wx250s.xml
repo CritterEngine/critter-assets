@@ -1,4 +1,7 @@
 <mujoco model="wx250s">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="0.022 0"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
 
   <option integrator="implicitfast" cone="elliptic" impratio="10"/>

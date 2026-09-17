@@ -1,4 +1,8 @@
 <mujoco model="talos">
+  <custom>
+    <numeric name="critter_gripper:gripper_left_joint_torque" data="1 -1"/>
+    <numeric name="critter_gripper:gripper_right_joint_torque" data="1 -1"/>
+  </custom>
   <include file="talos.xml"/>
 
   <actuator>

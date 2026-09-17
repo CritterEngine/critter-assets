@@ -1,4 +1,7 @@
 <mujoco model="stretch">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="0.04 -0.02"/>
+  </custom>
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
 
   <option integrator="implicitfast" impratio="10" cone="elliptic" noslip_iterations="3">

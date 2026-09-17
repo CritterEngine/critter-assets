@@ -1,4 +1,7 @@
 <mujoco model="so_arm100">
+  <custom>
+    <numeric name="critter_gripper:Jaw" data="1.75 0"/>
+  </custom>
   <compiler angle="radian" meshdir="assets/"/>
 
   <option cone="elliptic" impratio="10"/>

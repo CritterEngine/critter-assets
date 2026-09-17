@@ -1,4 +1,24 @@
 <mujoco model="left_shadow_hand">
+  <custom>
+    <numeric name="critter_gripper:lh_A_THJ5" data="0 0.17"/>
+    <numeric name="critter_gripper:lh_A_THJ4" data="0 1.2"/>
+    <numeric name="critter_gripper:lh_A_THJ3" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_THJ2" data="0 0.61"/>
+    <numeric name="critter_gripper:lh_A_THJ1" data="0 0.52"/>
+    <numeric name="critter_gripper:lh_A_FFJ4" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_FFJ3" data="0 1.5708"/>
+    <numeric name="critter_gripper:lh_A_FFJ0" data="0 3.1415"/>
+    <numeric name="critter_gripper:lh_A_MFJ4" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_MFJ3" data="0 1.5708"/>
+    <numeric name="critter_gripper:lh_A_MFJ0" data="0 3.1415"/>
+    <numeric name="critter_gripper:lh_A_RFJ4" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_RFJ3" data="0 1.5708"/>
+    <numeric name="critter_gripper:lh_A_RFJ0" data="0 3.1415"/>
+    <numeric name="critter_gripper:lh_A_LFJ5" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_LFJ4" data="0 0"/>
+    <numeric name="critter_gripper:lh_A_LFJ3" data="0 1.5708"/>
+    <numeric name="critter_gripper:lh_A_LFJ0" data="0 3.1415"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option cone="elliptic" impratio="10"/>

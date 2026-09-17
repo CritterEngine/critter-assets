@@ -1,4 +1,8 @@
 <mujoco>
+  <custom>
+    <numeric name="critter_gripper:left/finger" data="0.037 0.002"/>
+    <numeric name="critter_gripper:right/finger" data="0.037 0.002"/>
+  </custom>
 <!-- The dynamical parameters in this file are not the result of system identification.
 They were chosen for MJPC efficiency. The resulting qfrc is still limited by every joint's actuator_frcrange,
 as specified in the main model. -->

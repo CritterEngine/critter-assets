@@ -1,4 +1,7 @@
 <mujoco model="yam_v0">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="0 0.037524"/>
+  </custom>
   <compiler angle="radian" meshdir="assets"/>
 
   <option integrator="implicitfast"/>

@@ -1,4 +1,17 @@
 <mujoco model="robotiq_3f_gripper">
+  <custom>
+    <numeric name="critter_gripper:palm_finger_1" data="0 0"/>
+    <numeric name="critter_gripper:palm_finger_2" data="0 0"/>
+    <numeric name="critter_gripper:finger_1_proximal" data="0.0495 1.15"/>
+    <numeric name="critter_gripper:finger_1_middle" data="0 1.45"/>
+    <numeric name="critter_gripper:finger_1_distal" data="-0.0523 -1.15"/>
+    <numeric name="critter_gripper:finger_2_proximal" data="0.0495 1.15"/>
+    <numeric name="critter_gripper:finger_2_middle" data="0 1.45"/>
+    <numeric name="critter_gripper:finger_2_distal" data="-0.0523 -1.15"/>
+    <numeric name="critter_gripper:finger_middle_proximal" data="0.0495 1.15"/>
+    <numeric name="critter_gripper:finger_middle_middle" data="0 1.45"/>
+    <numeric name="critter_gripper:finger_middle_distal" data="-0.0523 -1.15"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option integrator="implicitfast" cone="elliptic" impratio="10"/>

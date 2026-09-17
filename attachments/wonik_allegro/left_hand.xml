@@ -1,4 +1,22 @@
 <mujoco model="allegro_left">
+  <custom>
+    <numeric name="critter_gripper:ffa0" data="0 0"/>
+    <numeric name="critter_gripper:ffa1" data="0 1.2"/>
+    <numeric name="critter_gripper:ffa2" data="0 1.2"/>
+    <numeric name="critter_gripper:ffa3" data="0 1.2"/>
+    <numeric name="critter_gripper:mfa0" data="0 0"/>
+    <numeric name="critter_gripper:mfa1" data="0 1.2"/>
+    <numeric name="critter_gripper:mfa2" data="0 1.2"/>
+    <numeric name="critter_gripper:mfa3" data="0 1.2"/>
+    <numeric name="critter_gripper:rfa0" data="0 0"/>
+    <numeric name="critter_gripper:rfa1" data="0 1.2"/>
+    <numeric name="critter_gripper:rfa2" data="0 1.2"/>
+    <numeric name="critter_gripper:rfa3" data="0 1.2"/>
+    <numeric name="critter_gripper:tha0" data="0.263 1.2"/>
+    <numeric name="critter_gripper:tha1" data="0 0.3"/>
+    <numeric name="critter_gripper:tha2" data="0 1.2"/>
+    <numeric name="critter_gripper:tha3" data="0 1.2"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option cone="elliptic" impratio="10"/>

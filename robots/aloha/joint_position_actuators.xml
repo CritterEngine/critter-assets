@@ -1,4 +1,8 @@
 <mujoco>
+  <custom>
+    <numeric name="critter_gripper:left/gripper" data="0.037 0.002"/>
+    <numeric name="critter_gripper:right/gripper" data="0.037 0.002"/>
+  </custom>
   <actuator>
     <position class="waist" name="left/waist" joint="left/waist"/>
     <position class="shoulder" name="left/shoulder" joint="left/shoulder"/>

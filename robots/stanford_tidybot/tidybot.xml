@@ -1,4 +1,7 @@
 <mujoco model="tidybot">
+  <custom>
+    <numeric name="critter_gripper:fingers_actuator" data="0 255"/>
+  </custom>
   <compiler angle="radian" meshdir="assets"/>
 
   <option integrator="implicitfast"/>

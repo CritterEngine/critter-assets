@@ -1,4 +1,7 @@
 <mujoco model="low_cost_robot_arm">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="-1.6 0.032"/>
+  </custom>
   <compiler angle="radian" meshdir="assets"/>
 
   <option integrator="implicitfast" cone="elliptic" impratio="10"/>

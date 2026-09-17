@@ -5,6 +5,14 @@
     <flag eulerdamp="disable" />
   </option>
   <custom>
+    <numeric name="critter_gripper:left_index_A_tendon" data="0.110387 0.05852"/>
+    <numeric name="critter_gripper:left_middle_A_tendon" data="0.110387 0.05852"/>
+    <numeric name="critter_gripper:left_ring_A_tendon" data="0.110387 0.05852"/>
+    <numeric name="critter_gripper:left_pinky_A_tendon" data="0.110387 0.05852"/>
+    <numeric name="critter_gripper:left_thumb_A_cmc_abd" data="0 0"/>
+    <numeric name="critter_gripper:left_th1_A_tendon" data="0.038389 0.026152"/>
+    <numeric name="critter_gripper:left_th2_A_tendon" data="0.112138 0.081568"/>
+
     <numeric data="30" name="max_contact_points" />
     <numeric data="12" name="max_geom_pairs" />
   </custom>

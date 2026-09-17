@@ -1,4 +1,7 @@
 <mujoco model="ufactory_lite6">
+  <custom>
+    <numeric name="critter_gripper:gripper" data="-10 10"/>
+  </custom>
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option integrator="implicitfast"/>

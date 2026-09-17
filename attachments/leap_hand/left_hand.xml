@@ -63,6 +63,24 @@ Naming Conventions
 -->
 
 <mujoco model="leap_rh">
+  <custom>
+    <numeric name="critter_gripper:if_mcp_act" data="0 1.2"/>
+    <numeric name="critter_gripper:if_rot_act" data="0 0"/>
+    <numeric name="critter_gripper:if_pip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:if_dip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:mf_mcp_act" data="0 1.2"/>
+    <numeric name="critter_gripper:mf_rot_act" data="0 0"/>
+    <numeric name="critter_gripper:mf_pip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:mf_dip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:rf_mcp_act" data="0 1.2"/>
+    <numeric name="critter_gripper:rf_rot_act" data="0 0"/>
+    <numeric name="critter_gripper:rf_pip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:rf_dip_act" data="0 1.2"/>
+    <numeric name="critter_gripper:th_cmc_act" data="0 1"/>
+    <numeric name="critter_gripper:th_axl_act" data="0 0.5"/>
+    <numeric name="critter_gripper:th_mcp_act" data="0 1.2"/>
+    <numeric name="critter_gripper:th_ipl_act" data="0 1.2"/>
+  </custom>
   <compiler angle="radian" meshdir="./assets/"/>
   <option integrator="implicitfast" cone="elliptic" impratio="100"/>
 

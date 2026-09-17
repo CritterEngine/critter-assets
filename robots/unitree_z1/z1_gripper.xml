@@ -1,4 +1,7 @@
 <mujoco model="z1">
+  <custom>
+    <numeric name="critter_gripper:motorGripper" data="-1.51844 0"/>
+  </custom>
   <compiler angle="radian" meshdir="assets"/>
 
   <option integrator="implicitfast"/>

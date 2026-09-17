@@ -1,4 +1,10 @@
 <mujoco model="tiago_dual">
+  <custom>
+    <numeric name="critter_gripper:gripper_left_left_finger_joint_position" data="0.04495 0.00003"/>
+    <numeric name="critter_gripper:gripper_left_right_finger_joint_position" data="0.04495 0.00003"/>
+    <numeric name="critter_gripper:gripper_right_left_finger_joint_position" data="0.04495 0.00003"/>
+    <numeric name="critter_gripper:gripper_right_right_finger_joint_position" data="0.04495 0.00003"/>
+  </custom>
 
   <include file="tiago_dual.xml"/>
   <actuator>

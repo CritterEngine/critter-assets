@@ -1,4 +1,8 @@
 <mujoco model="talos">
+  <custom>
+    <numeric name="critter_gripper:gripper_left_joint_position" data="0 -0.959931"/>
+    <numeric name="critter_gripper:gripper_right_joint_position" data="0 -0.959931"/>
+  </custom>
   <include file="talos.xml"/>
 
   <default>
