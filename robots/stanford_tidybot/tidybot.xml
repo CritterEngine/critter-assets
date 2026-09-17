@@ -1,5 +1,6 @@
 <mujoco model="tidybot">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:fingers_actuator" data="0 255"/>
   </custom>
   <compiler angle="radian" meshdir="assets"/>

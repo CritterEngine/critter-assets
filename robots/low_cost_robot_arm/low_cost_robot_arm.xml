@@ -1,5 +1,6 @@
 <mujoco model="low_cost_robot_arm">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:gripper" data="-1.6 0.032"/>
   </custom>
   <compiler angle="radian" meshdir="assets"/>

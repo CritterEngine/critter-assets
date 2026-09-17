@@ -64,6 +64,7 @@ Naming Conventions
 
 <mujoco model="leap_rh">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:if_mcp_act" data="0 1.2"/>
     <numeric name="critter_gripper:if_rot_act" data="0 0"/>
     <numeric name="critter_gripper:if_pip_act" data="0 1.2"/>

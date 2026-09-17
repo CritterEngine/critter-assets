@@ -1,5 +1,6 @@
 <mujoco model="robotiq_3f_gripper">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:palm_finger_1" data="0 0"/>
     <numeric name="critter_gripper:palm_finger_2" data="0 0"/>
     <numeric name="critter_gripper:finger_1_proximal" data="0.0495 1.15"/>

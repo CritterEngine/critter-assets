@@ -5,6 +5,7 @@
     <flag eulerdamp="disable" />
   </option>
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:left_index_A_tendon" data="0.110387 0.05852"/>
     <numeric name="critter_gripper:left_middle_A_tendon" data="0.110387 0.05852"/>
     <numeric name="critter_gripper:left_ring_A_tendon" data="0.110387 0.05852"/>

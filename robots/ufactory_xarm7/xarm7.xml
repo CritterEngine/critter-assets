@@ -1,5 +1,6 @@
 <mujoco model="xarm7">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:gripper" data="0 255"/>
   </custom>
   <compiler angle="radian" autolimits="true" meshdir="assets"/>

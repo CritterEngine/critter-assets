@@ -1,5 +1,6 @@
 <mujoco model="allegro_left">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:ffa0" data="0 0"/>
     <numeric name="critter_gripper:ffa1" data="0 1.2"/>
     <numeric name="critter_gripper:ffa2" data="0 1.2"/>

@@ -1,5 +1,6 @@
 <mujoco model="z1">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:motorGripper" data="-1.51844 0"/>
   </custom>
   <compiler angle="radian" meshdir="assets"/>

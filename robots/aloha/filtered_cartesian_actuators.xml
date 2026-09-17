@@ -1,5 +1,6 @@
 <mujoco>
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:left/finger" data="0.037 0.002"/>
     <numeric name="critter_gripper:right/finger" data="0.037 0.002"/>
   </custom>

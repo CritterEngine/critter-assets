@@ -1,5 +1,6 @@
 <mujoco model="piper_description">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:gripper" data="0.035 0"/>
   </custom>
   <compiler angle="radian" meshdir="assets"/>

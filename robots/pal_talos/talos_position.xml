@@ -1,5 +1,6 @@
 <mujoco model="talos">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:gripper_left_joint_position" data="0 -0.959931"/>
     <numeric name="critter_gripper:gripper_right_joint_position" data="0 -0.959931"/>
   </custom>

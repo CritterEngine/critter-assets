@@ -1,5 +1,6 @@
 <mujoco model="so_arm100">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:Jaw" data="1.75 0"/>
   </custom>
   <compiler angle="radian" meshdir="assets/"/>

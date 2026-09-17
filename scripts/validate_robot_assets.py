@@ -16,6 +16,27 @@ def validate_xml(xml_path: Path) -> list[str]:
     except ET.ParseError as error:
         return [f"{xml_path}: invalid XML: {error}"]
 
+    def expand_includes(element: ET.Element, source: Path, ancestors: set[Path]) -> None:
+        for child in list(element):
+            if child.tag != "include":
+                expand_includes(child, source, ancestors)
+                continue
+            reference = child.get("file", "")
+            included_path = (source.parent / reference).resolve()
+            if included_path in ancestors:
+                raise ValueError(f"cyclic include {reference!r}")
+            included = ET.parse(included_path).getroot()
+            expand_includes(included, included_path, ancestors | {included_path})
+            index = list(element).index(child)
+            element.remove(child)
+            for offset, included_child in enumerate(included):
+                element.insert(index + offset, included_child)
+
+    try:
+        expand_includes(root, xml_path, {xml_path.resolve()})
+    except (OSError, ET.ParseError, ValueError) as error:
+        return [f"{xml_path}: invalid include: {error}"]
+
     compiler = root.find("compiler")
     asset_dir = compiler.get("assetdir", "") if compiler is not None else ""
     mesh_dir = compiler.get("meshdir", asset_dir) if compiler is not None else ""

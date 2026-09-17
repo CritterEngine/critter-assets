@@ -1,5 +1,6 @@
 <mujoco model="right_shadow_hand">
   <custom>
+    <!-- Controller gripper defaults: open and closed actuator control values. -->
     <numeric name="critter_gripper:rh_A_THJ5" data="0 0.17"/>
     <numeric name="critter_gripper:rh_A_THJ4" data="0 1.2"/>
     <numeric name="critter_gripper:rh_A_THJ3" data="0 0"/>
