@@ -1,0 +1,43 @@
+<mujoco model="Side_Table_202_1">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="DarkWoodSmooth2" file="assets/deep/WoodGrains1.png"/>
+    <texture type="2d" name="LightWoodCounters3" file="assets/deep/LightWoodCounters.png"/>
+    <material name="material_DarkWoodSmooth2" class="/" texture="DarkWoodSmooth2" rgba="0.122641 0.0908241 0.0908241 1"/>
+    <material name="material_LightWoodCounters3" class="/" texture="LightWoodCounters3" rgba="0.698113 0.339363 0.135012 1"/>
+    <mesh name="Side_Table_202_1_TableMesh_0" class="/" content_type="model/obj" file="assets/deep/Side_Table_202_1_TableMesh/Side_Table_202_1_TableMesh_0.obj"/>
+    <mesh name="Side_Table_202_1_TableMesh_1" class="/" content_type="model/obj" file="assets/deep/Side_Table_202_1_TableMesh/Side_Table_202_1_TableMesh_1.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Side_Table_202_1" pos="0 0 0.357795" quat="0 0 0.7071067811865476 0.7071067811865476">
+      <body name="Side_Table_202_1_TableMesh" pos="-0.003 -0.35105 -0.00031">
+        <geom name="Side_Table_202_1_TableMesh_0" class="__VISUAL_MJT__" type="mesh" material="material_DarkWoodSmooth2" mesh="Side_Table_202_1_TableMesh_0"/>
+        <geom name="Side_Table_202_1_TableMesh_1" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Side_Table_202_1_TableMesh_1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.506008 0.0505326 0.324709" pos="-0.00600839 0.658312 0.000623584" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.506008 0.0255913 0.324709" pos="0 0.196 0" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <site name="Side_Table_202_1_TableMesh_Receptacle_0" class="/" pos="0 0.421709 0" quat="0 1 0 0" size="0.49969 0.187238 0.32302" type="box" rgba="1 0 0 1"/>
+        <site name="Side_Table_202_1_TableMesh_Receptacle_1" class="/" pos="0 0.779649 0" quat="0 1 0 0" size="0.506221 0.074649 0.324535" type="box" rgba="1 0 0 1"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

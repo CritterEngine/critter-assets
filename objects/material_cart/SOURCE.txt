@@ -1,0 +1,6 @@
+Derived from Sketchfab / Objaverse models, packaged for Critter.
+Platform cart: fcedc57affa34dba9870cefd9668e8fe (louis-muir), CC BY 4.0
+Orange hand truck: 4ca4915c16e64a5c8f46fe03ac8777bf (louis-muir), CC BY 4.0
+Red hand truck: b867044de92045629581d9bd3327899c (maxdragonn), CC BY 4.0
+Wheel hinges are authored in Critter so the carts roll when physics is on.
+The baked visual meshes still include the wheel shapes; the hinges drive separate collision wheels.

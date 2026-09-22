@@ -1,0 +1,35 @@
+<mujoco model="material_cart_red">
+  <compiler angle="radian" autolimits="true"/>
+  <option gravity="0 0 -9.81"/>
+  <default>
+    <default class="wheel">
+      <joint type="hinge" axis="1 0 0" damping="0.05" frictionloss="0.02" armature="0.01"/>
+      <geom type="cylinder" size="0.12 0.035" quat="0.707107 0 0.707107 0" density="300" group="3" rgba="0 0 0 0" condim="3" friction="1.2 0.005 0.001" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+    </default>
+  </default>
+  <asset>
+    <texture name="texture_0" type="2d" file="assets/red/textures/texture_0.png"/>
+    <material name="material_0_hand_truck" rgba="1 1 1 1" metallic="0" roughness="0.718602" texture="texture_0"/>
+    <mesh name="visual_0" file="assets/red/meshes/visual_0.obj" inertia="shell"/>
+  </asset>
+  <worldbody>
+    <body name="material_cart_red">
+      <joint name="material_cart_red_free" type="free" damping="0.05"/>
+      <geom name="visual_0" type="mesh" mesh="visual_0" material="material_0_hand_truck" group="0" contype="0" conaffinity="0" density="0"/>
+      <geom name="frame" type="box" pos="0 0.08 0.76" size="0.2 0.14 0.52" group="3" rgba="0 0 0 0" density="80"/>
+      <geom name="toe" type="box" pos="0 -0.31 0.008" size="0.14 0.025 0.008" group="3" rgba="0 0 0 0" density="200" friction="0.6 0.005 0.001"/>
+      <body name="wheel_l" pos="-0.243 0.155 0.12">
+        <joint name="wheel_l" class="wheel"/>
+        <geom name="wheel_l" class="wheel"/>
+      </body>
+      <body name="wheel_r" pos="0.243 0.155 0.12">
+        <joint name="wheel_r" class="wheel"/>
+        <geom name="wheel_r" class="wheel"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="material_cart_red" body2="wheel_l"/>
+    <exclude body1="material_cart_red" body2="wheel_r"/>
+  </contact>
+</mujoco>

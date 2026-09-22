@@ -1,0 +1,50 @@
+<mujoco model="material_cart_platform">
+  <compiler angle="radian" autolimits="true"/>
+  <option gravity="0 0 -9.81"/>
+  <default>
+    <default class="wheel">
+      <joint type="hinge" axis="1 0 0" damping="0.02" frictionloss="0.01" armature="0.002"/>
+      <geom type="cylinder" size="0.05 0.02" quat="0.707107 0 0.707107 0" density="400" group="3" rgba="0 0 0 0" condim="3" friction="1.2 0.005 0.001" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+    </default>
+  </default>
+  <asset>
+    <texture name="texture_0" type="2d" file="assets/platform/textures/texture_0.png"/>
+    <material name="material_0_lambert1" rgba="1 1 1 1" metallic="1" roughness="1" texture="texture_0"/>
+    <mesh name="visual_0" file="assets/platform/meshes/visual_0.obj" inertia="shell"/>
+    <texture name="texture_1" type="2d" file="assets/platform/textures/texture_1.png"/>
+    <material name="material_1_lambert2" rgba="1 1 1 1" metallic="1" roughness="1" texture="texture_1"/>
+    <mesh name="visual_1" file="assets/platform/meshes/visual_1.obj" inertia="shell"/>
+  </asset>
+  <worldbody>
+    <body name="material_cart_platform">
+      <joint name="material_cart_platform_free" type="free" damping="0.05"/>
+      <geom name="visual_0" type="mesh" mesh="visual_0" material="material_0_lambert1" group="0" contype="0" conaffinity="0" density="0"/>
+      <geom name="visual_1" type="mesh" mesh="visual_1" material="material_1_lambert2" group="0" contype="0" conaffinity="0" density="0"/>
+      <!-- Deck sits above the casters so only the wheels touch the floor. -->
+      <geom name="deck" type="box" pos="0 -0.0331217 0.126" size="0.3957125 0.6168783 0.041" group="3" rgba="0 0 0 0" density="180"/>
+      <geom name="handle" type="box" pos="0.000007 0.5817407 0.5737704" size="0.3625134 0.0682593 0.4091333" group="3" rgba="0 0 0 0" density="80"/>
+      <body name="caster_fl" pos="-0.323 -0.505 0.05">
+        <joint name="caster_fl" class="wheel"/>
+        <geom name="caster_fl" class="wheel"/>
+      </body>
+      <body name="caster_fr" pos="0.321 -0.505 0.05">
+        <joint name="caster_fr" class="wheel"/>
+        <geom name="caster_fr" class="wheel"/>
+      </body>
+      <body name="caster_bl" pos="-0.323 0.529 0.05">
+        <joint name="caster_bl" class="wheel"/>
+        <geom name="caster_bl" class="wheel"/>
+      </body>
+      <body name="caster_br" pos="0.321 0.529 0.05">
+        <joint name="caster_br" class="wheel"/>
+        <geom name="caster_br" class="wheel"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="material_cart_platform" body2="caster_fl"/>
+    <exclude body1="material_cart_platform" body2="caster_fr"/>
+    <exclude body1="material_cart_platform" body2="caster_bl"/>
+    <exclude body1="material_cart_platform" body2="caster_br"/>
+  </contact>
+</mujoco>

@@ -1,0 +1,5 @@
+Derived from MolmoSpaces THOR MuJoCo objects (allenai/molmospaces).
+TV stand: thor/Living Room Objects/TVStand/Prefabs/TV_Stand_223_1
+Utility table: thor/Common Objects/SideTable/Prefabs/Side_Table_202_1
+License: CC BY 4.0 for this subset per https://huggingface.co/datasets/allenai/molmospaces
+The two sizes are library variants of one wood-top table.
