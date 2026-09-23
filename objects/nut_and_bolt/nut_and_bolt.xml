@@ -67,18 +67,18 @@
   <worldbody>
     <body name="Nut" pos="0 0 0.025">
       <freejoint name="b_5d5ae9da-03c3-4713-ba1c-eb560110339f" align="false" />
-      <geom class="visual" type="sdf" name="b_06b050d0-70a3-47f2-a4c6-2757cd76cb2f" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" mass="0" contype="0" conaffinity="0">
+      <geom class="visual" type="sdf" name="Nut visual" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" mass="0" contype="0" conaffinity="0">
         <plugin instance="nut" />
       </geom>
-      <geom class="collision" type="sdf" name="d33b5ed4-56ec-40fd-9a71-ef2db445b74b" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.003" contype="1" conaffinity="1">
+      <geom class="collision" type="sdf" name="Nut collision" material="mjcf_rgba_0_83_0_68_0_4_1" mesh="nut" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.003" contype="1" conaffinity="1">
         <plugin instance="nut" />
       </geom>
     </body>
     <body name="Bolt" pos="0 0 0.03">
-      <geom class="visual" type="sdf" name="b_6071c4fe-c2fc-4318-8190-b3d8d035c0a6" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" mass="0" contype="0" conaffinity="0">
+      <geom class="visual" type="sdf" name="Bolt visual" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" mass="0" contype="0" conaffinity="0">
         <plugin instance="bolt" />
       </geom>
-      <geom class="collision" type="sdf" name="aa2e9ee0-e4c2-4267-b76a-ec53c14797e0" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.014" contype="1" conaffinity="1">
+      <geom class="collision" type="sdf" name="Bolt collision" material="mjcf_rgba_0_7_0_7_0_7_1" mesh="bolt" friction="0.3 0.00001 0.000001" solref="0.002 1" solimp="0.95 0.99 0.00001 0.5 2" mass="0.014" contype="1" conaffinity="1">
         <plugin instance="bolt" />
       </geom>
     </body>
