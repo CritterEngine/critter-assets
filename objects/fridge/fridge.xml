@@ -84,7 +84,7 @@
           <geom name="Fridge_1_Mesh_78210b38_3" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Interior1_Mat" mesh="Fridge_1_Mesh_78210b38_3"/>
           <geom name="Fridge_1_Mesh_78210b38_5" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_Mesh_78210b38_5"/>
           <geom name="Fridge_1_Mesh_78210b38_6" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Primary1_Mat" mesh="Fridge_1_Mesh_78210b38_6"/>
-          <geom name="Fridge_1_Mesh_78210b38_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.5 0.544218 0.079922" pos="0.485 -0.00999999 0.0869999" quat="0 1 0 0" type="box" density="70" rgba="0 1 0 1"/>
+          <geom name="Fridge_1_Mesh_78210b38_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.5 0.544218 0.0585486185968043" pos="0.485 -0.00999999 0.07522652225692109" quat="0 1 0 0" type="box" density="70" rgba="0 1 0 1"/>
           <body name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" pos="0.905033 -0.00864816 0.113277">
             <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="material_Fridge_Secondary1_Mat" mesh="Fridge_1_fridge_maindoor_handle_a1_fa5364a9"/>
             <geom name="Fridge_1_fridge_maindoor_handle_a1_fa5364a9_grip_collision" class="__DYNAMIC_MJT__" type="box" pos="0.00746 0 0.069" size="0.0243 0.430 0.010" density="100"/>
