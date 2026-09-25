@@ -25,15 +25,15 @@
     <body name="TV_Stand_223_1" pos="0 0 0.35701834" quat="0 0 0.7071067811865476 0.7071067811865476">
       <joint name="TV_Stand_223_1_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
       <body name="TV_Stand_223_1_tv_stand_223" pos="0.00296 -0.35647000000000001 0" quat="1 0 0 0">
-        <geom name="TV_Stand_223_1_tv_stand_223_0" class="__VISUAL_MJT__" type="mesh" material="material_DarkWoodSmooth2" mesh="TV_Stand_223_1_tv_stand_223_0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_1" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="TV_Stand_223_1_tv_stand_223_1"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_0" class="__VISUAL_MJT__" type="mesh" material="material_DarkWoodSmooth2" mesh="TV_Stand_223_1_tv_stand_223_0" mass="0"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_1" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="TV_Stand_223_1_tv_stand_223_1" mass="0"/>
         <site name="TV_Stand_223_1_tv_stand_223_ReceptacleCollider_0" class="/" type="box" rgba="1 0 0 1" size="0.50829213857650757 0.069608926773071289 0.1747530996799469" pos="0.0034098029136657715 0.78040891885757446 0" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.50815099477767944 0.047784425318241119 0.17574666440486908" rgba="0 1 0 1" pos="0.002958834171295166 0.66544824838638306 0" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="0.48659324645996094 0.35570552945137024 -0.16500000655651093" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="0.48659312725067139 0.35570552945137024 0.16500000655651093" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="-0.48140677809715271 0.35570552945137024 0.16499996185302734" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="-0.4814068078994751 0.35570552945137024 -0.164000004529953" quat="0 1 0 0"/>
-        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_5" class="__DYNAMIC_MJT__" type="box" size="0.50815099477767944 0.027611922472715378 0.17574666440486908" rgba="0 1 0 1" pos="0.002958834171295166 0.20584827661514282 0" quat="0 1 0 0"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.50815099477767944 0.047784425318241119 0.17574666440486908" rgba="0 1 0 1" pos="0.002958834171295166 0.66544824838638306 0" quat="0 1 0 0" density="488.169"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="0.48659324645996094 0.35570552945137024 -0.16500000655651093" quat="0 1 0 0" density="488.169"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="0.48659312725067139 0.35570552945137024 0.16500000655651093" quat="0 1 0 0" density="488.169"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="-0.48140677809715271 0.35570552945137024 0.16499996185302734" quat="0 1 0 0" density="488.169"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.020717272534966469 0.35599240660667419 0.010450122877955437" rgba="0 1 0 1" pos="-0.4814068078994751 0.35570552945137024 -0.164000004529953" quat="0 1 0 0" density="488.169"/>
+        <geom name="TV_Stand_223_1_tv_stand_223_PrimitiveCollider_5" class="__DYNAMIC_MJT__" type="box" size="0.50815099477767944 0.027611922472715378 0.17574666440486908" rgba="0 1 0 1" pos="0.002958834171295166 0.20584827661514282 0" quat="0 1 0 0" density="488.169"/>
       </body>
     </body>
   </worldbody>

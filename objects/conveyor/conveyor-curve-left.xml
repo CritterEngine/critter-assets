@@ -27,11 +27,11 @@
     <body name="conveyor_curve_left" pos="0 0 0">
       <!-- The incoming connection is centered at the origin and points along local +Y. -->
       <geom name="conveyor_curve_belt_underlay_visual" type="mesh" mesh="conveyor_curve_belt_underlay_visual"
-            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_rail_visual" type="mesh" mesh="conveyor_curve_inner_rail_visual"
-            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_rail_visual" type="mesh" mesh="conveyor_curve_outer_rail_visual"
-            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <!-- Connection frames use local +Y as belt travel for drag-to-attach placement. -->
       <site name="attachment_site" pos="0 0 0.88" xyaxes="1 0 0 0 1 0" size="0.035" group="4"/>
       <site name="attachment_site_outlet" pos="-1.25 1.25 0.88"
@@ -39,600 +39,600 @@
 
       <!-- Driven roller and end caps make each curve interface read as a real conveyor transition. -->
       <geom name="conveyor_curve_inlet_roller" type="cylinder" fromto="-0.405 0 0.81 0.405 0 0.81" size="0.075"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inlet_roller_caps" type="cylinder" fromto="-0.455 0 0.81 0.455 0 0.81" size="0.031"
-            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <!-- Driven roller and end caps make each curve interface read as a real conveyor transition. -->
       <geom name="conveyor_curve_outlet_roller" type="cylinder" fromto="-1.25 0.8629964 0.81 -1.25 1.6729964 0.81" size="0.075"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outlet_roller_caps" type="cylinder" fromto="-1.25 0.8129964 0.81 -1.25 1.7229964 0.81" size="0.031"
-            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_frame_mat" group="1" contype="0" conaffinity="0" mass="0"/>
 
       <!-- Reuse the straight conveyor's finished, adjustable-leg support assembly. -->
       <geom name="conveyor_curve_support_visual" type="mesh" mesh="conveyor_curve_support_visual"
             pos="-0.353391147 0.896608853 0" quat="0.923879533 0 0 0.382683432" material="conveyor_frame_mat"
-            group="1" contype="0" conaffinity="0" density="0"/>
+            group="1" contype="0" conaffinity="0" mass="0"/>
 
       <!-- Fasteners along both guard rails give the curve the same manufactured detail as the straight modules. -->
       <geom name="conveyor_curve_inner_fastener_0" type="cylinder" pos="-0.487412118 0.024964542 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_0" type="cylinder" pos="0.522047116 0.058010816 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_1" type="cylinder" pos="-0.490677636 0.074786725 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_1" type="cylinder" pos="0.514458938 0.173784037 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_2" type="cylinder" pos="-0.49719469 0.12428866 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_2" type="cylinder" pos="0.499315076 0.288813088 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_3" type="cylinder" pos="-0.506935371 0.173258371 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_3" type="cylinder" pos="0.476680378 0.402605397 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_4" type="cylinder" pos="-0.519857969 0.221486164 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_4" type="cylinder" pos="0.44665177 0.514673688 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_5" type="cylinder" pos="-0.535907147 0.268765518 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_5" type="cylinder" pos="0.409357839 0.624538067 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_6" type="cylinder" pos="-0.555014181 0.314893978 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_6" type="cylinder" pos="0.364958282 0.731728078 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_7" type="cylinder" pos="-0.57709725 0.359674013 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_7" type="cylinder" pos="0.313643227 0.835784717 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_8" type="cylinder" pos="-0.602061793 0.402913869 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_8" type="cylinder" pos="0.255632411 0.936262398 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_9" type="cylinder" pos="-0.629800906 0.444428386 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_9" type="cylinder" pos="0.191174246 1.03273086 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_10" type="cylinder" pos="-0.660195807 0.484039792 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_10" type="cylinder" pos="0.120544751 1.124777009 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_11" type="cylinder" pos="-0.69311634 0.521578466 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_11" type="cylinder" pos="0.044046373 1.212006691 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_12" type="cylinder" pos="-0.728421534 0.55688366 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_12" type="cylinder" pos="-0.037993309 1.294046373 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_13" type="cylinder" pos="-0.765960208 0.589804193 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_13" type="cylinder" pos="-0.125222991 1.370544751 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_14" type="cylinder" pos="-0.805571614 0.620199094 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_14" type="cylinder" pos="-0.21726914 1.441174246 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_15" type="cylinder" pos="-0.847086131 0.647938207 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_15" type="cylinder" pos="-0.313737602 1.505632411 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_16" type="cylinder" pos="-0.890325987 0.67290275 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_16" type="cylinder" pos="-0.414215283 1.563643227 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_17" type="cylinder" pos="-0.935106022 0.694985819 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_17" type="cylinder" pos="-0.518271922 1.614958282 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_18" type="cylinder" pos="-0.981234482 0.714092853 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_18" type="cylinder" pos="-0.625461933 1.659357839 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_19" type="cylinder" pos="-1.028513836 0.730142031 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_19" type="cylinder" pos="-0.735326312 1.69665177 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_20" type="cylinder" pos="-1.076741629 0.743064629 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_20" type="cylinder" pos="-0.847394603 1.726680378 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_21" type="cylinder" pos="-1.12571134 0.75280531 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_21" type="cylinder" pos="-0.961186912 1.749315076 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_22" type="cylinder" pos="-1.175213275 0.759322364 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_22" type="cylinder" pos="-1.076215963 1.764458938 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_inner_fastener_23" type="cylinder" pos="-1.225035458 0.762587882 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       <geom name="conveyor_curve_outer_fastener_23" type="cylinder" pos="-1.191989184 1.772047116 0.955" size="0.022 0.008"
-            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" density="0"/>
+            material="conveyor_hardware_mat" group="1" contype="0" conaffinity="0" mass="0"/>
 
       <!-- Overlapping tangent boxes approximate stable curved frame and rail collision. -->
       <geom name="conveyor_curve_frame_collision_0" type="box"
             pos="0.017317499 0.041487679 0.35" quat="0.999866138 0 0 0.016361732"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_0" type="box"
             pos="-0.492409441 0.024800947 0.82" quat="0.999866138 0 0 0.016361732"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_0" type="box"
             pos="0.527044438 0.058174411 0.82" quat="0.999866138 0 0 0.016361732"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_1" type="box"
             pos="0.011890651 0.124285381 0.35" quat="0.998795456 0 0 0.049067674"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_1" type="box"
             pos="-0.49565356 0.07429664 0.82" quat="0.998795456 0 0 0.049067674"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_1" type="box"
             pos="0.519434861 0.174274123 0.82" quat="0.998795456 0 0 0.049067674"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_2" type="box"
             pos="0.001060193 0.206550874 0.35" quat="0.996655239 0 0 0.081721074"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_2" type="box"
             pos="-0.502127906 0.123474182 0.82" quat="0.996655239 0 0 0.081721074"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_2" type="box"
             pos="0.504248293 0.289627565 0.82" quat="0.996655239 0 0 0.081721074"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_3" type="box"
             pos="-0.015127496 0.287931884 0.35" quat="0.993447779 0 0 0.114286965"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_3" type="box"
             pos="-0.511804756 0.17212299 0.82" quat="0.993447779 0 0 0.114286965"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_3" type="box"
             pos="0.481549763 0.403740778 0.82" quat="0.993447779 0 0 0.114286965"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_4" type="box"
             pos="-0.036603099 0.368079926 0.35" quat="0.98917651 0 0 0.146730474"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_4" type="box"
             pos="-0.524642671 0.22003474 0.82" quat="0.98917651 0 0 0.146730474"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_4" type="box"
             pos="0.451436472 0.516125111 0.82" quat="0.98917651 0 0 0.146730474"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_5" type="box"
             pos="-0.063274654 0.446651793 0.35" quat="0.983846006 0 0 0.179016861"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_5" type="box"
             pos="-0.540586677 0.267004268 0.82" quat="0.983846006 0 0 0.179016861"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_5" type="box"
             pos="0.414037369 0.626299317 0.82" quat="0.983846006 0 0 0.179016861"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_6" type="box"
             pos="-0.095027949 0.523311028 0.35" quat="0.977461975 0 0 0.211111552"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_6" type="box"
             pos="-0.5595685 0.312830443 0.82" quat="0.977461975 0 0 0.211111552"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_6" type="box"
             pos="0.369512602 0.733791613 0.82" quat="0.977461975 0 0 0.211111552"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_7" type="box"
             pos="-0.131727012 0.597729365 0.35" quat="0.970031253 0 0 0.24298018"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_7" type="box"
             pos="-0.581506857 0.357317029 0.82" quat="0.970031253 0 0 0.24298018"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_7" type="box"
             pos="0.318052833 0.838141701 0.82" quat="0.970031253 0 0 0.24298018"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_8" type="box"
             pos="-0.173214691 0.669588134 0.35" quat="0.961561798 0 0 0.274588618"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_8" type="box"
             pos="-0.606307804 0.40027353 0.82" quat="0.961561798 0 0 0.274588618"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_8" type="box"
             pos="0.259878422 0.938902737 0.82" quat="0.961561798 0 0 0.274588618"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_9" type="box"
             pos="-0.21931333 0.738579623 0.35" quat="0.952062678 0 0 0.30590302"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_9" type="box"
             pos="-0.633865139 0.441515997 0.82" quat="0.952062678 0 0 0.30590302"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_9" type="box"
             pos="0.195238479 1.035643248 0.82" quat="0.952062678 0 0 0.30590302"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_10" type="box"
             pos="-0.269825528 0.804408401 0.35" quat="0.941544065 0 0 0.336889853"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_10" type="box"
             pos="-0.664060859 0.480867826 0.82" quat="0.941544065 0 0 0.336889853"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_10" type="box"
             pos="0.124409803 1.127948975 0.82" quat="0.941544065 0 0 0.336889853"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_11" type="box"
             pos="-0.324534983 0.866792578 0.35" quat="0.930017224 0 0 0.367515937"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_11" type="box"
             pos="-0.69676566 0.518160504 0.82" quat="0.930017224 0 0 0.367515937"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_11" type="box"
             pos="0.047695694 1.215424652 0.82" quat="0.930017224 0 0 0.367515937"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_12" type="box"
             pos="-0.383207422 0.925465017 0.35" quat="0.917494496 0 0 0.397748475"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_12" type="box"
             pos="-0.731839496 0.55323434 0.82" quat="0.917494496 0 0 0.397748475"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_12" type="box"
             pos="-0.034575348 1.297695694 0.82" quat="0.917494496 0 0 0.397748475"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_13" type="box"
             pos="-0.445591599 0.980174472 0.35" quat="0.903989293 0 0 0.427555093"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_13" type="box"
             pos="-0.769132174 0.585939141 0.82" quat="0.903989293 0 0 0.427555093"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_13" type="box"
             pos="-0.122051025 1.374409803 0.82" quat="0.903989293 0 0 0.427555093"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_14" type="box"
             pos="-0.511420377 1.03068667 0.35" quat="0.889516075 0 0 0.456903876"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_14" type="box"
             pos="-0.808484003 0.616134861 0.82" quat="0.889516075 0 0 0.456903876"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_14" type="box"
             pos="-0.214356752 1.445238479 0.82" quat="0.889516075 0 0 0.456903876"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_15" type="box"
             pos="-0.580411866 1.076785309 0.35" quat="0.874090342 0 0 0.485763394"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_15" type="box"
             pos="-0.84972647 0.643692196 0.82" quat="0.874090342 0 0 0.485763394"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_15" type="box"
             pos="-0.311097263 1.509878422 0.82" quat="0.874090342 0 0 0.485763394"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_16" type="box"
             pos="-0.652270635 1.118272988 0.35" quat="0.85772861 0 0 0.514102744"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_16" type="box"
             pos="-0.892682971 0.668493143 0.82" quat="0.85772861 0 0 0.514102744"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_16" type="box"
             pos="-0.411858299 1.568052833 0.82" quat="0.85772861 0 0 0.514102744"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_17" type="box"
             pos="-0.726688972 1.154972051 0.35" quat="0.840448401 0 0 0.541891581"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_17" type="box"
             pos="-0.937169557 0.6904315 0.82" quat="0.840448401 0 0 0.541891581"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_17" type="box"
             pos="-0.516208387 1.619512602 0.82" quat="0.840448401 0 0 0.541891581"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_18" type="box"
             pos="-0.803348207 1.186725346 0.35" quat="0.822268219 0 0 0.569100146"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_18" type="box"
             pos="-0.982995732 0.709413323 0.82" quat="0.822268219 0 0 0.569100146"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_18" type="box"
             pos="-0.623700683 1.664037369 0.82" quat="0.822268219 0 0 0.569100146"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_19" type="box"
             pos="-0.881920074 1.213396901 0.35" quat="0.803207531 0 0 0.595699304"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_19" type="box"
             pos="-1.02996526 0.725357329 0.82" quat="0.803207531 0 0 0.595699304"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_19" type="box"
             pos="-0.733874889 1.701436472 0.82" quat="0.803207531 0 0 0.595699304"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_20" type="box"
             pos="-0.962068116 1.234872504 0.35" quat="0.783286749 0 0 0.621660573"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_20" type="box"
             pos="-1.07787701 0.738195244 0.82" quat="0.783286749 0 0 0.621660573"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_20" type="box"
             pos="-0.846259222 1.731549763 0.82" quat="0.783286749 0 0 0.621660573"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_21" type="box"
             pos="-1.043449126 1.251060193 0.35" quat="0.762527204 0 0 0.646956153"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_21" type="box"
             pos="-1.126525818 0.747872094 0.82" quat="0.762527204 0 0 0.646956153"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_21" type="box"
             pos="-0.960372435 1.754248293 0.82" quat="0.762527204 0 0 0.646956153"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_22" type="box"
             pos="-1.125714619 1.261890651 0.35" quat="0.740951125 0 0 0.671558955"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_22" type="box"
             pos="-1.17570336 0.75434644 0.82" quat="0.740951125 0 0 0.671558955"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_22" type="box"
             pos="-1.075725877 1.769434861 0.82" quat="0.740951125 0 0 0.671558955"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_frame_collision_23" type="box"
             pos="-1.208512321 1.267317499 0.35" quat="0.718581618 0 0 0.695442635"
-            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.52 0.085235363 0.35" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_inner_rail_collision_23" type="box"
             pos="-1.225199053 0.757590559 0.82" quat="0.718581618 0 0 0.695442635"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
       <geom name="conveyor_curve_outer_rail_collision_23" type="box"
             pos="-1.191825589 1.777044438 0.82" quat="0.718581618 0 0 0.695442635"
-            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0"/>
+            size="0.09 0.085235363 0.12" group="3" rgba="0 0 0 0" contype="1" conaffinity="0" density="27.0073"/>
 
       <!-- Tangent-aligned moving contact tiles steer objects continuously through the turn. -->
       <body name="conveyor_belt_segment_0" pos="0.017317499 0.041487679 0.88" quat="0.999866138 0 0 0.016361732">
         <joint name="conveyor_belt_segment_0_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_0_contact" type="box"
-              size="0.39 0.169211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.169211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_0_visual" type="mesh" mesh="conveyor_curve_belt_end_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_1" pos="0.011890651 0.124285381 0.88" quat="0.998795456 0 0 0.049067674">
         <joint name="conveyor_belt_segment_1_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_1_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_1_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_2" pos="0.001060193 0.206550874 0.88" quat="0.996655239 0 0 0.081721074">
         <joint name="conveyor_belt_segment_2_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_2_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_2_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_3" pos="-0.015127496 0.287931884 0.88" quat="0.993447779 0 0 0.114286965">
         <joint name="conveyor_belt_segment_3_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_3_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_3_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_4" pos="-0.036603099 0.368079926 0.88" quat="0.98917651 0 0 0.146730474">
         <joint name="conveyor_belt_segment_4_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_4_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_4_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_5" pos="-0.063274654 0.446651793 0.88" quat="0.983846006 0 0 0.179016861">
         <joint name="conveyor_belt_segment_5_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_5_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_5_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_6" pos="-0.095027949 0.523311028 0.88" quat="0.977461975 0 0 0.211111552">
         <joint name="conveyor_belt_segment_6_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_6_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_6_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_7" pos="-0.131727012 0.597729365 0.88" quat="0.970031253 0 0 0.24298018">
         <joint name="conveyor_belt_segment_7_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_7_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_7_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_8" pos="-0.173214691 0.669588134 0.88" quat="0.961561798 0 0 0.274588618">
         <joint name="conveyor_belt_segment_8_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_8_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_8_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_9" pos="-0.21931333 0.738579623 0.88" quat="0.952062678 0 0 0.30590302">
         <joint name="conveyor_belt_segment_9_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_9_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_9_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_10" pos="-0.269825528 0.804408401 0.88" quat="0.941544065 0 0 0.336889853">
         <joint name="conveyor_belt_segment_10_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_10_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_10_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_11" pos="-0.324534983 0.866792578 0.88" quat="0.930017224 0 0 0.367515937">
         <joint name="conveyor_belt_segment_11_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_11_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_11_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_12" pos="-0.383207422 0.925465017 0.88" quat="0.917494496 0 0 0.397748475">
         <joint name="conveyor_belt_segment_12_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_12_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_12_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_13" pos="-0.445591599 0.980174472 0.88" quat="0.903989293 0 0 0.427555093">
         <joint name="conveyor_belt_segment_13_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_13_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_13_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_14" pos="-0.511420377 1.03068667 0.88" quat="0.889516075 0 0 0.456903876">
         <joint name="conveyor_belt_segment_14_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_14_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_14_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_15" pos="-0.580411866 1.076785309 0.88" quat="0.874090342 0 0 0.485763394">
         <joint name="conveyor_belt_segment_15_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_15_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_15_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_16" pos="-0.652270635 1.118272988 0.88" quat="0.85772861 0 0 0.514102744">
         <joint name="conveyor_belt_segment_16_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_16_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_16_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_17" pos="-0.726688972 1.154972051 0.88" quat="0.840448401 0 0 0.541891581">
         <joint name="conveyor_belt_segment_17_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_17_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_17_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_18" pos="-0.803348207 1.186725346 0.88" quat="0.822268219 0 0 0.569100146">
         <joint name="conveyor_belt_segment_18_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_18_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_18_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_19" pos="-0.881920074 1.213396901 0.88" quat="0.803207531 0 0 0.595699304">
         <joint name="conveyor_belt_segment_19_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_19_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_19_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_20" pos="-0.962068116 1.234872504 0.88" quat="0.783286749 0 0 0.621660573">
         <joint name="conveyor_belt_segment_20_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_20_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_20_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_21" pos="-1.043449126 1.251060193 0.88" quat="0.762527204 0 0 0.646956153">
         <joint name="conveyor_belt_segment_21_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_21_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_21_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_22" pos="-1.125714619 1.261890651 0.88" quat="0.740951125 0 0 0.671558955">
         <joint name="conveyor_belt_segment_22_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_22_contact" type="box"
-              size="0.39 0.079211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.079211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_22_visual" type="mesh" mesh="conveyor_curve_belt_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
       <body name="conveyor_belt_segment_23" pos="-1.208512321 1.267317499 0.88" quat="0.718581618 0 0 0.695442635">
         <joint name="conveyor_belt_segment_23_slide" type="slide" axis="0 1 0"
                range="-0.05 0.05" limited="false" damping="0"/>
         <geom name="conveyor_belt_segment_23_contact" type="box"
-              size="0.39 0.169211827 0.0125" mass="0.02" group="3" contype="1" conaffinity="2"
+              size="0.39 0.169211827 0.0125" group="3" contype="1" conaffinity="2"
               rgba="0 0 0 0" condim="6" friction="1.8 0.08 0.02"
-              solimp="0.9 0.98 0.0001" solref="0.002 1"/>
+              solimp="0.9 0.98 0.0001" solref="0.002 1" mass="0.000540146"/>
         <!-- The visible tread shares this moving MuJoCo body with its contact tile. -->
         <geom name="conveyor_belt_segment_23_visual" type="mesh" mesh="conveyor_curve_belt_end_tile"
-              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" density="0"/>
+              material="conveyor_belt_mat" group="1" contype="0" conaffinity="0" mass="0"/>
       </body>
     </body>
   </worldbody>

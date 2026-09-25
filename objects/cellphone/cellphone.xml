@@ -24,10 +24,10 @@
   <worldbody>
     <body name="Cellphone_1">
       <joint name="Cellphone_1_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1" />
-      <geom name="Cellphone_1_cellphone_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_0" pos="0.0005 -0.00331 0.0003" />
-      <geom name="Cellphone_1_cellphone_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_1" pos="0.0005 -0.00331 0.0003" />
-      <geom name="Cellphone_1_cellphone_1_2" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_1A_Mat" mesh="Cellphone_1_cellphone_1_2" pos="0.0005 -0.00331 0.0003" />
-      <geom name="Cellphone_1_cellphone_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0391867 0.00300477 0.0808525" pos="0.001 8.5e-07 -1e-09" quat="-1 5.96046e-08 0 0" type="box" density="120" rgba="0 1 0 1" />
+      <geom name="Cellphone_1_cellphone_1_0" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_0" pos="0.0005 -0.00331 0.0003" mass="0"/>
+      <geom name="Cellphone_1_cellphone_1_1" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_Screen_Off_Mat" mesh="Cellphone_1_cellphone_1_1" pos="0.0005 -0.00331 0.0003" mass="0"/>
+      <geom name="Cellphone_1_cellphone_1_2" class="__VISUAL_MJT__" type="mesh" material="material_Cellphone_1A_Mat" mesh="Cellphone_1_cellphone_1_2" pos="0.0005 -0.00331 0.0003" mass="0"/>
+      <geom name="Cellphone_1_cellphone_1_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.0391867 0.00300477 0.0808525" pos="0.001 8.5e-07 -1e-09" quat="-1 5.96046e-08 0 0" type="box" rgba="0 1 0 1" density="2626.01"/>
     </body>
   </worldbody>
   <keyframe>

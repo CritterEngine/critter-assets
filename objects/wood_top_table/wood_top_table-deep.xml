@@ -27,14 +27,14 @@
   <worldbody>
     <body name="Side_Table_202_1" pos="0 0 0.357795" quat="0 0 0.7071067811865476 0.7071067811865476">
       <body name="Side_Table_202_1_TableMesh" pos="-0.003 -0.35105 -0.00031">
-        <geom name="Side_Table_202_1_TableMesh_0" class="__VISUAL_MJT__" type="mesh" material="material_DarkWoodSmooth2" mesh="Side_Table_202_1_TableMesh_0"/>
-        <geom name="Side_Table_202_1_TableMesh_1" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Side_Table_202_1_TableMesh_1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.506008 0.0505326 0.324709" pos="-0.00600839 0.658312 0.000623584" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.506008 0.0255913 0.324709" pos="0 0.196 0" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
-        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="Side_Table_202_1_TableMesh_0" class="__VISUAL_MJT__" type="mesh" material="material_DarkWoodSmooth2" mesh="Side_Table_202_1_TableMesh_0" mass="0"/>
+        <geom name="Side_Table_202_1_TableMesh_1" class="__VISUAL_MJT__" type="mesh" material="material_LightWoodCounters3" mesh="Side_Table_202_1_TableMesh_1" mass="0"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.506008 0.0505326 0.324709" pos="-0.00600839 0.658312 0.000623584" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.506008 0.0255913 0.324709" pos="0 0.196 0" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 0.3056" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="-0.487627 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
+        <geom name="Side_Table_202_1_TableMesh_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0219403 0.341932 0.0196934" pos="0.479273 0.335187 -0.302" quat="0 1 0 0" type="box" rgba="0 1 0 1" density="333.975"/>
         <site name="Side_Table_202_1_TableMesh_Receptacle_0" class="/" pos="0 0.421709 0" quat="0 1 0 0" size="0.49969 0.187238 0.32302" type="box" rgba="1 0 0 1"/>
         <site name="Side_Table_202_1_TableMesh_Receptacle_1" class="/" pos="0 0.779649 0" quat="0 1 0 0" size="0.506221 0.074649 0.324535" type="box" rgba="1 0 0 1"/>
       </body>
